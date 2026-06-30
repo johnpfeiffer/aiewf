@@ -41,6 +41,13 @@ describe("shareUrl encoding", () => {
     expect(code.length).toBeLessThan(scheduleSessions.length);
   });
 
+  it("trims trailing empty bytes instead of emitting default AAAAA suffixes", () => {
+    const ids = scheduleSessions.slice(0, 2).map((s) => s.id);
+    const code = encodeFavorites(ids, scheduleSessions);
+    expect(code).toBe("wA");
+    expect(decodeFavorites(code, scheduleSessions)).toEqual(ids);
+  });
+
   it("drops unknown IDs so stale schedule versions degrade gracefully", () => {
     const ids = [scheduleSessions[0].id, "d2-99999"];
     const code = encodeFavorites(ids, scheduleSessions);
@@ -56,6 +63,7 @@ describe("shareUrl encoding", () => {
 
   it("encodes an empty set to a bitmask that decodes back to empty", () => {
     const code = encodeFavorites([], scheduleSessions);
+    expect(code).toBe("");
     expect(decodeFavorites(code, scheduleSessions)).toEqual([]);
   });
 });
