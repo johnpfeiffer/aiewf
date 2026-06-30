@@ -1,0 +1,581 @@
+/* Loopcraft styles — scoped under .loopcraft so they never clash with the
+   MUI schedule app. Ported from the original per-page inline CSS. */
+.loopcraft {
+  --ink: #1f2430;
+  --muted: #6b7280;
+  --node-bg: #ffffff;
+  --node-border: #d8dde6;
+  --arrow: #9aa3af;
+  --kw: #3a3f4b;
+  --gold: #b8860b;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+.loopcraft * {
+  box-sizing: border-box;
+}
+
+/* nav --------------------------------------------------------------------- */
+.loopcraft nav {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+.loopcraft nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.loopcraft nav a.active {
+  color: var(--ink);
+  background: #eef0f4;
+  font-weight: 600;
+}
+
+/* h1 ---------------------------------------------------------------------- */
+.loopcraft h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+}
+
+/* controls ---------------------------------------------------------------- */
+.loopcraft .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.loopcraft .controls button {
+  font: inherit;
+  font-size: 14px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--node-border);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+.loopcraft .controls button:hover:not(:disabled) {
+  background: #f5f6f8;
+}
+.loopcraft .controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.loopcraft .controls .indicator {
+  font-size: 13px;
+  color: var(--muted);
+  min-width: 92px;
+  text-align: center;
+}
+
+/* toprow pills (nested + human) ------------------------------------------- */
+.loopcraft .toprow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+.loopcraft .pill-cell {
+  position: relative;
+  display: inline-flex;
+}
+.loopcraft .pill {
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  font-weight: 600;
+  font-size: 15px;
+  background: #fff;
+  transition: background 0.3s ease;
+}
+.loopcraft .pill.enter {
+  animation: lcPillIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.loopcraft .toprow .arrow {
+  color: var(--arrow);
+  font-size: 18px;
+}
+.loopcraft .toprow .arrow.enter {
+  animation: lcPillIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.loopcraft .toprow-caption {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 7px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-style: italic;
+}
+@keyframes lcPillIn {
+  from {
+    opacity: 0;
+    transform: translateY(-7px) scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* nested loops ------------------------------------------------------------ */
+.loopcraft .loop {
+  border: 1.5px solid var(--accent, #ccc);
+  border-radius: 16px;
+  padding: 16px 18px 20px;
+  position: relative;
+}
+.loopcraft .loop .loop {
+  margin-top: 16px;
+}
+.loopcraft .nodes + .loop {
+  margin-top: 16px;
+}
+.loopcraft .loop.enter {
+  animation: lcRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.loopcraft .loop-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.loopcraft .loop-label {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--accent);
+}
+.loopcraft .loop-label .verb {
+  font-weight: 500;
+  opacity: 0.85;
+}
+.loopcraft .loop-exit {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.loopcraft .loop-sub {
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--muted);
+  margin: -8px 0 12px;
+}
+.loopcraft .nodes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.loopcraft .node {
+  background: var(--node-bg);
+  border: 1.5px solid var(--node-border);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.loopcraft .node.mono {
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+.loopcraft .node.ghost {
+  background: transparent;
+  border-style: dashed;
+  color: var(--muted);
+}
+.loopcraft .sep {
+  color: var(--arrow);
+  font-size: 16px;
+}
+.loopcraft .cursor {
+  display: inline-block;
+  width: 9px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--accent);
+  animation: lcBlink 1.1s steps(1) infinite;
+  vertical-align: middle;
+}
+@keyframes lcBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* while-loop ladder ------------------------------------------------------- */
+.loopcraft .ladder {
+  position: relative;
+  background: #faf9f7;
+  border-radius: 14px;
+  padding: 28px 24px;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 17px;
+}
+.loopcraft .ladder .row {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+}
+.loopcraft .ladder.animate .row {
+  transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.loopcraft .ladder .code {
+  flex: 0 0 560px;
+  white-space: pre;
+}
+.loopcraft .ladder.animate .code {
+  transition: padding-left 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.loopcraft .ladder .tick {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1.25;
+}
+.loopcraft .ladder .tick .meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+.loopcraft .ladder .tick .meta .name {
+  font-weight: 600;
+}
+.loopcraft .ladder .tick .note {
+  color: var(--muted);
+  font-size: 12.5px;
+  font-style: italic;
+  opacity: 0.85;
+}
+.loopcraft .ladder .kw {
+  color: var(--kw);
+}
+.loopcraft .ladder .bar {
+  position: absolute;
+  width: 3px;
+  border-radius: 2px;
+}
+.loopcraft .ladder.animate .bar {
+  transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    left 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+}
+
+/* human life -------------------------------------------------------------- */
+.loopcraft .sub {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  min-height: 38px;
+  max-width: 680px;
+  margin: 6px auto 16px;
+  transition: opacity 0.3s ease;
+}
+.loopcraft .rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.loopcraft .rows .row {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+}
+.loopcraft .rows .row.enter {
+  animation: lcRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.loopcraft .rows .ai {
+  flex: 0 0 232px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--node-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--muted);
+  background: #fafbfc;
+}
+.loopcraft .rows .ai .n {
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.loopcraft .rows .ai .ai-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+.loopcraft .rows .approx {
+  align-self: center;
+  color: var(--arrow);
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+.loopcraft .rows .hu {
+  flex: 1;
+  border: 1.5px solid var(--accent);
+  border-left-width: 5px;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: var(--bg);
+}
+.loopcraft .rows .hu-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.loopcraft .rows .hu-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent);
+}
+.loopcraft .rows .hu-verbs {
+  font-size: 13.5px;
+  color: var(--ink);
+  opacity: 0.85;
+}
+.loopcraft .rows .hu-exit {
+  font-size: 12.5px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.loopcraft .rows .badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+@keyframes lcRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* stress curves ----------------------------------------------------------- */
+.loopcraft .frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #eef0f4;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(31, 36, 48, 0.06);
+}
+.loopcraft .frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.loopcraft .frame img.show {
+  opacity: 1;
+}
+
+/* summit ------------------------------------------------------------------- */
+.loopcraft .stage {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+.loopcraft .arc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.loopcraft .arc .pill {
+  padding: 6px 15px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  font-weight: 600;
+  font-size: 14px;
+  background: #fff;
+}
+.loopcraft .arc .pill.dim {
+  color: var(--muted);
+  opacity: 0.55;
+}
+.loopcraft .arc .arrow {
+  color: var(--arrow);
+  font-size: 16px;
+}
+.loopcraft .arc .pill.q {
+  color: var(--gold);
+  animation: lcPulse 1.3s ease-in-out infinite;
+}
+@keyframes lcPulse {
+  50% {
+    opacity: 0.4;
+  }
+}
+.loopcraft .kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+}
+.loopcraft .line {
+  max-width: 720px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.loopcraft .ask {
+  max-width: 680px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.loopcraft .card {
+  width: 100%;
+  max-width: 760px;
+  border: 1.5px solid var(--accent);
+  border-radius: 16px;
+  padding: 20px 22px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(31, 36, 48, 0.06);
+}
+.loopcraft .card.rise {
+  animation: lcRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.loopcraft .card .eyebrow {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.loopcraft .card .name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  margin: 4px 0 14px;
+}
+.loopcraft .card pre {
+  margin: 0 0 14px;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #3a3f4b;
+  white-space: pre;
+  overflow-x: auto;
+}
+.loopcraft .card pre .kw {
+  color: var(--accent);
+}
+.loopcraft .card .foot {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+}
+.loopcraft .finale {
+  text-align: center;
+  animation: lcRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.loopcraft .finale .big {
+  font-size: clamp(44px, 8vw, 84px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  background: linear-gradient(120deg, #b8860b, #e0b84d 45%, #8a7320);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 18px;
+}
+.loopcraft .finale .punch {
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.loopcraft .finale .wink {
+  font-size: 15px;
+  color: var(--muted);
+  font-style: italic;
+}
+.loopcraft .finale .shot {
+  margin: 22px auto 0;
+  max-width: 760px;
+  width: 100%;
+  border-radius: 14px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(31, 36, 48, 0.18);
+  display: block;
+}
+.loopcraft .finale a.shotlink {
+  display: block;
+  text-decoration: none;
+}
+
+/* intro / title slide ----------------------------------------------------- */
+.loopcraft .intro {
+  text-align: center;
+  padding-top: 18vh;
+}
+.loopcraft .intro h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  margin: 0 0 10px;
+}
+.loopcraft .intro .by {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0 0 40px;
+}
+.loopcraft .intro .hint {
+  font-size: 16px;
+  color: var(--muted);
+}
+.loopcraft .intro .hint strong {
+  color: var(--ink);
+}
+.loopcraft .intro .hint a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.loopcraft .intro .hint a:hover {
+  text-decoration: underline;
+}
