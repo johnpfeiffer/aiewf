@@ -12,6 +12,7 @@ export interface UseFavorites {
   toggleFavorite: (id: string) => void;
   addFavorite: (id: string) => void;
   removeFavorite: (id: string) => void;
+  setFavorites: (ids: string[]) => void;
   clearFavorites: () => void;
   count: number;
 }
@@ -42,6 +43,10 @@ export function useFavorites(): UseFavorites {
     setIds((current) => current.filter((value) => value !== id));
   }, []);
 
+  const setFavorites = useCallback((nextIds: string[]) => {
+    setIds(nextIds);
+  }, []);
+
   const toggleFavorite = useCallback((id: string) => {
     setIds((current) =>
       current.includes(id)
@@ -62,6 +67,7 @@ export function useFavorites(): UseFavorites {
     toggleFavorite,
     addFavorite,
     removeFavorite,
+    setFavorites,
     clearFavorites,
     count: ids.length,
   };

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Badge,
   Box,
@@ -25,6 +25,7 @@ import { TrackFilter } from "../components/TrackFilter";
 import { SessionList } from "../components/SessionList";
 import { MySchedule } from "../components/MySchedule";
 import { SessionDetail } from "../components/SessionDetail";
+import { decodeFavorites, readShareParam } from "../models/shareUrl";
 
 type TabValue = "schedule" | "mine";
 
@@ -65,6 +66,21 @@ export default function App() {
       setSelectedId(currentList[0].id);
     }
   }, [currentList, selectedId]);
+
+  // Restore "My Schedule" from a share link (?s=<code>) on first load, but only
+  // when the user has no existing saved sessions.
+  const didRestoreFromShare = useRef(false);
+  useEffect(() => {
+    if (didRestoreFromShare.current) return;
+    didRestoreFromShare.current = true;
+    if (favorites.count > 0) return;
+    const code = readShareParam();
+    if (!code) return;
+    const ids = decodeFavorites(code, schedule.allSessions);
+    if (ids.length) {
+      favorites.setFavorites(ids);
+    }
+  }, [favorites.count, favorites.setFavorites, schedule.allSessions]);
 
   const selectedSession = selectedId ? byId.get(selectedId) : undefined;
   const totalSessions = schedule.allSessions.length;
