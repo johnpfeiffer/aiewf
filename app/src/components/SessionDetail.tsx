@@ -2,7 +2,6 @@ import { Box, Chip, IconButton, Paper, Stack, Typography } from "@mui/material";
 import {
   ScheduleSession,
   TYPE_LABEL,
-  durationLabel,
   formatTimeRange,
 } from "../models/session";
 
@@ -43,7 +42,7 @@ export function SessionDetail({
         <Stack direction="row" gap={0.5} flexWrap="wrap" alignItems="center">
           <Chip size="small" label={TYPE_LABEL[session.type]} color="primary" />
           <Typography variant="caption" color="text.secondary">
-            {formatTimeRange(session)} · {durationLabel(session)}
+            {formatTimeRange(session)}
           </Typography>
           {session.tentative && (
             <Chip size="small" label="tentative" variant="outlined" color="warning" />
