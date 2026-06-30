@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Badge,
   Box,
   Container,
+  Link,
   Paper,
   Stack,
   Tab,
@@ -11,12 +12,19 @@ import {
 } from "@mui/material";
 import { useSchedule } from "../controllers/useSchedule";
 import { useFavorites } from "../controllers/useFavorites";
-import { DAY_DATE, DAY_LABEL, VENUE } from "../models/session";
+import {
+  DAY_DATE,
+  DAY_LABEL,
+  VENUE,
+  ScheduleSession,
+  conflictingIds,
+} from "../models/session";
 import { SearchBar } from "../components/SearchBar";
 import { TypeFilter } from "../components/TypeFilter";
 import { TrackFilter } from "../components/TrackFilter";
 import { SessionList } from "../components/SessionList";
 import { MySchedule } from "../components/MySchedule";
+import { SessionDetail } from "../components/SessionDetail";
 
 type TabValue = "schedule" | "mine";
 
@@ -24,17 +32,55 @@ export default function App() {
   const schedule = useSchedule();
   const favorites = useFavorites();
   const [tab, setTab] = useState<TabValue>("schedule");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const noConflict = new Set<string>();
+  const byId = useMemo(
+    () => new Map(schedule.allSessions.map((session) => [session.id, session])),
+    [schedule.allSessions],
+  );
+
+  const favoriteSessions = useMemo(
+    () =>
+      favorites.ids
+        .map((id) => byId.get(id))
+        .filter((session): session is ScheduleSession => Boolean(session)),
+    [byId, favorites.ids],
+  );
+
+  const favoriteConflictIds = useMemo(
+    () => conflictingIds(favoriteSessions),
+    [favoriteSessions],
+  );
+
+  const currentList = tab === "schedule" ? schedule.filtered : favoriteSessions;
+
+  useEffect(() => {
+    if (currentList.length === 0) {
+      if (selectedId !== null) {
+        setSelectedId(null);
+      }
+      return;
+    }
+    if (!currentList.some((session) => session.id === selectedId)) {
+      setSelectedId(currentList[0].id);
+    }
+  }, [currentList, selectedId]);
+
+  const selectedSession = selectedId ? byId.get(selectedId) : undefined;
   const totalSessions = schedule.allSessions.length;
+  const noConflict = new Set<string>();
+  const selectedConflicts =
+    tab === "mine" && selectedSession
+      ? favoriteConflictIds.has(selectedSession.id)
+      : false;
 
   return (
     <Box sx={{ minHeight: "100vh", py: { xs: 2, md: 3 } }}>
       <Container maxWidth="xl">
         <Stack spacing={2}>
           <Box>
-            <Typography variant="h1" component="h1">
-              AI Engineer World&rsquo;s Fair
+            <Typography variant="h5" component="h1">
+              AI Engineer World's Fair
             </Typography>
             <Typography color="text.secondary">
               {DAY_LABEL} · {DAY_DATE} · {VENUE}
@@ -79,50 +125,66 @@ export default function App() {
                 />
               </Stack>
               {schedule.hasActiveFilters && (
-                <Box>
-                  <Typography variant="caption" color="text.secondary">
-                    {schedule.filtered.length} of {totalSessions} sessions shown ·{" "}
-                    <button
-                      type="button"
-                      onClick={schedule.clearFilters}
-                      style={{
-                        background: "none",
-                        border: "none",
-                        padding: 0,
-                        color: "#2d4ba8",
-                        cursor: "pointer",
-                        fontSize: "inherit",
-                      }}
-                    >
-                      clear filters
-                    </button>
-                  </Typography>
-                </Box>
+                <Typography variant="caption" color="text.secondary">
+                  {schedule.filtered.length} of {totalSessions} sessions shown ·{" "}
+                  <Link
+                    component="button"
+                    type="button"
+                    onClick={schedule.clearFilters}
+                  >
+                    clear filters
+                  </Link>
+                </Typography>
               )}
             </Stack>
           )}
 
-          {tab === "schedule" && (
-            <SessionList
-              timeSlots={schedule.timeSlots}
-              isFavorite={favorites.isFavorite}
-              onToggleFavorite={favorites.toggleFavorite}
-              conflictIds={noConflict}
-              emptyMessage="No sessions match your filters."
-            />
-          )}
-
-          {tab === "mine" && (
-            <MySchedule
-              allSessions={schedule.allSessions}
-              favoriteIds={favorites.ids}
-              isFavorite={favorites.isFavorite}
-              onToggleFavorite={favorites.toggleFavorite}
-              onClearFavorites={favorites.clearFavorites}
-            />
-          )}
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1fr) 360px" },
+              gap: 2,
+              alignItems: "start",
+            }}
+          >
+            <Box>
+              {tab === "schedule" && (
+                <SessionList
+                  timeSlots={schedule.timeSlots}
+                  selectedId={selectedId}
+                  onSelect={setSelectedId}
+                  isFavorite={favorites.isFavorite}
+                  onToggleFavorite={favorites.toggleFavorite}
+                  conflictIds={noConflict}
+                  emptyMessage="No sessions match your filters."
+                />
+              )}
+              {tab === "mine" && (
+                <MySchedule
+                  allSessions={schedule.allSessions}
+                  favoriteIds={favorites.ids}
+                  isFavorite={favorites.isFavorite}
+                  onToggleFavorite={favorites.toggleFavorite}
+                  onClearFavorites={favorites.clearFavorites}
+                  selectedId={selectedId}
+                  onSelect={setSelectedId}
+                />
+              )}
+            </Box>
+            <Box sx={{ position: { md: "sticky" }, top: { md: 16 } }}>
+              <SessionDetail
+                session={selectedSession}
+                isFavorite={
+                  selectedSession ? favorites.isFavorite(selectedSession.id) : false
+                }
+                onToggleFavorite={favorites.toggleFavorite}
+                conflictsWithFavorite={selectedConflicts}
+              />
+            </Box>
+          </Box>
         </Stack>
       </Container>
     </Box>
   );
 }
+
