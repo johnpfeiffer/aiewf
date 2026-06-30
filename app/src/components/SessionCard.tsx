@@ -29,7 +29,6 @@ const typeColor: Record<
   KEYNOTE: { bg: "#1e293b", fg: "#f8fafc" },
   SESSION: { bg: "#2d4ba8", fg: "#ffffff" },
   SPONSOR: { bg: "#c2410c", fg: "#ffffff" },
-  FIRESIDE: { bg: "#6a4c93", fg: "#ffffff" },
 };
 
 export function SessionCard({

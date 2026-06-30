@@ -24,14 +24,12 @@ export const TYPE_ORDER: SessionType[] = [
   "KEYNOTE",
   "SESSION",
   "SPONSOR",
-  "FIRESIDE",
 ];
 
 export const TYPE_LABEL: Record<SessionType, string> = {
   KEYNOTE: "Keynote",
   SESSION: "Session",
   SPONSOR: "Sponsor",
-  FIRESIDE: "Fireside",
 };
 
 export function durationMinutes(session: ScheduleSession): number {
