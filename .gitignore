@@ -41,3 +41,6 @@ app/dist/
 app/.vite/
 app/vite.config.js
 app/vite.config.d.ts
+
+# reverse-engineering scratch (not part of the module)
+.loopcraft-capture/

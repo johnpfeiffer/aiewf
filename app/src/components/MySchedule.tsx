@@ -1,11 +1,12 @@
-import { useMemo } from "react";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { useMemo, useState } from "react";
+import { Box, Button, OutlinedInput, Stack, Typography } from "@mui/material";
 import {
   ScheduleSession,
   conflictingIds,
   groupByTimeSlot,
   sortSessionsByTime,
 } from "../models/session";
+import { buildShareUrl, copyShareUrl } from "../models/shareUrl";
 import { ConflictNotice } from "./ConflictNotice";
 import { SessionList } from "./SessionList";
 
@@ -53,6 +54,17 @@ export function MySchedule({
     [favoriteSessions],
   );
 
+  const [shareUrl, setShareUrl] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    const url = buildShareUrl(favoriteIds, allSessions);
+    if (!url) return;
+    setShareUrl(url);
+    setCopied(false);
+    copyShareUrl(url).then((ok) => setCopied(ok));
+  };
+
   if (favoriteSessions.length === 0) {
     return (
       <Box sx={{ py: 6, textAlign: "center" }}>
@@ -65,19 +77,54 @@ export function MySchedule({
 
   return (
     <Stack spacing={1.5}>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        flexWrap="wrap"
+        gap={1}
+      >
         <Typography color="text.secondary">
-          {favoriteSessions.length} saved session{favoriteSessions.length === 1 ? "" : "s"}
+          {favoriteSessions.length} saved session
+          {favoriteSessions.length === 1 ? "" : "s"}
         </Typography>
-        <Button
-          size="small"
-          color="error"
-          variant="text"
-          onClick={onClearFavorites}
-        >
-          Clear all
-        </Button>
+        <Stack direction="row" spacing={1}>
+          <Button
+            size="small"
+            variant="outlined"
+            onClick={handleShare}
+            aria-label="Share my schedule"
+          >
+            Share
+          </Button>
+          <Button
+            size="small"
+            color="error"
+            variant="text"
+            onClick={onClearFavorites}
+          >
+            Clear all
+          </Button>
+        </Stack>
       </Stack>
+
+      {shareUrl && (
+        <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
+          <OutlinedInput
+            value={shareUrl}
+            size="small"
+            readOnly
+            onChange={() => {}}
+            onFocus={(event) => event.currentTarget.select()}
+            slotProps={{ input: { "aria-label": "Shareable schedule link" } }}
+            sx={{ flex: 1, minWidth: 220, fontSize: 13 }}
+          />
+          <Typography variant="caption" color={copied ? "success.main" : "text.secondary"}>
+            {copied ? "Link copied to clipboard!" : "Copy this link to share your schedule"}
+          </Typography>
+        </Stack>
+      )}
+
       <ConflictNotice conflictCount={conflictIds.size} />
       <SessionList
         timeSlots={timeSlots}
