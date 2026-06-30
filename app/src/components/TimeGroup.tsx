@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { ScheduleSession } from "../models/session";
-import { SessionCard } from "./SessionCard";
+import { SessionListItem } from "./SessionListItem";
 
 interface TimeGroupProps {
   startLabel: string;
   sessions: ScheduleSession[];
+  selectedId: string | null;
+  onSelect: (id: string) => void;
   isFavorite: (id: string) => boolean;
   onToggleFavorite: (id: string) => void;
   conflictIds: Set<string>;
@@ -13,6 +15,8 @@ interface TimeGroupProps {
 export function TimeGroup({
   startLabel,
   sessions,
+  selectedId,
+  onSelect,
   isFavorite,
   onToggleFavorite,
   conflictIds,
@@ -20,38 +24,31 @@ export function TimeGroup({
   return (
     <Box>
       <Typography
-        variant="h2"
+        variant="subtitle2"
         component="h2"
         sx={{
           position: "sticky",
           top: 0,
           bgcolor: "background.default",
+          borderBottom: "1px solid",
+          borderColor: "divider",
           py: 0.5,
           zIndex: 1,
         }}
       >
         {startLabel}
-        <Typography
-          component="span"
-          color="text.secondary"
-          sx={{ ml: 1, fontSize: "0.85rem" }}
-        >
+        <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>
           {sessions.length} {sessions.length === 1 ? "session" : "sessions"}
         </Typography>
       </Typography>
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr", xl: "1fr 1fr 1fr" },
-          gap: 1,
-          mt: 1,
-        }}
-      >
+      <Box sx={{ mt: 1 }}>
         {sessions.map((session) => (
-          <SessionCard
+          <SessionListItem
             key={session.id}
             session={session}
+            selected={session.id === selectedId}
             isFavorite={isFavorite(session.id)}
+            onSelect={onSelect}
             onToggleFavorite={onToggleFavorite}
             conflictsWithFavorite={conflictIds.has(session.id)}
           />

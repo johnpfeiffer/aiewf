@@ -2,45 +2,54 @@ import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ScheduleSession } from "../models/session";
-import { SessionCard } from "./SessionCard";
+import { SessionDetail } from "./SessionDetail";
 
 function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession {
   return {
     id: "d2-001",
-    type: "SESSION",
+    type: "KEYNOTE",
     track: "Software Factories · Main Stage",
     start: "9:00am",
-    end: "9:30am",
+    end: "9:05am",
     startMin: 540,
-    endMin: 570,
+    endMin: 545,
     tentative: false,
-    title: "Building Reliable Agents",
-    speakers: [{ name: "Jane Doe", role: "CEO, Acme" }],
-    description: "A deep dive into shipping agents that work.",
+    title: "Three Years of AI Engineering",
+    speakers: [{ name: "swyx", role: "Curator, Latent Space / AI Engineer" }],
+    description: "We celebrate the third birthday of the AI Engineer post.",
     ...overrides,
   };
 }
 
-describe("SessionCard", () => {
-  it("renders title, time range, track, and speaker", () => {
+describe("SessionDetail", () => {
+  it("renders full details: title, track, speakers, description", () => {
     render(
-      <SessionCard
+      <SessionDetail
         session={makeSession()}
         isFavorite={false}
         onToggleFavorite={vi.fn()}
       />,
     );
-    expect(screen.getByText("Building Reliable Agents")).toBeInTheDocument();
-    expect(screen.getByText(/9:00am–9:30am/)).toBeInTheDocument();
+    expect(screen.getByText("Three Years of AI Engineering")).toBeInTheDocument();
     expect(screen.getByText("Software Factories · Main Stage")).toBeInTheDocument();
-    expect(screen.getByText(/Jane Doe/)).toBeInTheDocument();
+    expect(screen.getByText(/swyx/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/third birthday of the AI Engineer post/i),
+    ).toBeInTheDocument();
   });
 
-  it("calls onToggleFavorite with the session id when the star is clicked", async () => {
+  it("shows an empty state when no session is selected", () => {
+    render(
+      <SessionDetail session={undefined} isFavorite={false} onToggleFavorite={vi.fn()} />,
+    );
+    expect(screen.getByText(/Select a session to see details/i)).toBeInTheDocument();
+  });
+
+  it("toggles favorites via the star control", async () => {
     const user = userEvent.setup();
     const onToggle = vi.fn();
     render(
-      <SessionCard
+      <SessionDetail
         session={makeSession()}
         isFavorite={false}
         onToggleFavorite={onToggle}
@@ -50,20 +59,9 @@ describe("SessionCard", () => {
     expect(onToggle).toHaveBeenCalledWith("d2-001");
   });
 
-  it("shows a tentative chip for tentative sessions", () => {
+  it("renders a conflict chip when conflictsWithFavorite is true", () => {
     render(
-      <SessionCard
-        session={makeSession({ tentative: true })}
-        isFavorite={false}
-        onToggleFavorite={vi.fn()}
-      />,
-    );
-    expect(screen.getByText("tentative")).toBeInTheDocument();
-  });
-
-  it("shows a conflict chip when conflictsWithFavorite is true", () => {
-    render(
-      <SessionCard
+      <SessionDetail
         session={makeSession()}
         isFavorite
         onToggleFavorite={vi.fn()}

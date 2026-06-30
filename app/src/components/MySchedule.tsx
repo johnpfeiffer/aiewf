@@ -15,6 +15,8 @@ interface MyScheduleProps {
   isFavorite: (id: string) => boolean;
   onToggleFavorite: (id: string) => void;
   onClearFavorites: () => void;
+  selectedId: string | null;
+  onSelect: (id: string) => void;
 }
 
 export function MySchedule({
@@ -23,6 +25,8 @@ export function MySchedule({
   isFavorite,
   onToggleFavorite,
   onClearFavorites,
+  selectedId,
+  onSelect,
 }: MyScheduleProps) {
   const byId = useMemo(
     () => new Map(allSessions.map((session) => [session.id, session])),
@@ -70,7 +74,6 @@ export function MySchedule({
           color="error"
           variant="text"
           onClick={onClearFavorites}
-          sx={{ textTransform: "none" }}
         >
           Clear all
         </Button>
@@ -78,6 +81,8 @@ export function MySchedule({
       <ConflictNotice conflictCount={conflictIds.size} />
       <SessionList
         timeSlots={timeSlots}
+        selectedId={selectedId}
+        onSelect={onSelect}
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
         conflictIds={conflictIds}

@@ -4,6 +4,8 @@ import { TimeGroup } from "./TimeGroup";
 
 interface SessionListProps {
   timeSlots: TimeSlot[];
+  selectedId: string | null;
+  onSelect: (id: string) => void;
   isFavorite: (id: string) => boolean;
   onToggleFavorite: (id: string) => void;
   conflictIds: Set<string>;
@@ -12,6 +14,8 @@ interface SessionListProps {
 
 export function SessionList({
   timeSlots,
+  selectedId,
+  onSelect,
   isFavorite,
   onToggleFavorite,
   conflictIds,
@@ -32,6 +36,8 @@ export function SessionList({
           key={slot.startMin}
           startLabel={slot.startLabel}
           sessions={slot.sessions}
+          selectedId={selectedId}
+          onSelect={onSelect}
           isFavorite={isFavorite}
           onToggleFavorite={onToggleFavorite}
           conflictIds={conflictIds}
