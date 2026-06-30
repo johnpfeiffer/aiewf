@@ -8,6 +8,8 @@ import {
   Stack,
   Tab,
   Tabs,
+  ToggleButton,
+  ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import { useSchedule } from "../controllers/useSchedule";
@@ -26,13 +28,16 @@ import { SessionList } from "../components/SessionList";
 import { MySchedule } from "../components/MySchedule";
 import { SessionDetail } from "../components/SessionDetail";
 import { decodeFavorites, readShareParam } from "../models/shareUrl";
+import Loopcraft from "./Loopcraft";
 
 type TabValue = "schedule" | "mine";
+type View = "schedule" | "loopcraft";
 
 export default function App() {
   const schedule = useSchedule();
   const favorites = useFavorites();
   const [tab, setTab] = useState<TabValue>("schedule");
+  const [view, setView] = useState<View>("schedule");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const byId = useMemo(
@@ -95,17 +100,43 @@ export default function App() {
       <Container maxWidth="xl">
         <Stack spacing={2}>
           <Box>
-            <Typography variant="h5" component="h1">
-              AI Engineer World's Fair
-            </Typography>
-            <Typography color="text.secondary">
-              {DAY_LABEL} · {DAY_DATE} · {VENUE}
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              {totalSessions} sessions · favorites save to this browser
-            </Typography>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="flex-start"
+              flexWrap="wrap"
+              gap={1}
+            >
+              <Box>
+                <Typography variant="h5" component="h1">
+                  AI Engineer World's Fair
+                </Typography>
+                <Typography color="text.secondary">
+                  {DAY_LABEL} · {DAY_DATE} · {VENUE}
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  {totalSessions} sessions · favorites save to this browser
+                </Typography>
+              </Box>
+              <ToggleButtonGroup
+                size="small"
+                exclusive
+                value={view}
+                onChange={(_e, value: View | null) =>
+                  value && setView(value)
+                }
+                aria-label="App view"
+              >
+                <ToggleButton value="schedule">Schedule</ToggleButton>
+                <ToggleButton value="loopcraft">Loopcraft</ToggleButton>
+              </ToggleButtonGroup>
+            </Stack>
           </Box>
 
+          {view === "loopcraft" && <Loopcraft />}
+
+          {view === "schedule" && (
+            <>
           <Paper variant="outlined" sx={{ px: 1 }}>
             <Tabs
               value={tab}
@@ -198,6 +229,8 @@ export default function App() {
               />
             </Box>
           </Box>
+            </>
+          )}
         </Stack>
       </Container>
     </Box>
