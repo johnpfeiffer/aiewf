@@ -11,10 +11,13 @@ describe("useSchedule", () => {
     expect(result.current.typeOptions).toContain("SESSION");
   });
 
-  it("starts with no active filters and all sessions visible", () => {
+  it("starts with no active filters and all day sessions visible", () => {
     const { result } = renderHook(() => useSchedule());
     expect(result.current.hasActiveFilters).toBe(false);
-    expect(result.current.filtered.length).toBe(result.current.allSessions.length);
+    const daySessionCount = result.current.allSessions.filter(
+      (s) => s.day === result.current.day,
+    ).length;
+    expect(result.current.filtered.length).toBe(daySessionCount);
   });
 
   it("filters by query", () => {
@@ -66,6 +69,9 @@ describe("useSchedule", () => {
       result.current.clearFilters();
     });
     expect(result.current.hasActiveFilters).toBe(false);
-    expect(result.current.filtered.length).toBe(result.current.allSessions.length);
+    const daySessionCount = result.current.allSessions.filter(
+      (s) => s.day === result.current.day,
+    ).length;
+    expect(result.current.filtered.length).toBe(daySessionCount);
   });
 });

@@ -7,6 +7,7 @@ import { SessionDetail } from "./SessionDetail";
 function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession {
   return {
     id: "d2-001",
+    day: "Day 2 — Session Day 1",
     type: "KEYNOTE",
     track: "Software Factories · Main Stage",
     start: "9:00am",

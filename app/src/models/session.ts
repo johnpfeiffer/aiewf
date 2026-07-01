@@ -8,9 +8,9 @@ export {
   type ScheduleSession,
   type Speaker,
   type SessionType,
+  type ScheduleDay,
   scheduleSessions,
-  DAY_LABEL,
-  DAY_DATE,
+  SCHEDULE_DAYS,
   VENUE,
 } from "./scheduleData";
 

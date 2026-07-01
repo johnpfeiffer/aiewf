@@ -1,8 +1,8 @@
 // Adapter that derives the app's schedule from the official open data files.
 // sessions.json and speakers.json are committed verbatim in ../data/ (the source
-// of truth). This module filters to Day 2, computes time-of-day minutes, joins
-// track + room, and looks up speaker roles. To update the schedule, replace
-// those two JSON files.
+// of truth). This module filters to session days (2-4), computes time-of-day
+// minutes, joins track + room, and looks up speaker roles. To update the
+// schedule, replace those two JSON files.
 
 import sessionsJsonRaw from "../data/sessions.json?raw";
 import speakersJsonRaw from "../data/speakers.json?raw";
@@ -16,6 +16,7 @@ export type SessionType = "KEYNOTE" | "SESSION" | "SPONSOR" | "WORKSHOP";
 
 export interface ScheduleSession {
   id: string;
+  day: string;
   type: SessionType;
   track: string;
   start: string;
@@ -28,8 +29,18 @@ export interface ScheduleSession {
   description: string;
 }
 
-export const DAY_LABEL = "Day 2 — Session Day 1";
-export const DAY_DATE = "Tuesday, June 30, 2026";
+export interface ScheduleDay {
+  key: string;
+  shortLabel: string;
+  date: string;
+}
+
+export const SCHEDULE_DAYS: ScheduleDay[] = [
+  { key: "Day 2 — Session Day 1", shortLabel: "Day 2", date: "Tuesday, June 30, 2026" },
+  { key: "Day 3 — Session Day 2", shortLabel: "Day 3", date: "Wednesday, July 1, 2026" },
+  { key: "Day 4 — Session Day 3", shortLabel: "Day 4", date: "Thursday, July 2, 2026" },
+];
+
 export const VENUE = "Moscone West, San Francisco, CA";
 
 interface RawSession {
@@ -108,42 +119,51 @@ for (const speaker of speakersFile.speakers) {
   speakerRoleByName.set(speaker.name, buildSpeakerRole(speaker));
 }
 
-const day2Sessions = sessionsFile.sessions
-  .filter((session) => session.day.startsWith("Day 2"))
-  .sort((a, b) => {
-    const [aStart] = splitTimeRange(a.time);
-    const [bStart] = splitTimeRange(b.time);
-    const byStart = toMinutes(aStart) - toMinutes(bStart);
-    if (byStart !== 0) {
-      return byStart;
-    }
-    const aTrack = buildTrack(a);
-    const bTrack = buildTrack(b);
-    const byTrack = aTrack.localeCompare(bTrack);
-    if (byTrack !== 0) {
-      return byTrack;
-    }
-    return a.title.localeCompare(b.title);
-  });
+const sessionDayKeys = new Set(SCHEDULE_DAYS.map((d) => d.key));
 
-export const scheduleSessions: ScheduleSession[] = day2Sessions.map(
-  (session, index) => {
-    const [start, end] = splitTimeRange(session.time);
-    return {
-      id: `d2-${String(index + 1).padStart(3, "0")}`,
-      type: session.type.toUpperCase() as SessionType,
-      track: buildTrack(session),
-      start,
-      end,
-      startMin: toMinutes(start),
-      endMin: toMinutes(end),
-      tentative: session.status === "tentative",
-      title: session.title,
-      speakers: session.speakers.map((name) => ({
-        name,
-        role: speakerRoleByName.get(name) ?? "",
-      })),
-      description: session.description ?? "",
-    };
+function sortRawSessions(a: RawSession, b: RawSession): number {
+  const [aStart] = splitTimeRange(a.time);
+  const [bStart] = splitTimeRange(b.time);
+  const byStart = toMinutes(aStart) - toMinutes(bStart);
+  if (byStart !== 0) {
+    return byStart;
+  }
+  const aTrack = buildTrack(a);
+  const bTrack = buildTrack(b);
+  const byTrack = aTrack.localeCompare(bTrack);
+  if (byTrack !== 0) {
+    return byTrack;
+  }
+  return a.title.localeCompare(b.title);
+}
+
+export const scheduleSessions: ScheduleSession[] = SCHEDULE_DAYS.flatMap(
+  (dayInfo) => {
+    const dayNum = dayInfo.key.match(/^Day (\d)/)?.[1] ?? "2";
+    return sessionsFile.sessions
+      .filter(
+        (session) => sessionDayKeys.has(session.day) && session.day === dayInfo.key,
+      )
+      .sort(sortRawSessions)
+      .map((session, index) => {
+        const [start, end] = splitTimeRange(session.time);
+        return {
+          id: `d${dayNum}-${String(index + 1).padStart(3, "0")}`,
+          day: session.day,
+          type: session.type.toUpperCase() as SessionType,
+          track: buildTrack(session),
+          start,
+          end,
+          startMin: toMinutes(start),
+          endMin: toMinutes(end),
+          tentative: session.status === "tentative",
+          title: session.title,
+          speakers: session.speakers.map((name) => ({
+            name,
+            role: speakerRoleByName.get(name) ?? "",
+          })),
+          description: session.description ?? "",
+        };
+      });
   },
 );
