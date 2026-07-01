@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { ScheduleSession } from "../models/session";
 import { SessionListItem } from "./SessionListItem";
@@ -11,6 +10,8 @@ interface TimeGroupProps {
   isFavorite: (id: string) => boolean;
   onToggleFavorite: (id: string) => void;
   conflictIds: Set<string>;
+  collapsed: boolean;
+  onToggleCollapse: () => void;
 }
 
 export function TimeGroup({
@@ -21,9 +22,9 @@ export function TimeGroup({
   isFavorite,
   onToggleFavorite,
   conflictIds,
+  collapsed,
+  onToggleCollapse,
 }: TimeGroupProps) {
-  const [collapsed, setCollapsed] = useState(false);
-
   return (
     <Box>
       <Typography
@@ -33,11 +34,11 @@ export function TimeGroup({
         tabIndex={0}
         aria-expanded={!collapsed}
         aria-label={`${startLabel} — ${sessions.length} ${sessions.length === 1 ? "session" : "sessions"} — ${collapsed ? "expand" : "collapse"}`}
-        onClick={() => setCollapsed((c) => !c)}
+        onClick={onToggleCollapse}
         onKeyDown={(event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            setCollapsed((c) => !c);
+            onToggleCollapse();
           }
         }}
         sx={{

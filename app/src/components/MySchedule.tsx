@@ -3,6 +3,7 @@ import { Box, Button, OutlinedInput, Stack, Typography } from "@mui/material";
 import {
   ScheduleSession,
   conflictingIds,
+  groupByDay,
   groupByTimeSlot,
   sortSessionsByTime,
 } from "../models/session";
@@ -49,8 +50,8 @@ export function MySchedule({
     [favoriteSessions],
   );
 
-  const timeSlots = useMemo(
-    () => groupByTimeSlot(favoriteSessions),
+  const dayGroups = useMemo(
+    () => groupByDay(favoriteSessions),
     [favoriteSessions],
   );
 
@@ -126,15 +127,23 @@ export function MySchedule({
       )}
 
       <ConflictNotice conflictCount={conflictIds.size} />
-      <SessionList
-        timeSlots={timeSlots}
-        selectedId={selectedId}
-        onSelect={onSelect}
-        isFavorite={isFavorite}
-        onToggleFavorite={onToggleFavorite}
-        conflictIds={conflictIds}
-        emptyMessage="No saved sessions match."
-      />
+
+      {dayGroups.map((group) => (
+        <Box key={group.day.key}>
+          <Typography variant="subtitle1" component="h3" sx={{ mt: 1, mb: 0.5 }}>
+            {group.day.shortLabel} · {group.day.date}
+          </Typography>
+          <SessionList
+            timeSlots={groupByTimeSlot(group.sessions)}
+            selectedId={selectedId}
+            onSelect={onSelect}
+            isFavorite={isFavorite}
+            onToggleFavorite={onToggleFavorite}
+            conflictIds={conflictIds}
+            emptyMessage="No saved sessions for this day."
+          />
+        </Box>
+      ))}
     </Stack>
   );
 }

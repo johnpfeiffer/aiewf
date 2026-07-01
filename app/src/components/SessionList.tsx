@@ -1,4 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import { useCallback, useState } from "react";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { TimeSlot } from "../models/session";
 import { TimeGroup } from "./TimeGroup";
 
@@ -21,6 +22,28 @@ export function SessionList({
   conflictIds,
   emptyMessage,
 }: SessionListProps) {
+  const [collapsedSlots, setCollapsedSlots] = useState<Set<number>>(new Set());
+
+  const toggleSlot = useCallback((startMin: number) => {
+    setCollapsedSlots((prev) => {
+      const next = new Set(prev);
+      if (next.has(startMin)) {
+        next.delete(startMin);
+      } else {
+        next.add(startMin);
+      }
+      return next;
+    });
+  }, []);
+
+  const collapseAll = useCallback(() => {
+    setCollapsedSlots(new Set(timeSlots.map((s) => s.startMin)));
+  }, [timeSlots]);
+
+  const expandAll = useCallback(() => {
+    setCollapsedSlots(new Set());
+  }, []);
+
   if (timeSlots.length === 0) {
     return (
       <Box sx={{ py: 6, textAlign: "center" }}>
@@ -31,6 +54,14 @@ export function SessionList({
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      <Stack direction="row" spacing={1}>
+        <Button size="small" variant="text" onClick={collapseAll} sx={{ textTransform: "none" }}>
+          Collapse all
+        </Button>
+        <Button size="small" variant="text" onClick={expandAll} sx={{ textTransform: "none" }}>
+          Expand all
+        </Button>
+      </Stack>
       {timeSlots.map((slot) => (
         <TimeGroup
           key={slot.startMin}
@@ -41,6 +72,8 @@ export function SessionList({
           isFavorite={isFavorite}
           onToggleFavorite={onToggleFavorite}
           conflictIds={conflictIds}
+          collapsed={collapsedSlots.has(slot.startMin)}
+          onToggleCollapse={() => toggleSlot(slot.startMin)}
         />
       ))}
     </Box>

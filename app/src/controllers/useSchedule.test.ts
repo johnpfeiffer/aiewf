@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { act, renderHook } from "@testing-library/react";
 import { useSchedule } from "./useSchedule";
+import { isDefaultHiddenTrack } from "../models/session";
 
 describe("useSchedule", () => {
   it("exposes the full schedule and all track/type options", () => {
@@ -11,11 +12,11 @@ describe("useSchedule", () => {
     expect(result.current.typeOptions).toContain("SESSION");
   });
 
-  it("starts with no active filters and all day sessions visible", () => {
+  it("starts with no active filters and all non-leadership day sessions visible", () => {
     const { result } = renderHook(() => useSchedule());
     expect(result.current.hasActiveFilters).toBe(false);
     const daySessionCount = result.current.allSessions.filter(
-      (s) => s.day === result.current.day,
+      (s) => s.day === result.current.day && !isDefaultHiddenTrack(s.track),
     ).length;
     expect(result.current.filtered.length).toBe(daySessionCount);
   });
@@ -70,7 +71,7 @@ describe("useSchedule", () => {
     });
     expect(result.current.hasActiveFilters).toBe(false);
     const daySessionCount = result.current.allSessions.filter(
-      (s) => s.day === result.current.day,
+      (s) => s.day === result.current.day && !isDefaultHiddenTrack(s.track),
     ).length;
     expect(result.current.filtered.length).toBe(daySessionCount);
   });

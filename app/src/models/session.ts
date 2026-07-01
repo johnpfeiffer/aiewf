@@ -1,6 +1,8 @@
 import {
   ScheduleSession,
+  ScheduleDay,
   SessionType,
+  SCHEDULE_DAYS,
   scheduleSessions,
 } from "./scheduleData";
 
@@ -11,6 +13,7 @@ export {
   type ScheduleDay,
   scheduleSessions,
   SCHEDULE_DAYS,
+  FAIR_DATES,
   VENUE,
 } from "./scheduleData";
 
@@ -117,13 +120,21 @@ export function matchesQuery(
   return false;
 }
 
+export function isDefaultHiddenTrack(track: string): boolean {
+  return track.toLowerCase().includes("leadership");
+}
+
 export function applyFilters(
   sessions: ScheduleSession[],
   filters: SessionFilters,
 ): ScheduleSession[] {
   return sortSessionsByTime(
     sessions.filter((session) => {
-      if (filters.tracks.length > 0 && !filters.tracks.includes(session.track)) {
+      if (filters.tracks.length > 0) {
+        if (!filters.tracks.includes(session.track)) {
+          return false;
+        }
+      } else if (isDefaultHiddenTrack(session.track)) {
         return false;
       }
       if (filters.types.length > 0 && !filters.types.includes(session.type)) {
@@ -168,7 +179,7 @@ export function sessionsOverlap(
   a: ScheduleSession,
   b: ScheduleSession,
 ): boolean {
-  return a.startMin < b.endMin && b.startMin < a.endMin;
+  return a.day === b.day && a.startMin < b.endMin && b.startMin < a.endMin;
 }
 
 export interface ConflictPair {
@@ -207,4 +218,18 @@ export function sessionsById(
   sessions: ScheduleSession[],
 ): Map<string, ScheduleSession> {
   return new Map(sessions.map((session) => [session.id, session]));
+}
+
+export interface DayGroup {
+  day: ScheduleDay;
+  sessions: ScheduleSession[];
+}
+
+export function groupByDay(
+  sessions: ScheduleSession[],
+): DayGroup[] {
+  return SCHEDULE_DAYS.map((day) => ({
+    day,
+    sessions: sessions.filter((s) => s.day === day.key),
+  })).filter((group) => group.sessions.length > 0);
 }
