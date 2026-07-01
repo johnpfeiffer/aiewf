@@ -15,7 +15,11 @@ describe("App", () => {
   it("renders the conference header and the full schedule by default", () => {
     render(<App />);
     expect(screen.getByText(/AI Engineer World/i)).toBeInTheDocument();
-    expect(screen.getByText(/Day 2 — Session Day 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tuesday, June 30, 2026/i)).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "Day 2" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
     expect(screen.getByRole("tab", { name: /Full Schedule/i })).toHaveAttribute(
       "aria-selected",
       "true",
@@ -29,7 +33,7 @@ describe("App", () => {
     render(<App />);
     await user.click(screen.getByRole("tab", { name: /My Schedule/i }));
     expect(
-      screen.getByText(/Tap the star on any talk to build your Day 2 schedule/i),
+      screen.getByText(/Tap the star on any talk to build your schedule/i),
     ).toBeInTheDocument();
   });
 

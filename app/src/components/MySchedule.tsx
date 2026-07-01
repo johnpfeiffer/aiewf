@@ -69,7 +69,7 @@ export function MySchedule({
     return (
       <Box sx={{ py: 6, textAlign: "center" }}>
         <Typography color="text.secondary">
-          No saved sessions yet. Tap the star on any talk to build your Day 2 schedule.
+          No saved sessions yet. Tap the star on any talk to build your schedule.
         </Typography>
       </Box>
     );

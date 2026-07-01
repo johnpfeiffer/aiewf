@@ -15,8 +15,6 @@ import {
 import { useSchedule } from "../controllers/useSchedule";
 import { useFavorites } from "../controllers/useFavorites";
 import {
-  DAY_DATE,
-  DAY_LABEL,
   VENUE,
   ScheduleSession,
   conflictingIds,
@@ -39,6 +37,11 @@ export default function App() {
   const [tab, setTab] = useState<TabValue>("schedule");
   const [view, setView] = useState<View>("schedule");
   const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const selectedDay = schedule.days.find((d) => d.key === schedule.day);
+  const dayTotal = schedule.allSessions.filter(
+    (s) => s.day === schedule.day,
+  ).length;
 
   const byId = useMemo(
     () => new Map(schedule.allSessions.map((session) => [session.id, session])),
@@ -88,7 +91,6 @@ export default function App() {
   }, [favorites.count, favorites.setFavorites, schedule.allSessions]);
 
   const selectedSession = selectedId ? byId.get(selectedId) : undefined;
-  const totalSessions = schedule.allSessions.length;
   const noConflict = new Set<string>();
   const selectedConflicts =
     tab === "mine" && selectedSession
@@ -112,10 +114,10 @@ export default function App() {
                   AI Engineer World's Fair
                 </Typography>
                 <Typography color="text.secondary">
-                  {DAY_LABEL} · {DAY_DATE} · {VENUE}
+                  {selectedDay?.date} · {VENUE}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {totalSessions} sessions · favorites save to this browser
+                  {dayTotal} sessions · favorites save to this browser
                 </Typography>
               </Box>
               <ToggleButtonGroup
@@ -156,6 +158,18 @@ export default function App() {
           </Paper>
 
           {tab === "schedule" && (
+            <Tabs
+              value={schedule.day}
+              onChange={(_e, value: string) => schedule.setDay(value)}
+              aria-label="Schedule day"
+            >
+              {schedule.days.map((d) => (
+                <Tab key={d.key} value={d.key} label={d.shortLabel} />
+              ))}
+            </Tabs>
+          )}
+
+          {tab === "schedule" && (
             <Stack spacing={1}>
               <SearchBar value={schedule.filters.query} onChange={schedule.setQuery} />
               <Stack direction={{ xs: "column", md: "row" }} gap={1} alignItems="flex-start">
@@ -173,7 +187,7 @@ export default function App() {
               </Stack>
               {schedule.hasActiveFilters && (
                 <Typography variant="caption" color="text.secondary">
-                  {schedule.filtered.length} of {totalSessions} sessions shown ·{" "}
+                  {schedule.filtered.length} of {dayTotal} sessions shown ·{" "}
                   <Link
                     component="button"
                     type="button"

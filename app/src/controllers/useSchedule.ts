@@ -1,8 +1,10 @@
 import { useCallback, useMemo, useState } from "react";
 import {
   ScheduleSession,
+  ScheduleDay,
   SessionFilters,
   SessionType,
+  SCHEDULE_DAYS,
   applyFilters,
   groupByTimeSlot,
   scheduleSessions,
@@ -12,6 +14,9 @@ import {
 
 export interface UseSchedule {
   allSessions: ScheduleSession[];
+  days: ScheduleDay[];
+  day: string;
+  setDay: (day: string) => void;
   filters: SessionFilters;
   setQuery: (query: string) => void;
   toggleTrack: (track: string) => void;
@@ -27,8 +32,17 @@ export interface UseSchedule {
 
 export function useSchedule(): UseSchedule {
   const allSessions = scheduleSessions;
-  const trackOptions = useMemo(() => uniqueTracks(allSessions), [allSessions]);
-  const typeOptions = useMemo(() => uniqueTypes(allSessions), [allSessions]);
+  const days = SCHEDULE_DAYS;
+
+  const [day, setDay] = useState(days[0].key);
+
+  const daySessions = useMemo(
+    () => allSessions.filter((s) => s.day === day),
+    [allSessions, day],
+  );
+
+  const trackOptions = useMemo(() => uniqueTracks(daySessions), [daySessions]);
+  const typeOptions = useMemo(() => uniqueTypes(daySessions), [daySessions]);
 
   const [filters, setFilters] = useState<SessionFilters>({
     query: "",
@@ -67,8 +81,8 @@ export function useSchedule(): UseSchedule {
   }, []);
 
   const filtered = useMemo(
-    () => applyFilters(allSessions, filters),
-    [allSessions, filters],
+    () => applyFilters(daySessions, filters),
+    [daySessions, filters],
   );
 
   const timeSlots = useMemo(() => groupByTimeSlot(filtered), [filtered]);
@@ -80,6 +94,9 @@ export function useSchedule(): UseSchedule {
 
   return {
     allSessions,
+    days,
+    day,
+    setDay,
     filters,
     setQuery,
     toggleTrack,

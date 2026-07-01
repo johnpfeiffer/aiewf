@@ -8,7 +8,7 @@ interface TrackFilterProps {
   onClear: () => void;
 }
 
-const PREVIEW_COUNT = 8;
+const PREVIEW_COUNT = 4;
 
 export function TrackFilter({
   options,
