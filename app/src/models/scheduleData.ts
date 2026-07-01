@@ -10,6 +10,7 @@ import speakersJsonRaw from "../data/speakers.json?raw";
 export interface Speaker {
   name: string;
   role: string;
+  bio: string;
 }
 
 export type SessionType = "KEYNOTE" | "SESSION" | "SPONSOR" | "WORKSHOP";
@@ -60,6 +61,7 @@ interface RawSpeaker {
   name: string;
   role?: string;
   company?: string;
+  bio?: string;
 }
 
 interface SessionsFile {
@@ -115,9 +117,12 @@ function buildSpeakerRole(speaker: RawSpeaker): string {
 const speakersFile = JSON.parse(speakersJsonRaw) as SpeakersFile;
 const sessionsFile = JSON.parse(sessionsJsonRaw) as SessionsFile;
 
-const speakerRoleByName = new Map<string, string>();
+const speakerInfoByName = new Map<string, { role: string; bio: string }>();
 for (const speaker of speakersFile.speakers) {
-  speakerRoleByName.set(speaker.name, buildSpeakerRole(speaker));
+  speakerInfoByName.set(speaker.name, {
+    role: buildSpeakerRole(speaker),
+    bio: (speaker.bio ?? "").trim(),
+  });
 }
 
 const sessionDayKeys = new Set(SCHEDULE_DAYS.map((d) => d.key));
@@ -161,7 +166,8 @@ export const scheduleSessions: ScheduleSession[] = SCHEDULE_DAYS.flatMap(
           title: session.title,
           speakers: session.speakers.map((name) => ({
             name,
-            role: speakerRoleByName.get(name) ?? "",
+            role: speakerInfoByName.get(name)?.role ?? "",
+            bio: speakerInfoByName.get(name)?.bio ?? "",
           })),
           description: session.description ?? "",
         };

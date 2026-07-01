@@ -16,7 +16,7 @@ function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession 
     endMin: 570,
     tentative: false,
     title: "Building Reliable Agents",
-    speakers: [{ name: "Jane Doe", role: "CEO, Acme" }],
+    speakers: [{ name: "Jane Doe", role: "CEO, Acme", bio: "" }],
     description: "A deep dive into shipping agents that work.",
     ...overrides,
   };

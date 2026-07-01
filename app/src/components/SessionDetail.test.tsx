@@ -16,7 +16,7 @@ function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession 
     endMin: 545,
     tentative: false,
     title: "Three Years of AI Engineering",
-    speakers: [{ name: "swyx", role: "Curator, Latent Space / AI Engineer" }],
+    speakers: [{ name: "swyx", role: "Curator, Latent Space / AI Engineer", bio: "" }],
     description: "We celebrate the third birthday of the AI Engineer post.",
     ...overrides,
   };
