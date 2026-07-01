@@ -199,7 +199,9 @@ export function findConflicts(
       if (right.startMin >= left.endMin) {
         break;
       }
-      pairs.push({ a: left, b: right });
+      if (left.day === right.day) {
+        pairs.push({ a: left, b: right });
+      }
     }
   }
   return pairs;
