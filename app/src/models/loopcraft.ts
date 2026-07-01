@@ -306,7 +306,7 @@ export const LOOPS: Loop[] = [
 ];
 
 // --- stress-curve steps ---------------------------------------------------
-const CURVES_BASE = "/loopcraft/curves/";
+const CURVES_BASE = "loopcraft/curves/";
 export const CURVE_STEPS: CurveStep[] = [
   { src: `${CURVES_BASE}stress-2023.png`, heading: "AIEWF Stress Level Index", caption: "2023 — the index begins" },
   { src: `${CURVES_BASE}stress-2024.png`, heading: "AIEWF Stress Level Index", caption: "+ 2024 — note the axis rescaling" },
@@ -314,7 +314,7 @@ export const CURVE_STEPS: CurveStep[] = [
   { src: `${CURVES_BASE}stress-2026.png`, heading: "AIEWF Stress Level Index", caption: "+ 2026 — stress compounds every year" },
   { src: `${CURVES_BASE}lorenz.png`, heading: "Sales-pace Lorenz curves", caption: "outlier-cleaned · Gini rising 0.04 → 0.71" },
 ];
-export const SHOT_SRC = "/loopcraft/shot.jpeg";
+export const SHOT_SRC = "loopcraft/shot.jpeg";
 export const SUMMIT_HREF = "https://ai.engineer/wf";
 
 // --- sections -------------------------------------------------------------
