@@ -58,12 +58,19 @@ export function SessionDetail({
           {session.track}
         </Typography>
         {hasSpeakers && (
-          <Stack spacing={0.5}>
+          <Stack spacing={1}>
             {session.speakers.map((speaker) => (
-              <Typography key={speaker.name} variant="body2">
-                <strong>{speaker.name}</strong>
-                {speaker.role ? ` — ${speaker.role}` : ""}
-              </Typography>
+              <Box key={speaker.name}>
+                <Typography variant="body2">
+                  <strong>{speaker.name}</strong>
+                  {speaker.role ? ` — ${speaker.role}` : ""}
+                </Typography>
+                {speaker.bio && (
+                  <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: "pre-line", display: "block", mt: 0.25 }}>
+                    {speaker.bio}
+                  </Typography>
+                )}
+              </Box>
             ))}
           </Stack>
         )}
