@@ -4,7 +4,6 @@ import {
   Box,
   Container,
   Link,
-  Paper,
   Stack,
   Tab,
   Tabs,
@@ -15,6 +14,7 @@ import {
 import { useSchedule } from "../controllers/useSchedule";
 import { useFavorites } from "../controllers/useFavorites";
 import {
+  FAIR_DATES,
   VENUE,
   ScheduleSession,
   conflictingIds,
@@ -28,17 +28,15 @@ import { SessionDetail } from "../components/SessionDetail";
 import { decodeFavorites, readShareParam } from "../models/shareUrl";
 import Loopcraft from "./Loopcraft";
 
-type TabValue = "schedule" | "mine";
 type View = "schedule" | "loopcraft";
 
 export default function App() {
   const schedule = useSchedule();
   const favorites = useFavorites();
-  const [tab, setTab] = useState<TabValue>("schedule");
+  const [tab, setTab] = useState<string>(schedule.days[0].key);
   const [view, setView] = useState<View>("schedule");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const selectedDay = schedule.days.find((d) => d.key === schedule.day);
   const dayTotal = schedule.allSessions.filter(
     (s) => s.day === schedule.day,
   ).length;
@@ -61,7 +59,7 @@ export default function App() {
     [favoriteSessions],
   );
 
-  const currentList = tab === "schedule" ? schedule.filtered : favoriteSessions;
+  const currentList = tab === "mine" ? favoriteSessions : schedule.filtered;
 
   useEffect(() => {
     if (currentList.length === 0) {
@@ -114,7 +112,7 @@ export default function App() {
                   AI Engineer World's Fair
                 </Typography>
                 <Typography color="text.secondary">
-                  {selectedDay?.date} · {VENUE}
+                  {FAIR_DATES} · {VENUE}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
                   {dayTotal} sessions · favorites save to this browser
@@ -139,37 +137,30 @@ export default function App() {
 
           {view === "schedule" && (
             <>
-          <Paper variant="outlined" sx={{ px: 1 }}>
-            <Tabs
-              value={tab}
-              onChange={(_event, value: TabValue) => setTab(value)}
-              aria-label="Schedule views"
-            >
-              <Tab value="schedule" label="Full Schedule" />
-              <Tab
-                value="mine"
-                label={
-                  <Badge badgeContent={favorites.count} color="primary" showZero={false}>
-                    <Box sx={{ pr: 1 }}>My Schedule</Box>
-                  </Badge>
-                }
-              />
-            </Tabs>
-          </Paper>
+          <Tabs
+            value={tab}
+            onChange={(_e, value: string) => {
+              setTab(value);
+              if (value !== "mine") {
+                schedule.setDay(value);
+              }
+            }}
+            aria-label="Schedule views"
+          >
+            {schedule.days.map((d) => (
+              <Tab key={d.key} value={d.key} label={d.shortLabel} />
+            ))}
+            <Tab
+              value="mine"
+              label={
+                <Badge badgeContent={favorites.count} color="primary" showZero={false}>
+                  <Box sx={{ pr: 1 }}>My Schedule</Box>
+                </Badge>
+              }
+            />
+          </Tabs>
 
-          {tab === "schedule" && (
-            <Tabs
-              value={schedule.day}
-              onChange={(_e, value: string) => schedule.setDay(value)}
-              aria-label="Schedule day"
-            >
-              {schedule.days.map((d) => (
-                <Tab key={d.key} value={d.key} label={d.shortLabel} />
-              ))}
-            </Tabs>
-          )}
-
-          {tab === "schedule" && (
+          {tab !== "mine" && (
             <Stack spacing={1}>
               <SearchBar value={schedule.filters.query} onChange={schedule.setQuery} />
               <Stack direction={{ xs: "column", md: "row" }} gap={1} alignItems="flex-start">
@@ -209,7 +200,7 @@ export default function App() {
             }}
           >
             <Box>
-              {tab === "schedule" && (
+              {tab !== "mine" && (
                 <SessionList
                   timeSlots={schedule.timeSlots}
                   selectedId={selectedId}

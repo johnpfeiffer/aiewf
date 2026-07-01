@@ -41,6 +41,7 @@ export const SCHEDULE_DAYS: ScheduleDay[] = [
   { key: "Day 4 — Session Day 3", shortLabel: "Day 4", date: "Thursday, July 2, 2026" },
 ];
 
+export const FAIR_DATES = "June 29 – July 2, 2026";
 export const VENUE = "Moscone West, San Francisco, CA";
 
 interface RawSession {
