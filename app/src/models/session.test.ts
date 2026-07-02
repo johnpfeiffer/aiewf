@@ -7,6 +7,7 @@ import {
   findConflicts,
   formatTimeRange,
   groupByTimeSlot,
+  isDefaultHiddenTrack,
   matchesQuery,
   sortSessionsByTime,
   sessionsOverlap,
@@ -25,7 +26,7 @@ function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession 
     endMin: 570,
     tentative: false,
     title: "A talk",
-    speakers: [{ name: "Jane Doe", role: "CEO, Acme" }],
+    speakers: [{ name: "Jane Doe", role: "CEO, Acme", bio: "" }],
     description: "A description about agents.",
     ...overrides,
   };
@@ -141,6 +142,42 @@ describe("applyFilters", () => {
     });
     expect(result.map((s) => s.id)).toEqual(["c"]);
   });
+
+  it("hides leadership tracks by default when no tracks are selected", () => {
+    const withLeadership = [
+      ...sessions,
+      makeSession({ id: "d", track: "AI-Native Enterprises · Leadership 1" }),
+      makeSession({ id: "e", track: "CTO Circle · Leadership Lounge" }),
+    ];
+    const result = applyFilters(withLeadership, { query: "", tracks: [], types: [] });
+    expect(result.map((s) => s.id)).toEqual(["a", "b", "c"]);
+  });
+
+  it("shows leadership tracks when explicitly selected", () => {
+    const withLeadership = [
+      ...sessions,
+      makeSession({ id: "d", track: "CTO Circle · Leadership Lounge" }),
+    ];
+    const result = applyFilters(withLeadership, {
+      query: "",
+      tracks: ["CTO Circle · Leadership Lounge"],
+      types: [],
+    });
+    expect(result.map((s) => s.id)).toEqual(["d"]);
+  });
+});
+
+describe("isDefaultHiddenTrack", () => {
+  it("returns true for tracks containing Leadership", () => {
+    expect(isDefaultHiddenTrack("AI-Native Enterprises · Leadership 1")).toBe(true);
+    expect(isDefaultHiddenTrack("CTO Circle · Leadership Lounge")).toBe(true);
+    expect(isDefaultHiddenTrack("Software Factories · Leadership 2")).toBe(true);
+  });
+
+  it("returns false for non-leadership tracks", () => {
+    expect(isDefaultHiddenTrack("Software Factories · Main Stage")).toBe(false);
+    expect(isDefaultHiddenTrack("Vision · Track 2")).toBe(false);
+  });
 });
 
 describe("groupByTimeSlot", () => {
@@ -170,6 +207,12 @@ describe("sessionsOverlap", () => {
     const b = makeSession({ startMin: 600, endMin: 660 });
     expect(sessionsOverlap(a, b)).toBe(false);
   });
+
+  it("does not flag same-time sessions on different days", () => {
+    const a = makeSession({ day: "Day 2 — Session Day 1", startMin: 540, endMin: 600 });
+    const b = makeSession({ day: "Day 3 — Session Day 2", startMin: 540, endMin: 600 });
+    expect(sessionsOverlap(a, b)).toBe(false);
+  });
 });
 
 describe("findConflicts and conflictingIds", () => {
@@ -192,6 +235,15 @@ describe("findConflicts and conflictingIds", () => {
     const sessions = [
       makeSession({ id: "a", startMin: 540, endMin: 600 }),
       makeSession({ id: "c", startMin: 700, endMin: 720 }),
+    ];
+    expect(findConflicts(sessions)).toHaveLength(0);
+    expect(conflictingIds(sessions).size).toBe(0);
+  });
+
+  it("does not flag same-time sessions on different days", () => {
+    const sessions = [
+      makeSession({ id: "a", day: "Day 2 — Session Day 1", startMin: 540, endMin: 600 }),
+      makeSession({ id: "b", day: "Day 3 — Session Day 2", startMin: 540, endMin: 600 }),
     ];
     expect(findConflicts(sessions)).toHaveLength(0);
     expect(conflictingIds(sessions).size).toBe(0);
