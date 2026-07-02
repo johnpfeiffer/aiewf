@@ -74,7 +74,8 @@ describe("App", () => {
     const search = screen.getByLabelText("Search sessions");
     await user.type(search, "keynote");
     expect(search).toHaveValue("keynote");
-    // The active-filter hint appears once a filter is active.
-    expect(screen.getByText(/sessions shown/i)).toBeInTheDocument();
+    // The count + clear-filters control now lives near Collapse all, and
+    // appears once a filter is active.
+    expect(screen.getByRole("button", { name: /clear filters/i })).toBeInTheDocument();
   });
 });

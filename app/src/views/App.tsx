@@ -3,7 +3,6 @@ import {
   Badge,
   Box,
   Container,
-  Link,
   Stack,
   Tab,
   Tabs,
@@ -180,18 +179,6 @@ export default function App() {
                   onClear={schedule.clearTracks}
                 />
               </Stack>
-              {schedule.hasActiveFilters && (
-                <Typography variant="caption" color="text.secondary">
-                  {schedule.filtered.length} of {dayTotal} sessions shown ·{" "}
-                  <Link
-                    component="button"
-                    type="button"
-                    onClick={schedule.clearFilters}
-                  >
-                    clear filters
-                  </Link>
-                </Typography>
-              )}
             </Stack>
           )}
 
@@ -213,6 +200,10 @@ export default function App() {
                   onToggleFavorite={favorites.toggleFavorite}
                   conflictIds={noConflict}
                   emptyMessage="No sessions match your filters."
+                  showCount
+                  totalCount={dayTotal}
+                  hasActiveFilters={schedule.hasActiveFilters}
+                  onClearFilters={schedule.clearFilters}
                 />
               )}
               {tab === "mine" && (
