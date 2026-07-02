@@ -27,8 +27,9 @@ import { MySchedule } from "../components/MySchedule";
 import { SessionDetail } from "../components/SessionDetail";
 import { decodeFavorites, readShareParam } from "../models/shareUrl";
 import Loopcraft from "./Loopcraft";
+import Homa from "./Homa";
 
-type View = "schedule" | "loopcraft";
+type View = "schedule" | "loopcraft" | "homa";
 
 export default function App() {
   const schedule = useSchedule();
@@ -129,11 +130,14 @@ export default function App() {
               >
                 <ToggleButton value="schedule">Schedule</ToggleButton>
                 <ToggleButton value="loopcraft">Loopcraft</ToggleButton>
+                <ToggleButton value="homa">Homa</ToggleButton>
               </ToggleButtonGroup>
             </Stack>
           </Box>
 
           {view === "loopcraft" && <Loopcraft />}
+
+          {view === "homa" && <Homa />}
 
           {view === "schedule" && (
             <>

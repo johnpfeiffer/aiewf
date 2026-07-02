@@ -1,0 +1,272 @@
+/* Homa styles — scoped under .homa so they never clash with the MUI app.
+   Minimalist per KERNEL/DESIGN.md: light, 1px borders, no decoration. */
+.homa {
+  --ink: #1f2430;
+  --muted: #6b7280;
+  --line: #d8dde6;
+  --lane: #f5f6f8;
+  --ok: #2e9e6b;
+  --warn: #d2691e;
+  --bad: #d6456f;
+  --grant: #2a8fbd;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 8px 12px 48px;
+  color: var(--ink);
+}
+.homa * {
+  box-sizing: border-box;
+}
+.homa .homa-scene-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.homa .homa-scene-tab {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+}
+.homa .homa-scene-tab.active {
+  color: var(--ink);
+  border-color: var(--ink);
+  font-weight: 600;
+}
+.homa .homa-scene-tab.stub {
+  border-style: dashed;
+}
+.homa .homa-scene-tab .tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+/* layout: viz + side panel */
+.homa .homa-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .homa .homa-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.homa .homa-viz {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+.homa .homa-viz svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.homa .homa-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.homa .homa-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+.homa .homa-card h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.homa .homa-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 13px;
+  padding: 3px 0;
+}
+.homa .homa-metric-row .label {
+  color: var(--muted);
+}
+.homa .homa-metric-row .value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.homa .homa-queue-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+.homa .homa-queue-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+.homa .homa-queue-bar .qlabel {
+  width: 26px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.homa .homa-queue-bar .qtrack {
+  flex: 1;
+  height: 8px;
+  background: var(--lane);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.homa .homa-queue-bar .qfill {
+  height: 100%;
+}
+.homa .homa-queue-bar .qbytes {
+  width: 52px;
+  text-align: right;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* event log */
+.homa .homa-log {
+  font-size: 12px;
+  line-height: 1.5;
+  max-height: 168px;
+  overflow-y: auto;
+}
+.homa .homa-log .ev {
+  display: flex;
+  gap: 6px;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--lane);
+}
+.homa .homa-log .ev .t {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 42px;
+}
+.homa .homa-log .ev .tx {
+  color: var(--ink);
+}
+
+/* controls */
+.homa .homa-transport {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.homa .homa-overlays {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.homa .homa-overlay {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--grant);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+}
+.homa .homa-overlay h4 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.homa .homa-overlay p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* stub scene */
+.homa .homa-stub {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 40px 24px;
+  text-align: center;
+  background: var(--lane);
+}
+.homa .homa-stub h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.homa .homa-stub p {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.homa .homa-stub .badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* tcp vs homa split */
+.homa .homa-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .homa .homa-split {
+    grid-template-columns: 1fr;
+  }
+}
+.homa .homa-split .panel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+.homa .homa-split .panel h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.homa .homa-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-top: 1px solid var(--line);
+  background: var(--lane);
+}
+.homa .homa-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.homa .homa-legend .swatch {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  display: inline-block;
+}
