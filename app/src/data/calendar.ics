@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AI Engineer//World's Fair 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260703
+DTSTAMP:20260703T182228Z
+UID:aie-worldsfair-2026@ai.engineer
+SUMMARY:AI Engineer World's Fair 2026
+DESCRIPTION:AI Engineer World's Fair is the largest technical conference for AI engineers. Day 1 is workshop day; Days 2-4 feature keynotes on the Main Stage plus talks across multiple breakout tracks, leadership programming, and a sponsor expo.\n\nWebsite: https://ai.engineer/worldsfair\nTickets: https://app.ai.engineer/e/ai-engineer-worlds-fair-2026/portal\nVenue: Moscone West\nYouTube: https://youtube.com/@aidotengineer\nNewsletter: https://ai.engineer/newsletter\n\nDeveloper Endpoints:\n- llms.txt: https://ai.engineer/worldsfair/llms.txt\n- sessions.json: https://ai.engineer/worldsfair/sessions.json\n- speakers.json: https://ai.engineer/worldsfair/speakers.json\n- MCP: https://ai.engineer/worldsfair/mcp
+LOCATION:Moscone West\, San Francisco, CA
+URL:https://ai.engineer/worldsfair
+ORGANIZER;CN=AI Engineer:mailto:team@ai.engineer
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
