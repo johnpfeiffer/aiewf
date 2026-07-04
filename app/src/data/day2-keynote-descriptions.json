@@ -1,0 +1,122 @@
+{
+  "source": "app/src/data/keynotes-day2.txt",
+  "model": "gemma-4-31b-it",
+  "tokens_used": 47323,
+  "descriptions": [
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0900_2026_06_09t19_26_48_493z",
+      "title": "The Highest Loop",
+      "description": "Swyx discusses the evolution of AI engineering, moving from tokens and chat to automations and the emergence of software factories. He introduces 'Loopcraft,' a core skill for AI engineers that involves defining and navigating different levels of loops to balance productivity and reliability. The session explores how software factories have transitioned from a vision to a practical reality, driven by advancements in model vision, richer tool ecosystems, improved context windows, and enhanced reasoning capabilities. By integrating these improvements with emerging AI security best practices, agents can now perform meaningful, autonomous work within the enterprise.",
+      "evidence": [
+        "defining what loops you're working in",
+        "core skill of AI engineer",
+        "software factories are no longer a vision for the future",
+        "Model vision has improved",
+        "richer tool ecosystems"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0910_2026_06_09t20_16_03_148z",
+      "title": "On AI and Knowledge",
+      "description": "Pablo Castro explores the intersection of AI and knowledge, categorizing it into intrinsic, extrinsic, and learned types. He discusses how intrinsic knowledge powers model reasoning and how extrinsic knowledge is implemented via RAG and context engineering. The session details Microsoft IQ for grounding agents in organizational ambient data and Microsoft Foundry for managing knowledge bases and agentic retrieval. Additionally, Castro introduces the Agent Optimizer, a tool that creates a learning loop to automatically refine agent configurations and instructions by evaluating baselines and generating candidates to improve performance based on actual user traces.",
+      "evidence": [
+        "intrinsic, extrinsic, and learned",
+        "ground the agent often on the kind of ambient data of your organization",
+        "agentic retrieval stack",
+        "agent optimizer that effectively goes through this process and allows you to evaluate a baseline, generate candidates"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0930_2026_06_13t02_44_22_994z",
+      "title": "The Golden Age of AI Engineering",
+      "description": "Alexander Embiricos and Romain Huet discuss the evolution of AI engineering, framing it as a return to problem-solving over simple code generation. They detail the Codex ecosystem, including the Codex app's collaborative UI and the open-source Codex harness and app server. The session highlights the GPT 5.6 model family, specifically the cost efficiency of Terra and Luna and the high-speed performance of GPT 5.6 Cell running on Cerebras at 750 tokens per second. The speakers also explore the concept of \"value maxing,\" focusing on cost efficiency, speed, and the transition toward seamless cloud-based agent execution.",
+      "evidence": [
+        "engineering was never about writing code",
+        "Codex harness is also open source",
+        "GPT 5.6 Terra... brings GPT 5.5 level intelligence, but at half the cost",
+        "GPT 5.6 cell running on Cerebras... at now 750 tokens a second",
+        "Value maxing"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1010_2026_06_18t10_40_22_580z",
+      "title": "GLM-5.2: Frontier Intelligence, Open Weights.",
+      "description": "This session introduces GLM-5.2, an open-weight model from Z.AI designed to advance reasoning, coding, and agentic capabilities. The discussion highlights the model's performance on benchmarks such as Deep Tunnel Bench 2.1 and the introduction of a \"high\" thinking level to improve token efficiency. Beyond coding, GLM-5.2 is optimized for general chat, role play, and mathematics. The session explains the strategic decision to open weights to facilitate enterprise security, on-premise deployment, and domain-specific fine-tuning in fields like legal, finance, and security. Additionally, the session introduces Zcode, a harness built for GLM-5.2 that supports various frontier models.",
+      "evidence": [
+        "GLM 4.2 actually specialize in coding energetic task",
+        "deep tunnel bench 2.1",
+        "add a thinking uh level called high",
+        "open the weights for several things because there are users needs",
+        "fine-tune the model... in legal, finance, security",
+        "Zcode actually it's built for GI 4.2 but also support all frontier models"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0950_2026_06_18t10_42_03_611z",
+      "title": "Thom Wolf keynote",
+      "description": "Thom Wolf and Olive Song discuss the M3 model from MiniMax, an open-source multimodal model featuring 400 billion total parameters and 20 billion activated. The discussion highlights M3's coding and vision capabilities and its 1 million token long context, powered by the Minimax Sparse Attention (MSA) architecture. Olive details the native multimodality training approach, which integrates vision and text from the first step to optimize performance. Additionally, the conversation explores MiniMax's collaborative research culture, the trajectory toward trillion-parameter models, and the potential for multi-agent systems to handle complex, long-horizon tasks.",
+      "evidence": [
+        "400 billion total parameters and 20 billion activated",
+        "1 million token long context",
+        "minimax sparse attention",
+        "training from the very first step"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1025_2026_06_25t09_02_28_031z",
+      "title": "Security Track intro",
+      "description": "This session explores the industry shift from traditional application security to agentic security, focusing on the risks of deploying autonomous agents in production. The discussion addresses the misconception that setting model temperature to zero ensures determinism, explaining how GPU non-determinism, floating point math, batch invariance, and mixture of experts routing create unpredictable outputs. The speakers contrast bitwise determinism with replayability to emphasize the need for observability over controllability. Additionally, the session examines the infrastructure bottlenecks hindering browser agents, arguing that improving the environment for planning and execution is more critical than increasing model intelligence.",
+      "evidence": [
+        "shift that's happening across the industry from traditional application security to agentic security",
+        "temperature zero isn't even truly deterministic on a hardware level",
+        "bitwise determinism and replayability",
+        "models are pretty smart, but it's the infra around them that sucks"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_11t04_22_24_160z",
+      "title": "Harness Engineering is not Enough: Why Software Factories Fail",
+      "description": "Dex Horthy explores why \"lights-off\" software factories relying solely on AI coding agents often fail in complex, brownfield codebases. He argues that current models are trained for binary correctness—passing tests—rather than long-term maintainability, which leads to codebase erosion and increased incidents. To solve this, Horthy proposes a model-assisted planning approach that reintroduces human steering through product reviews, system architecture, and detailed program design. By aligning on architecture and vertical slices upfront, engineering teams can leverage the speed of agentic coding while maintaining high code quality and ownership.",
+      "evidence": [
+        "no amount of harness engineering or loops maxing can solve what is fundamentally a model training issue",
+        "models have a shortcoming. um they can't maintain and improve codebase quality over time",
+        "turning the lights back on, we're going to put the code review back",
+        "model assisted planning and alignment"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_0900_2026_06_04t12_24_42_870z",
+      "title": "In Code They Act, In Proof We Trust",
+      "description": "Erik Meijer discusses the inherent dangers of AI agents, particularly when tool calls allow models to perform irreversible side effects. He explains how to transition from unhinged LLMs to provably safe agentic compute by air-gapping the agentic loop. By reifying the agent's plan into a program—specifically using free monads and type systems like Lean—developers can apply data flow and taint analysis to ensure safety. The session covers the concept of proof-carrying code to create a machine that generates and proves safe computations, moving AI safety from philosophical debate to mathematical certainty.",
+      "evidence": [
+        "make AI provably safe",
+        "airgapping the agentic loop from the agent",
+        "reify the plan into a program",
+        "mathematically proven safe agentic compute",
+        "proof carrying code"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_18t18_28_08_450z",
+      "title": "Recursive Model Improvement",
+      "description": "Lee Robinson discusses how Cursor trains AI models through recursive model improvement, detailing the interplay between the outer loop of user feedback and the inner loop of high-quality evals. The session covers strategies to combat reward hacking, the development of Cursor Bench for real-world engineering tasks, and the use of textual feedback to coach models during RL. Robinson also explains how scaling compute via Colossus and Terrafab enables the creation of derivative models that automate research and accelerate the training flywheel, ultimately raising the baseline intelligence of the entire system.",
+      "evidence": [
+        "outer loop and the inner loop",
+        "recursive model improvement",
+        "reward hacking",
+        "Cursor Bench",
+        "textual feedback",
+        "derivative versions that you use to speed up other parts of the training process"
+      ],
+      "confidence": 1
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -88,4 +89,53 @@ func DescriptionBatchToJSON(batch DescriptionBatch) (string, error) {
 		return "", err
 	}
 	return string(data), nil
+}
+
+func LoadDescriptionProposals(path string) (map[string]DescriptionProposal, error) {
+	paths, err := transcriptPaths(path)
+	if err != nil {
+		return nil, err
+	}
+
+	proposals := make(map[string]DescriptionProposal)
+	for _, path := range paths {
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return nil, err
+		}
+		var batch DescriptionBatch
+		if err := json.Unmarshal(data, &batch); err != nil {
+			return nil, err
+		}
+		for _, proposal := range batch.Descriptions {
+			if strings.TrimSpace(proposal.SessionID) == "" || strings.TrimSpace(proposal.Description) == "" {
+				continue
+			}
+			proposals[proposal.SessionID] = proposal
+		}
+	}
+	return proposals, nil
+}
+
+func AttachDescriptionProposals(sessions []Session, proposals map[string]DescriptionProposal) []Session {
+	if len(proposals) == 0 {
+		return sessions
+	}
+	out := make([]Session, len(sessions))
+	copy(out, sessions)
+	for i := range out {
+		if !ThinDescription(out[i]) {
+			continue
+		}
+		proposal, ok := proposals[out[i].SessionID]
+		if !ok {
+			continue
+		}
+		description := strings.TrimSpace(proposal.Description)
+		if description == "" {
+			continue
+		}
+		out[i].Description = description
+	}
+	return out
 }

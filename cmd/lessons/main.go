@@ -16,23 +16,25 @@ import (
 )
 
 const (
-	defaultSessions    = "app/src/data/sessions.json"
-	defaultSpeakers    = "app/src/data/speakers.json"
-	defaultTranscripts = "app/src/data/keynote_segments_day*.json"
-	defaultPrompt      = "prompts/v001.txt"
-	defaultJudgePrompt = "prompts/judge-v001.txt"
-	defaultPromptVer   = "v001"
-	defaultDB          = "lessons.db"
-	defaultGoldens     = "goldens"
-	defaultLessonModel = "gemma-4-31b-it"
-	defaultJudgeModel  = "gemini-2.5-flash"
-	defaultTemperature = 0
+	defaultSessions     = "app/src/data/sessions.json"
+	defaultSpeakers     = "app/src/data/speakers.json"
+	defaultTranscripts  = "app/src/data/keynote_segments_day*.json"
+	defaultDescriptions = "app/src/data/day*-keynote-descriptions.json"
+	defaultPrompt       = "prompts/v001.txt"
+	defaultJudgePrompt  = "prompts/judge-v001.txt"
+	defaultPromptVer    = "v001"
+	defaultDB           = "lessons.db"
+	defaultGoldens      = "goldens"
+	defaultLessonModel  = "gemma-4-31b-it"
+	defaultJudgeModel   = "gemini-2.5-flash"
+	defaultTemperature  = 0
 )
 
 type commonConfig struct {
 	sessions      string
 	speakers      string
 	transcripts   string
+	descriptions  string
 	dbPath        string
 	promptVersion string
 	limit         int
@@ -157,6 +159,7 @@ func addCommonFlags(fs *flag.FlagSet, cfg *commonConfig) {
 	fs.StringVar(&cfg.sessions, "sessions", defaultSessions, "source sessions JSON path")
 	fs.StringVar(&cfg.speakers, "speakers", defaultSpeakers, "source speakers JSON path")
 	fs.StringVar(&cfg.transcripts, "transcripts", defaultTranscripts, "optional transcript augmentation JSON path, glob, or comma-separated paths")
+	fs.StringVar(&cfg.descriptions, "descriptions", defaultDescriptions, "optional description augmentation JSON path, glob, or comma-separated paths")
 	fs.StringVar(&cfg.dbPath, "db", defaultDB, "SQLite database path")
 	fs.StringVar(&cfg.promptVersion, "prompt-version", defaultPromptVer, "prompt version")
 	fs.IntVar(&cfg.limit, "limit", 0, "max sessions to process; 0 means all")
@@ -306,6 +309,13 @@ func selectedSessions(cfg commonConfig) ([]model.Session, error) {
 	if err != nil {
 		return nil, err
 	}
+	if cfg.descriptions != "" {
+		proposals, err := model.LoadDescriptionProposals(cfg.descriptions)
+		if err != nil {
+			return nil, err
+		}
+		sessions = model.AttachDescriptionProposals(sessions, proposals)
+	}
 	if cfg.transcripts != "" {
 		segments, err := model.LoadTranscriptSegments(cfg.transcripts)
 		if err != nil {
@@ -365,6 +375,7 @@ common flags:
   --sessions app/src/data/sessions.json
   --speakers app/src/data/speakers.json
   --transcripts app/src/data/keynote_segments_day*.json
+  --descriptions app/src/data/day*-keynote-descriptions.json
   --db lessons.db
   --prompt-version v001
   --limit 0

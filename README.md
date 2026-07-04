@@ -56,12 +56,13 @@ The CLI reads:
 - `app/src/data/sessions.json`
 - `app/src/data/speakers.json`
 - `app/src/data/keynote_segments_day*.json` for optional keynote transcript augmentation
+- `app/src/data/day*-keynote-descriptions.json` for optional generated description augmentation
 
 The raw keynote transcripts remain in `app/src/data/keynotes-day*.txt`. The derived `app/src/data/keynote_segments_day*.json` files map transcript segments to canonical ASN-backed schedule session ids.
 
 The same extraction step writes the consolidated `app/src/data/video-links-for-sessions.json`, which the schedule app uses to show timestamped external video links in session details.
 
-The CLI writes generated lessons and judge scores to SQLite, and writes seed golden files to `goldens/` for manual review.
+The CLI only uses generated description proposals when the source session description is empty or under 50 characters. The CLI writes generated lessons and judge scores to SQLite, and writes seed golden files to `goldens/` for manual review.
 
 `cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator.
 
@@ -81,10 +82,10 @@ go run ./cmd/lessons generate --limit 1
 go run ./cmd/lessons seed-goldens --limit 1
 go run ./cmd/lessons judge --limit 1
 go run ./cmd/lessons run --limit 1
-go run ./cmd/descriptions --limit 1 app/src/data/keynote_segments_day2.json
+go run ./cmd/descriptions --out app/src/data/day2-keynote-descriptions.json app/src/data/keynote_segments_day2.json
 ```
 
-Description generation writes JSON to stdout by default. Use `--out descriptions_day2.json` to write a reviewable file, and `--session-id <asn-id>` to generate one session.
+Description generation writes one valid JSON batch to stdout by default. Use `--out app/src/data/dayN-keynote-descriptions.json` to write a reviewable file for a whole day, and `--session-id <asn-id>` to generate one session.
 
 Rebuild the derived keynote augmentation file after changing the raw transcript or schedule:
 

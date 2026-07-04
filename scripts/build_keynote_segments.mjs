@@ -225,7 +225,7 @@ const configs = [
     outPath: "app/src/data/keynote_segments_day4.json",
     scheduleDay: "Day 4 — Session Day 3",
     videoID: "I2cbIws9j10",
-    fallbackEnd: "08:39:04",
+    fallbackEnd: "09:09:28",
     mappings: [
       {
         toc: "Barr Yaron - The 2026 State of AI Engineering",

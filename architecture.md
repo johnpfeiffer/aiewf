@@ -99,19 +99,20 @@ flowchart LR
   speakers["speakers.json"]
   rawtx["keynotes-day*.txt"]
   segments["keynote_segments_day*.json"]
+  descjson["day*-keynote-descriptions.json"]
   cmd["cmd/lessons CLI"]
   desc["cmd/descriptions CLI"]
   model["model package"]
   client["client Gemini API"]
   sqlite["SQLite lessons.db"]
   goldens["goldens/*.json"]
-  descjson["description proposals JSON"]
 
   sessions --> model
   speakers --> model
   rawtx --> segments
   segments --> model
   segments --> desc
+  descjson --> model
   cmd --> model
   desc --> model
   model --> client
@@ -132,9 +133,9 @@ The package split is:
 - `scripts/reconcile_session_ids.mjs`: reconciles `sessions.json` with authoritative ASN web ids and stores the previous hash id in `source_ids.derived`.
 - `scripts/build_keynote_segments.mjs`: reproducible extraction of keynote transcript segments from the day-specific raw transcripts into `app/src/data/keynote_segments_day*.json` and consolidated `app/src/data/video-links-for-sessions.json`.
 
-The CLI uses canonical `session_id` values from the schedule, falling back to deterministic derived ids only for unreconciled records. It joins speaker title/company metadata from the speaker catalog by name and attaches optional transcript segments by session id.
+The CLI uses canonical `session_id` values from the schedule, falling back to deterministic derived ids only for unreconciled records. It joins speaker title/company metadata from the speaker catalog by name, attaches optional transcript segments by session id, and applies reviewed description proposals only when the source schedule description is empty or under 50 characters.
 
-The description helper reads one transcript segment file, calls Gemini once per selected session, and emits reviewable JSON with proposed schedule descriptions. It does not write to `sessions.json`; the output is intended for manual review before augmenting source data.
+The description helper reads one transcript segment file, calls Gemini once per selected session, and emits one reviewable JSON batch with proposed schedule descriptions. It does not write to `sessions.json`; the output is consumed as an augmentation file or manually copied into source data after review.
 
 The schedule app consumes the app-local video-link map by canonical `session_id`. `SessionListItem` renders a "Watch video" link beside the schedule-row track/location, and `SessionDetail` renders the same link inline after the displayed track/location when `videoUrl` is present.
 

@@ -15,6 +15,10 @@ Optional transcript augmentation is read from:
 
 - `app/src/data/keynote_segments_day*.json`
 
+Optional generated description augmentation is read from:
+
+- `app/src/data/day*-keynote-descriptions.json`
+
 The raw transcript sources remain:
 
 - `app/src/data/keynotes-day*.txt`
@@ -43,6 +47,7 @@ Default flags:
 - `--sessions app/src/data/sessions.json`
 - `--speakers app/src/data/speakers.json`
 - `--transcripts app/src/data/keynote_segments_day*.json`
+- `--descriptions app/src/data/day*-keynote-descriptions.json`
 - `--prompt prompts/v001.txt`
 - `--prompt-version v001`
 - `--db lessons.db`
@@ -96,6 +101,14 @@ The generator and judge load transcript segments into a session-id map. When a s
 Evidence hard checks accept verbatim phrases from either the schedule description or the matched transcript segment. A session is considered thin only when both the schedule description and transcript segment are missing or under 50 characters.
 
 The extracted JSON is intentionally not written back into `sessions.json`.
+
+## Description Augmentation
+
+`app/src/data/day*-keynote-descriptions.json` files are AI-derived, human-reviewable description proposal batches produced from transcript segments.
+
+The generator and judge load description proposals into a session-id map before transcript attachment. If the authoritative schedule description is empty or under 50 characters after trimming, and a matching proposal exists, the session description is replaced with the proposal text for that run. Existing rich descriptions in `sessions.json` are not overwritten.
+
+These files are intentionally not written back into `sessions.json`.
 
 ## Lesson Schema
 

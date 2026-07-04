@@ -1,0 +1,225 @@
+{
+  "source": "app/src/data/keynotes-day4.txt",
+  "model": "gemma-4-31b-it",
+  "tokens_used": 125690,
+  "descriptions": [
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_11t07_46_15_572z",
+      "title": "The 2026 State of AI Engineering",
+      "description": "Barr Yaron presents findings from the 2026 State of AI Engineering survey, analyzing trends across over a thousand respondents. The session examines the adoption of modalities, noting a surge in image generation and high intent for audio. It discusses the strategic use of closed and open-weight models, where quality and cost have emerged as first-class engineering constraints. The presentation highlights the shift toward agents with write access and the persistent challenges of evaluation within the AI stack. Finally, it explores organizational impacts, including the erosion of deep technical skills and the increasing frequency of non-developers shipping software features.",
+      "evidence": [
+        "cost is becoming a real big part of the product decision today",
+        "Agents are no longer reading, summarizing, drafting. They're taking actions inside of systems.",
+        "the number one answer is eval",
+        "over a third of teams have non-developers shipping features",
+        "openweight models are not replacing closed models for the most part"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_15t10_04_08_812z",
+      "title": "TCP and RDMA are Killing Inference Throughput; Homa can Fix It",
+      "description": "John Ousterhout discusses how AI workloads, particularly in inference and agentic applications, are shifting from large data transfers to smaller, more granular exchanges where tail latency becomes critical. He explains why legacy protocols like TCP and RDMA are poorly suited for this environment, citing issues with sender-side congestion control and head-of-line blocking. To address this, Ousterhout introduces Homa, a clean-slate transport protocol developed at Stanford. Homa utilizes receiver-side congestion control, a message-based data model, and SRPT prioritization to significantly reduce tail latency and improve overall throughput by allowing short messages to bypass longer ones.",
+      "evidence": [
+        "workloads are changing... seeing more and more smaller transfers where the latency is crucial",
+        "legacy protocols like TCP and RDMA are poorly suited to this environment",
+        "HOMA which is a new protocol we've developed at Stanford",
+        "controls congestion from the receiver"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1140_2026_06_15t11_56_48_892z",
+      "title": "The Unreasonable Effectiveness of Separating the Task from the Model",
+      "description": "This session introduces DSPy, an open-source Python framework designed to separate AI task specifications from their model implementations. By utilizing a triad of specifications, code constraints, and evaluations, DSPy enables the creation of reusable, composable, and automatically optimizable AI programs. The discussion details how this separation allows developers to swap models and integrate new techniques, such as recursive language models, without changing the task interface. Additionally, the session covers enterprise applications for cost reduction and introduces new capabilities like DSPy.flex for learning custom harnesses and qualitative learning for refining evaluations using production feedback.",
+      "evidence": [
+        "separating the tasks from the model",
+        "open source software in Python",
+        "three things to specify your task... specs, code, and evals",
+        "automatically optimize",
+        "qualitative learning"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_0930_2026_06_08t10_02_35_056z",
+      "title": "How Anthropic Builds: Lessons from Labs",
+      "description": "Mike Krieger discusses the internal building processes at Anthropic Labs, highlighting a paradigm shift from task delegation to expressing end states when collaborating with AI. He shares examples of \"unreasonable\" ambition in prompting, including porting a Python codebase to TypeScript over a weekend. The session explores the \"persevere or pivot\" organizational structure of the Labs team and the use of multiplayer tagging to treat AI as a proactive teammate. Additionally, Krieger addresses the importance of infrastructure like feature flags, the evolution of Cloud Design, and the critical need for verifiability and data provenance in vertical AI applications for the finance sector.",
+      "evidence": [
+        "express the end state and then have it go and cook on it",
+        "port this entire Python codebase to TypeScript",
+        "persevere or pivot",
+        "multiplayer async proactive way",
+        "verifiability and audit logging and and sort of data provenence"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1025_2026_06_25t09_02_28_031z",
+      "title": "Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer",
+      "description": "Emil Eifrem addresses the challenges of deploying AI agents in large enterprises, where fragmented data sources across various databases often lead to manual wiring and duplication. He proposes a blueprint for \"thin agents on a smarter shared substrate\" utilizing an ontology-based semantic layer. This framework consists of three pillars: a business-facing ontology to define key organizational concepts, a technical ontology to manage metadata across diverse data assets, and runtime execution traces to capture performance signals. This approach enables better data discovery, centralized governance, and cross-agent self-learning, allowing agents to become more efficient over time.",
+      "evidence": [
+        "thin agents on a smarter shared substrate",
+        "business-facing ontology",
+        "technical ontology",
+        "runtime signals out of your agents",
+        "ontology-based semantic layer"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0900_2026_06_05t14_17_19_767z",
+      "title": "Tokens Should Have Jobs",
+      "description": "This session explores the concept that tokens in agentic systems should be assigned specific \"jobs\" rather than being treated as fungible budget. The speakers detail three strategies to improve agent outcomes: advising, where tokens guide the executor; grading, where tokens evaluate output against a rubric to trigger iterations; and dreaming, where tokens reflect on transcripts to write learnings to memory. Using a financial analysis benchmark, the presentation demonstrates how these strategies provide performance gains and token efficiency over simple execution within a fixed budget. The discussion concludes with the architecture of cloud managed agents and multi-agent orchestration.",
+      "evidence": [
+        "tokens should have jobs",
+        "advising strategy",
+        "grading",
+        "dreaming",
+        "tokens are not funible",
+        "cloud managed agents"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_breakout_track_04_1330_2026_06_11t06_26_57_559z",
+      "title": "MCPs, CLIs, and Skills: Choosing the Right Tooling Layer for Agentic Development",
+      "description": "Nikita Kothari examines the tooling layer, or \"plumbing,\" required to move AI agents from demo to production. The session compares three distinct approaches for agent environment interaction: Command Line Interfaces (CLIs) for reproducible direct execution, the Model Context Protocol (MCP) as a universal adapter for external services, and structured skills as playbooks for rigid orchestration. Kothari addresses critical production challenges including context explosion, invisible failures, and security risks related to multi-tenant data isolation. The talk provides a rubric for selecting the appropriate layer based on the required failure mode, context constraints, and whether the service is shared across multiple agents.",
+      "evidence": [
+        "three distinct approaches which is MCP, LCLI and the structured skill",
+        "context explosion",
+        "MCP stands for model context protocol",
+        "skill is a structural playbook that wraps around your tools",
+        "enforce the isolation in your infrastructure never in your prompts"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_breakout_track_04_1045_2026_06_11t07_11_06_613z",
+      "title": "Auth for Agents: Unblock Autonomous AI with auth.md",
+      "description": "Michael Grinich explores the shift toward agentic engineering and the necessity of moving from human-in-the-loop workflows to fully autonomous AI agents. He identifies a primary blocker to adoption: the lack of agent-native registration, as current signup flows are designed for humans and often block automated actors. To address this, Grinich introduces auth.md (referred to as o.md), an open specification that provides instructions for agents to register for services legitimately. The session details how this spec uses identity assertions and open standards to allow agents to autonomously sign up for and utilize services, effectively opening the door for an agent-driven consumer economy.",
+      "evidence": [
+        "agent-native registration",
+        "a new spec we have called o.md",
+        "tells agents how they can become legitimate users",
+        "identity JSON access grant"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_11t09_03_26_579z",
+      "title": "Harness Engineering: Building the Production Cage for Powerful Domain Agents",
+      "description": "Mike Chambers explores harness engineering, defining a harness as the remaining components of an agent once the model is removed. He distinguishes between agents used for productivity and those built for production, detailing the infrastructure required to scale agents to thousands of users. Key technical considerations include managing memory, identity, runtime, and observability. Using the Strands agents SDK and Bedrock Agent Core, Chambers demonstrates how to deploy agents with serverless long-term and short-term memory and multi-tenant isolation, advocating for infrastructure as code to prevent 'slop ops' in cloud-scale deployments.",
+      "evidence": [
+        "you take an agent, remove the model part from it, and everything that you have left, that's the harness",
+        "manage um scaling, payments, memory, identity, skills, runtime, context management",
+        "Bedrock agent core... that's how I'm doing this and how I'm deploying",
+        "I don't want to see any more slop ops"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_08t03_05_49_658z",
+      "title": "Loophole - Adversarial Agents To Stress Test Your Morality",
+      "description": "Brendan Rappazzo presents Loophole, an open-source adversarial agent framework designed to stress test personal morality. The system codifies natural language morals into a precise legal system, using adversarial agents to identify loopholes—actions that are immoral but legal—and overreach—actions that are moral but illegal. The session explores practical applications of this framework, including the creation of codified system prompts for chatbots and the development of decentralized contracts. Additionally, Rappazzo demonstrates a US Senate simulator that uses representative personas to predict voting behavior and optimize legislative language to maximize consensus through a process of hill climbing.",
+      "evidence": [
+        "adversarial agent framework",
+        "codifies that into a legal system",
+        "find loopholes in your system",
+        "find overreach",
+        "auto way to make constitutions for chat bots",
+        "decentralized contracts",
+        "US Senate simulator"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1355_2026_06_05t14_41_17_671z",
+      "title": "🎵 Every step you take, every call you make - the reliable agent stack",
+      "description": "This session explores the infrastructure required to run AI agents reliably and resiliently in production. The speakers introduce Restate, an open-source durable execution framework that enables long-running, stateful processes to recover from failures using a journal of events. The discussion covers the use of virtual objects to manage concurrent agent sessions and demonstrates a deep research agent integrated with Slack. Additionally, the session examines agentic engineering practices, detailing a development workflow that moves from abstract specifications to simulated implementations and finally to concrete production systems to ensure correctness in distributed environments.",
+      "evidence": [
+        "how to run agents reliably in production",
+        "durable execution in the industry",
+        "journal of events to recover the process after a failure",
+        "virtual object... a bit like a stateful actor",
+        "abstract specification, simulation implementation, concrete specification and then concrete implementation"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1425_2026_06_05t14_41_18_364z",
+      "title": "We let an AI agent execute Bash and lived to talk about it",
+      "description": "This session examines the security challenges of deploying \"the wizard,\" an agentic CLI tool at PostHog that executes Bash commands to automate project setup. Sarah Sanders details the risks of shipping agents with command-execution capabilities and introduces \"the Warlock,\" a deterministic security scanner using Yara rules to detect prompt injections and PII exposure. The talk covers a \"defense in depth\" strategy that combines sandboxing, deny-by-default policies, and a strict distinction between deterministic enforcement and probabilistic LLM triage for noise reduction. Sanders also emphasizes the importance of scanning the internal supply chain to prevent prompt injection payloads from entering the agent's context.",
+      "evidence": [
+        "agentic CLI tool that reads your codebase",
+        "security scanner called the Warlock",
+        "rules run on Yara",
+        "detection and enforcement stay deterministic and mechanical",
+        "defense in depth"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1450_2026_06_11t09_29_08_527z",
+      "title": "No Memory, No Harness: Why the Database Is the Last Line of Defense",
+      "description": "Kay Malcolm explores the necessity of memory and harnesses for enterprise AI agents to improve team productivity beyond individual speed. The session details five types of agent memory—short-term, long-term, episodic, procedural, and semantic—and argues that a converged database is the optimal storage for these diverse data types to maintain a single source of truth. Malcolm also addresses the challenges of 'repo boundaries' and 'amnesia' in AI agents, introducing Polygraph, an agent-agnostic meta harness designed to create a unified dependency graph across thousands of repositories.",
+      "evidence": [
+        "five most common ones... short-term memory... long-term memory... Episodic memory... Procedural memory... and finally, semantic memory",
+        "Oracle AI database is the best place to store this agent memory that's going to power your harness",
+        "agent agnostic meta harness called Polygraph"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1520_2026_06_05t14_41_19_678z",
+      "title": "How we Solved Agent Building",
+      "description": "Andrew Qu discusses Vercel's evolution in agent building, moving from simple prompts and multi-agent chains to a file-system-based approach. He introduces Eve, an agent framework described as the 'Next.js for agents,' which utilizes a convention-based structure of skills, tools, and channels to simplify development. The session also features Isan, who argues that an agent's identity is defined by its log—an append-only event history—rather than the model or runtime. This conceptual shift ensures reliability and allows agents to resume state regardless of the execution environment.",
+      "evidence": [
+        "Next.js for agents",
+        "file system agent",
+        "the log is the agent",
+        "append-only event history of the agent"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_04t12_50_51_105z",
+      "title": "Agents Without Code: How Skills, YAML, and Filesystems Replaced Python",
+      "description": "Philipp Schmid explores the evolution of building LLM agents, moving from manual Python loops and agent frameworks to a code-less approach using remote agents. He introduces the Gemini Interactions API, which replaces turn-based conversation history with a step-based timeline for reasoning and tool calls. The session demonstrates how hosted cloud sandboxes allow agents to execute bash commands and access filesystems, enabling developers to define agent behavior and capabilities through markdown files like agents.md and skills.md. By shifting from hardcoded orchestration to general-purpose tools, developers can reduce boilerplate code and focus on domain instructions and evaluations.",
+      "evidence": [
+        "files are basically replacing Python",
+        "moved away from this term based based conversation history to steps",
+        "hosted isolated cloud sandbox where it can run tools, where it can run bash commands and where it can save files",
+        "We no longer need to execute loops. We no longer need to do two routing."
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1630_2026_06_03t12_53_09_071z",
+      "title": "Closing Keynote — Theo Browne",
+      "description": "Theo Browne discusses the rapid evolution of AI models, tracing the progression from the tool-calling capabilities of Sonnet 3.5 to the orchestration power of Mythos. He argues that software developers are currently in a 'skeuomorphic phase,' clinging to legacy tools and workflows like terminals and Git out of habit rather than utility. Browne explains how AI has shifted the scale of development, turning former startup-sized ideas into simple side projects or executable markdown files. He encourages developers to reject old constraints and 'go bigger' by building wide-spectrum products that challenge established platforms like AWS and Salesforce.",
+      "evidence": [
+        "Sonnet 35 is the tool call era",
+        "Mythos is another jump to orchestration",
+        "currently in our skumorphic phase as software developers",
+        "what used to be a startup is now a side project"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1650_2026_06_03t13_31_56_662z",
+      "title": "Closing Keynote: Garry Tan",
+      "description": "Garry Tan, CEO of Y Combinator, discusses the architecture of AI native companies and the concept of \"wiring the work\" by treating AI as a workforce rather than a simple autocomplete tool. He introduces \"skill files\" to encode organizational capabilities and \"company brains\" as a memory layer for context engineering. Tan distinguishes between computation in latent space for judgment and deterministic space for logic, emphasizing the practice of \"skillifying\" one-off tasks to create a compounding library of knowledge. This approach allows small teams to achieve extreme productivity and unprecedented revenue per head.",
+      "evidence": [
+        "treating it as a workforce",
+        "wiring the work",
+        "skill files",
+        "company brain",
+        "latent space",
+        "deterministic space",
+        "skillify it"
+      ],
+      "confidence": 1
+    }
+  ]
+}

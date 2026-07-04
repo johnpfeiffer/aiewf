@@ -1,0 +1,227 @@
+{
+  "source": "app/src/data/keynotes-day3.txt",
+  "model": "gemma-4-31b-it",
+  "tokens_used": 125144,
+  "descriptions": [
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0910_2026_06_18t10_34_19_797z",
+      "title": "Field Guide to Fable",
+      "description": "Thariq Shihipar explores how to work with Fable, a new class of models from Anthropic. He discusses 'unhobbling' the model by understanding its 'capability overhang,' where intelligence increases in spiky ways through tools like code execution and proactive agency. The session presents a framework for identifying 'unknowns' by distinguishing between the mental map of a project and the actual territory of the codebase, utilizing techniques such as blind spot passes and interviews. Finally, Shihipar reflects on the evolving nature of programming and encourages engineers to challenge traditional trade-offs to increase productivity and generate more value.",
+      "evidence": [
+        "capability overhang",
+        "unhobbling claude",
+        "the map is not the territory",
+        "blind spot pass"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1010_2026_06_09t20_29_18_622z",
+      "title": "In the Land of AI Agents, the Verifiers Are King",
+      "description": "Tariq Shaukat discusses the critical role of verification in AI-driven software development to combat \"AI slop\" and the accumulation of technical debt. He introduces the Agent Centric Development Cycle (AC/DC), a framework that integrates guiding, verifying, and solving within the development process. The session covers the importance of providing agents with context and constraints, implementing zero-trust multi-layered verification—combining algorithmic and agentic methods—and maintaining a clean codebase. Shaukat explains how embedding these practices into agentic, CI, and maintenance loops can reduce production outages and prevent the productivity dip often seen after the initial adoption of AI coding agents.",
+      "evidence": [
+        "AI slop is everywhere",
+        "Agent Centric Development Cycle",
+        "zero trust multi-layered verification",
+        "combination of algorithmic verification... combined with what is now possible with agentic verification"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0950_2026_06_08t10_14_44_229z",
+      "title": "Perception Agents",
+      "description": "This session explores Perception Agents, which aim to increase reliability in end-to-end knowledge work by implementing a loop of perceiving, planning, and acting. Unlike agents that rely on APIs, perception agents analyze the rendered screen and layout to establish shared context with the user. This approach enables more precise interaction through visual annotation and allows agents to verify their own work against design specifications via visual and user-flow checks. The discussion covers how these agents reduce the need for long text prompts and can integrate external inputs, such as meeting transcripts, to execute and validate complex tasks.",
+      "evidence": [
+        "perceiving to planning to acting",
+        "works off the rendered interface",
+        "verification part gives the agent the capability to check its own work"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1010_2026_06_19t21_58_46_011z",
+      "title": "Research to Reality with Google DeepMind",
+      "description": "Benoit Schillings, VP of Research at Google DeepMind, explores the transition from traditional software engineering to an AI-driven frontier where writing code is nearly free. He discusses the evolution of coding from assembly to 'vibe coding' and explains how Google DeepMind is utilizing 'self-play' to overcome the exhaustion of human training data. The session covers the shift in bottlenecks from syntax generation to system architecture, security, and inductive thinking. Schillings also examines the potential for AI to drive breakthroughs in chemistry and biology by experimenting with complex molecular structures and biological patterns.",
+      "evidence": [
+        "writing code is free or nearly free",
+        "selfplay is something we always liked a lot at deep mind",
+        "bottlenecks are really how do you ensure that that code is what you really wanted",
+        "intersection of code writing and atoms or science"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1025_2026_06_25t09_02_28_031z",
+      "title": "Evals Track Intro",
+      "description": "This session explores the evolution of AI evaluations and the deployment of agents in production. Aparna Dhinakaran discusses the shift toward 'Agent as a Judge' for adaptive dynamic analysis and introduces Signal, a tool that analyzes traces to discover patterns of issues and suggest fixes. Gabe Dees Mesa shares how OpenGov scaled OG Assist using the Effect library for its core agent loop and the A2A protocol for agent communication. The discussion also covers production safety measures, including sandboxing for code execution and human-in-the-loop approvals for mutating tool calls.",
+      "evidence": [
+        "Agent as a judge is about adaptive dynamic analysis",
+        "Signal is actually a longunning agent that can read traces sent in discover patterns of issues",
+        "bet on effect... to design and build the the core agent loop",
+        "agentto agent protocol... an open protocol for agents to intercommunicate",
+        "deterministically interrupt the agent loop. If there is a tool call approval required"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1045_2026_06_13t06_10_40_547z",
+      "title": "First Steps Toward Automated AI Research",
+      "description": "Richard Socher introduces the 'Eureka machine,' a system designed to automate scientific discovery and accelerate human flourishing. Drawing inspiration from evolutionary processes and the philosophy of science, the session outlines a framework based on four pillars: existing knowledge, measurement data, simulations, and physical labs. Socher discusses the potential of recursive self-improvement (RSI), where AI identifies and fixes its own shortcomings to advance research. The presentation provides concrete proof points of this approach, including performance gains in Nanochat, Nano GPT speedruns, and the discovery of more efficient CUDA kernels for NVIDIA GPUs.",
+      "evidence": [
+        "Eureka machine",
+        "automates the process of scientific discoveries",
+        "recursive self-improvement",
+        "better kernels for for Nvidia GPUs"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_breakout_track_03_1520_2026_06_22t14_21_25_611z",
+      "title": "Autoresearch for Dense Retrieval: Test-Time Compute with Frozen Embedding Models",
+      "description": "Han Xiao explores the application of test-time compute to dense retrieval, investigating if small models can improve performance by increasing inference-time computation without increasing model size. He describes an \"auto research\" loop where an agent discovers optimal search programs over frozen embedding models. The session covers two primary approaches: implementing embedding algebra over a single frozen encoder to improve relevance and assembling a full-stack search pipeline using tools such as data rooms, search boxes, and knowledge graphs. Xiao demonstrates that cheap structural improvements often generalize better across different encoders and tasks than simply increasing the compute budget.",
+      "evidence": [
+        "test time compute",
+        "agent runs the research loop by itself",
+        "frozen single vector embedding model",
+        "embedding algebra over the fixed frozen embedding",
+        "assemble a search pipeline at test time"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_breakout_track_03_1205_2026_06_15t11_47_11_620z",
+      "title": "Memory Harnesses for Long-Running Research Agents",
+      "description": "Stefania Druga discusses memory harnesses for long-running research agents deployed on local devices. Addressing the issue of \"context rot\" in long-horizon tasks, she presents a memory design based on a write-manage-read loop. The session covers a harness architecture featuring a core of traces, an archival block, and a recall block tested across various modes, including vector RAG and a decisions ledger. Using local models like Qwen 27B and DeepSeek V4 Flash on M3 Ultra hardware, Druga demonstrates that ranked recall policies improve performance on benchmarks like Xbench and Spider V2 while reducing token costs.",
+      "evidence": [
+        "memory harnesses for longunning research agents on device",
+        "write manage read loop",
+        "ranked recall, the model gets the right answer um more frequently",
+        "recall policy as a first class metric"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_08t03_48_01_126z",
+      "title": "« the era of (auto) research »",
+      "description": "Elie Bakouch discusses automated AI research, focusing on the use of \"speedrun\" environments like nano GPT and the optimizer speedrun to evaluate model capabilities. He explores whether models can achieve recursive self-improvement by comparing agents such as Codex and Cloud Code in their ability to beat human records for validation loss. While the agents successfully iterated on existing methods to improve performance, Bakouch notes a lack of true novelty in their discoveries. He proposes a multi-agent system involving generators and judges to shift the focus from simple evaluation to genuine scientific discovery in AI research.",
+      "evidence": [
+        "speedrun as an environment for automated AI research",
+        "recursive self-improvement is like model training models without human intervention",
+        "beat the record with only novel ideas"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1425_2026_06_10t15_57_34_716z",
+      "title": "Closing the Loop: An Autonomous AI Research Agent",
+      "description": "This session introduces Arya, an autonomous AI research and iteration agent from Weights and Biases designed to automate ML workflows. The presentation covers Arya's ability to autonomously iterate on code and hyperparameters, identify research patterns, and generate integrated reports. Tim Sweeney explains the underlying architecture, utilizing Coreweave GPUs and the Weights and Biases Weave observability layer to track traces and tool calls. The discussion details an improvement loop that transforms production logs into YAML-based tasks and utilizes LLM judges for nightly evaluations. Finally, the session provides strategies for productionizing agents, emphasizing agent-oriented observability and human-in-the-loop verification.",
+      "evidence": [
+        "autonomous AI research and iteration agent",
+        "autonomously iterate on the code itself and the hyperparameters",
+        "Weights and Biases Weave that we log 100% of our traces to",
+        "tasks are all described as YAML files",
+        "integrated LLM judge experience"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1140_2026_06_07t18_45_30_022z",
+      "title": "An AI Agent Became the #1 Contributor in OpenAI's Hiring Challenge",
+      "description": "This session explores the creation and success of Aiden, an auto-research agent that became the top contributor in OpenAI's Parameter Golf hiring challenge. The speaker explains how Aiden identifies and implements ideas from research papers to set leaderboard records. The discussion extends to the evolving role of AI engineers, emphasizing that while agents handle execution, humans must focus on high-level design, such as evaluation and codebase abstraction. Additionally, the session outlines a technical framework for designing agentic systems, covering systems thinking, workflow design, decomposition, and the strategic balance between deterministic code and agentic judgment.",
+      "evidence": [
+        "top contributor was one candidate that they couldn't hire. It wasn't a person, it's an agent we build called Aiden",
+        "multi-aent self-improving system that can read public information like research papers and other PRs, run its own experiments and submit a PR",
+        "if a task has an exact answer, reach for code. If it needs interpretation or judgment, that's when you can get the agent to do it"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_03t09_49_39_605z",
+      "title": "Self-Improvement of Context, Harness, and Model Weights through Reflective Optimization",
+      "description": "Lakshya Agrawal presents reflective optimization, a method to self-improve prompts, agents, and model weights using textual feedback. Addressing the sample inefficiency of standard reinforcement learning, the session introduces Japa, a reflective prompt optimization technique that utilizes an evolutionary loop and Pareto-based candidate selection to achieve significant performance gains with minimal data. The talk further explores 'optimize anything,' a universal API for optimizing any text-based parameter, including agent harnesses, CUDA kernels, and cloud scheduling policies. Practical applications include improving math task accuracy, reducing OCR error rates, and enhancing repository issue resolution.",
+      "evidence": [
+        "reflective optimization or how can we self-improve prompts agents and models from textual feedback",
+        "reflective prompt optimization technique for agents",
+        "universal API for optimizing any text parameter",
+        "Pareto-based candidate selection"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_breakout_track_09_1355_2026_06_05t13_43_08_694z",
+      "title": "Autoresearch for Kernels",
+      "description": "Tejas Bhakta explains how to use the Autoresearch framework to optimize GPU kernels, achieving up to 3x speedups. He describes a loop where an agent proposes solutions and benchmarks them for correctness and speed, specifically for optimizing parameters like block sizes while humans provide high-level architectural ideas. The session covers identifying compute and memory bottlenecks using profilers like NSIS and the necessity of providing hardware-specific context, such as TMA for B200 GPUs. Additionally, Bhakta discusses overcoming reward hacking and utilizing bare metal optimizations, including BIOS tweaks and overclocking, to maximize theoretical GPU utilization.",
+      "evidence": [
+        "make models three times faster with Auto Research",
+        "agent proposes a solution. You have a setup to to define what's correct, benchmark it for us.",
+        "auto research framework is really good for like picking block sizes",
+        "profiling with a profiler like NSIS"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1140_2026_06_08t03_48_01_899z",
+      "title": "Autoresearch in the wild",
+      "description": "This session explores the blueprint for auto research and deploying long-running agent tasks. Roland Gavrilescu discusses the concept of 'the loop is the product' and 'system distillation,' introducing 'agent recipes' as a way to codify human taste into reproducible, provider-agnostic AI systems. The talk emphasizes optimizing for 'valued work per watt' to ensure economic viability. Additionally, Rushab from Machine Craft shares a case study on building a 36-agent 'pantheon' of specialists that manages go-to-market operations by leveraging a well-organized memory of private company history rather than traditional model fine-tuning.",
+      "evidence": [
+        "the loop is the product",
+        "system distillation is the mode",
+        "agent recipe is really something that enables you to create reproducible frontier AI systems",
+        "valued work per watt",
+        "a pantheon. A whole cast of specialists"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1330_2026_06_09t23_25_53_097z",
+      "title": "Autoresearch in a Multi-Agent AI Village",
+      "description": "Erina Karati presents Project Paradox, a modular AI framework for autonomous agents featuring stateful memory backed by RAG, emotion tracking, and trust matrices. To solve the problem of weakening social consistency over long horizons, the session introduces an 'auto research' layer that acts as an experimental loop. This system utilizes controlled scenario suits and balanced scorecards to evaluate society-level behavior and optimize a constrained policy surface. By analyzing structured traces, the framework improves agent protocols for memory retrieval, source attribution, and replanning, providing an engineering pattern applicable to support, research, and coding agents.",
+      "evidence": [
+        "modular AI framework that allows any developer to plug in intelligent autonomous agents",
+        "per agent memory... backed by rag",
+        "auto research becomes the experimental loop around it",
+        "long horizon agent behavior needs scenario suits",
+        "keep the editable surface really small"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1630_2026_06_24t19_44_50_508z",
+      "title": "Closing Keynote",
+      "description": "Addy Osmani explores the evolving role of the software engineer in an era of AI agents and software factories. He discusses the transition from focusing on technical capabilities to prioritizing human judgment, accountability, and qualitative taste when making production decisions. The session covers the shift toward harness and loop engineering, where agents handle the inner execution loop while humans manage the outer loop of verification and risk acceptance. Osmani warns against cognitive debt and cognitive surrender, arguing that as AI-assisted code becomes the norm, the engineer's primary value shifts from the ability to code to the ability to reason about systems and own the final verdict.",
+      "evidence": [
+        "the engineer of the future is going to be really defined by the person who is able to choose what is worth doing",
+        "the coding agent is the model plus the harness around it",
+        "the scarce resource becomes judgment that's backed by evidence",
+        "cognitive debt is the erosion of your understanding and memory around how to solve problems",
+        "the inner execution loop... the outer loop is still engineering"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1650_2026_06_25t07_28_22_389z",
+      "title": "Trends in AI",
+      "description": "Micah Hill-Smith and George Cameron of Artificial Analysis examine the cost of intelligence and the trade-offs between model performance and expense. Using the Artificial Analysis Intelligence Index, they analyze the gap between open weights and proprietary models and explain why cost per task is rising despite falling token prices. The session delves into agentic knowledge work via the AA Briefcase benchmark, identifying key cost drivers such as agent trajectories and the impact of prompt caching. The speakers conclude by categorizing professional tasks into those with and without intelligence ceilings to guide model selection based on the Pareto line.",
+      "evidence": [
+        "cost of intelligence",
+        "Artificial Analysis Intelligence Index",
+        "gap between the open weights frontier and the overall frontier",
+        "AA briefcase benchmark",
+        "impact of prompt caching"
+      ],
+      "confidence": 1
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1710_2026_06_25t23_38_40_379z",
+      "title": "Closing Keynote",
+      "description": "Wei-Lin Chiang, CTO of Arena, discusses the transition from chatbots to agentic AI and the technical challenges of measuring agent outcomes. He explains how Arena utilizes a live leaderboard powered by millions of real-world traces to rank AI models across modalities including text, image, video, and code. The session details the methodology for agentic evaluation, focusing on mining explicit, implicit, and environment signals to assess success rates, stability, and token efficiency. Chiang demonstrates Agent Arena, a platform designed to source organic user feedback and provide grounded measurements of AI intelligence in real-world professional and consumer use cases.",
+      "evidence": [
+        "building agent evals in Arena",
+        "measure intelligence in the real world beyond just static benchmark",
+        "mine the signals from three type of basically signals",
+        "randomized control trial where we intervene on agent component"
+      ],
+      "confidence": 1
+    }
+  ]
+}
