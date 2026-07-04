@@ -20,7 +20,7 @@ At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`. `App` 
 
 ## Data Flow
 
-1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `DAY_LABEL`, `DAY_DATE`, and `VENUE`.
+1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `DAY_LABEL`, `DAY_DATE`, and `VENUE`. It also attaches optional video URLs from `app/src/data/session-video-links.json`.
 2. `app/src/models/session.ts` exports helpers over that data:
    - `matchesQuery`
    - `applyFilters`
@@ -81,4 +81,65 @@ Run them with:
 ```bash
 cd app
 npm test
+```
+
+## Lessons Learned CLI
+
+The root Go module implements a crawl-stage lesson generator and judge. It is intentionally separate from the frontend and treats `app/src/data/sessions.json`, `app/src/data/speakers.json`, and `app/src/data/keynotes-day*.txt` as read-only inputs.
+
+```mermaid
+flowchart LR
+  sessions["sessions.json"]
+  speakers["speakers.json"]
+  rawtx["keynotes-day*.txt"]
+  segments["keynote_segments_day*.json"]
+  cmd["cmd/lessons CLI"]
+  model["model package"]
+  client["client Gemini API"]
+  sqlite["SQLite lessons.db"]
+  goldens["goldens/*.json"]
+
+  sessions --> model
+  speakers --> model
+  rawtx --> segments
+  segments --> model
+  cmd --> model
+  model --> client
+  model --> sqlite
+  sqlite --> goldens
+  goldens --> model
+  model --> sqlite
+```
+
+The package split is:
+
+- `cmd/lessons`: command parsing and orchestration for `generate`, `seed-goldens`, `judge`, and `run`.
+- `model`: schedule adaptation, prompt rendering, lesson schema, thin-description handling, hard checks, generator orchestration, and judge orchestration.
+- `client`: Gemini API wrapper using `google.golang.org/genai`.
+- `storage`: SQLite persistence using `modernc.org/sqlite`.
+- `scripts/build_keynote_segments.mjs`: reproducible extraction of keynote transcript segments from the day-specific raw transcripts into `app/src/data/keynote_segments_day*.json` and consolidated `app/src/data/session-video-links.json`.
+
+The CLI derives stable session ids when the schedule file does not provide one. It joins speaker title/company metadata from the speaker catalog by name, attaches optional transcript segments by session id, but it does not mutate the schedule, speaker, or raw transcript source files.
+
+The schedule app consumes the app-local video-link map by computing the same stable source session id for each raw session. `SessionDetail` renders a "Watch video" link only when `videoUrl` is present.
+
+The first-pass user journey is:
+
+```mermaid
+sequenceDiagram
+  participant User
+  participant CLI as lessons CLI
+  participant Gemini
+  participant DB as SQLite
+  participant Goldens as goldens/
+
+  User->>CLI: generate
+  CLI->>Gemini: request lesson JSON for rich approved source material
+  CLI->>DB: store generation
+  User->>CLI: seed-goldens
+  CLI->>Goldens: write editable JSON seeds
+  User->>Goldens: manually edit references
+  User->>CLI: judge
+  CLI->>Gemini: request rubric scores after hard checks
+  CLI->>DB: store score
 ```

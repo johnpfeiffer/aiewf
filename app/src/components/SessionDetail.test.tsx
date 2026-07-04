@@ -18,6 +18,7 @@ function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession 
     title: "Three Years of AI Engineering",
     speakers: [{ name: "swyx", role: "Curator, Latent Space / AI Engineer", bio: "" }],
     description: "We celebrate the third birthday of the AI Engineer post.",
+    videoUrl: undefined,
     ...overrides,
   };
 }
@@ -70,5 +71,23 @@ describe("SessionDetail", () => {
       />,
     );
     expect(screen.getByText("conflict")).toBeInTheDocument();
+  });
+
+  it("renders an external video link when available", () => {
+    render(
+      <SessionDetail
+        session={makeSession({
+          videoUrl: "https://www.youtube.com/watch?v=htM02KMNZnk&t=12845s",
+        })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    const link = screen.getByRole("link", { name: "Watch video" });
+    expect(link).toHaveAttribute(
+      "href",
+      "https://www.youtube.com/watch?v=htM02KMNZnk&t=12845s",
+    );
+    expect(link).toHaveAttribute("target", "_blank");
   });
 });

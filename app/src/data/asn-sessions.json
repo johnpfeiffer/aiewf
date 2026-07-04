@@ -1,0 +1,5092 @@
+{
+  "source": "https://www.ai.engineer/worldsfair/schedule?view=list",
+  "scraped": "2026-07-04T00:06:04Z",
+  "totalSessions": 565,
+  "sessions": [
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1140_2026_06_03t09_28_29_013z",
+      "title": "Building self-learning loops for your agent",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 1",
+      "type": "sponsor",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_02_0900",
+      "title": "RAG Needs a Map: Using GraphRAG to Retrieve Connected Context",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Track 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1425_2026_06_08t11_12_30_233z",
+      "title": "How I learned to stop worrying and love the sandbox",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 3",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_06_1315_2026_06_09t23_18_49_832z",
+      "title": "The model swap workshop",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 4",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1450_2026_06_04t12_30_35_603z",
+      "title": "Teaching Agents to Search: Building Synthetic Training Pipelines with NVIDIA Data Designer",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 5",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_08_1105",
+      "title": "Local LLMs and workstation agents: Part 1",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 6",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_05_1315",
+      "title": "How to Build Quality Gates into Agentic Coding Workflows",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 7",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1105_2026_06_13t06_25_55_037z",
+      "title": "What is an Inference Engine, Anyway?",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 8",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1525",
+      "title": "Agent Speedrun: Idea → Code → Deploy → Observe, Fix → Ship",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_microsoft_presenting_sponsor_1105",
+      "title": "From zero to deployed on Azure with AI agents",
+      "day": "Day 1 — Workshop Day",
+      "time": "11:05am-12:05pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_08_1315",
+      "title": "Evals in AI: A Deep Dive",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 1",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_01_1105_2026_06_12t17_09_41_148z",
+      "title": "From approval loops to autonomous agents with Docker",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 2",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_03_1210_2026_06_15t12_20_19_746z",
+      "title": "2 hr deep dive on LLM Inference at Scale — Part 1 of 2",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 3",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_04_1210",
+      "title": "Build the Right Thing: Product Engineering for Software Developers (Part 1)",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 4",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_08_1420",
+      "title": "From Zero to Leaderboard: Building an End-to-End AI Agent Evaluation Pipeline",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 5",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_06_1210",
+      "title": "Local LLMs and workstation agents: Part 2",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 6",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_07_1210",
+      "title": "Beyond RAG: Build a Relational Context Engine from Scratch",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 7",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_08_1210",
+      "title": "Building AI Agents with Real-Time Web Data",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 8",
+      "type": "workshop",
+      "track": "Track 8"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1105_2026_06_22t15_22_59_465z",
+      "title": "Research to Reality with Google DeepMind",
+      "day": "Day 1 — Workshop Day",
+      "time": "12:10pm-1:10pm",
+      "room": "Track 9",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_01_1315",
+      "title": "Let your agent cook: using skills to evaluate and improve your app",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 1",
+      "type": "sponsor",
+      "track": "Track 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_02_1315",
+      "title": "Neo4J L&L",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Track 2"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_07_1105",
+      "title": "2 hr deep dive on LLM Inference at Scale — Part 2 of 2",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 3",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_04_1315_2026_06_15t13_09_05_634z",
+      "title": "Build the Right Thing: Product Engineering for Software Developers — Part 2",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 4",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1420_2026_06_05t11_54_48_570z",
+      "title": "Build a Platform, Unleash an Agent on it.... and Watch it Burn!",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_06_1630",
+      "title": "SonarQube + OpenAI: Wiring Your Team for Agentic Development",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 6",
+      "type": "sponsor",
+      "track": "Track 6"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_05_1420",
+      "title": "How Reducto parsed the Epstein Files for the Viral JMail Project: The Secret Complexities of Document",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 7",
+      "type": "sponsor",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_05_1105",
+      "title": "Turning My Obsidian Vault Into a Local AI Engineer",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 8",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_04_1315",
+      "title": "Continuously improving agents with Langfuse",
+      "day": "Day 1 — Workshop Day",
+      "time": "1:15pm-2:15pm",
+      "room": "Track 9",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_microsoft_presenting_sponsor_1420_2026_06_20t09_03_28_193z",
+      "title": "Observe, optimize and protect your hosted agents in Microsoft Foundry",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-3:35pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_01_1420",
+      "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 201",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 1",
+      "type": "sponsor",
+      "track": "Track 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_02_1420",
+      "title": "The Data Context Layer: Why Data Engineering Agents Need More Than Code and Databases",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Track 2"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_09_1630",
+      "title": "Burn your flags: How PayPal designs interactive CLI tools for agents",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 4",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_05_1420_2026_06_23t07_56_22_912z",
+      "title": "AI Security Engineer Foundations + Certificate",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1420_2026_06_05t11_53_44_628z",
+      "title": "Context Engineering in 2026: Compaction, Memory & Cost",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 6",
+      "type": "sponsor",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_07_1420",
+      "title": "Vector Isn't Enough: Hybrid Search & Retrieval for AI Engineers",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 7",
+      "type": "sponsor",
+      "track": "Track 7"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_01_1210",
+      "title": "Build with Perception Agents",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1420_2026_06_13t06_23_26_426z",
+      "title": "Hands-on AutoResearch: Cracking OpenAI's Parameter Golf",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-4:20pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_03_1420_2026_06_13t06_02_51_065z",
+      "title": "Special topics in Kernels, RL, Reward Hacking in Agents",
+      "day": "Day 1 — Workshop Day",
+      "time": "2:20pm-5:30pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1330_2026_06_08t03_28_41_227z",
+      "title": "The Autonomous Computer: Full-stack Infrastructure for Computer Use Agents",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1315",
+      "title": "The Dark Arts of Skill Engineering",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 2",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_04_1630",
+      "title": "Hill-climbing Skills: How to Improve Agents Without Touching the Model",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 4",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1545_2026_06_18t07_59_51_272z",
+      "title": "Agent Auth",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 5",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_06_1630_2026_06_24t02_09_43_947z",
+      "title": "The Prime Intellect Stack",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 6",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_05_1210",
+      "title": "Lifestyles of the AI-Native: Voice-coding, agent skills, hooks and scheduled tasks",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 7",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_08_1630_2026_06_19t22_53_15_418z",
+      "title": "The Art and Science of Loopcraft with Pi (and friends)",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 8",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1630_2026_06_24t10_58_04_892z",
+      "title": "Evolution of agentic surfaces",
+      "day": "Day 1 — Workshop Day",
+      "time": "4:30pm-5:30pm",
+      "room": "Track 9",
+      "type": "workshop",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_expo_stage_01_1700",
+      "title": "Human Connection in the Age of AI",
+      "day": "Day 1 — Workshop Day",
+      "time": "5:00pm-6:00pm",
+      "room": "Expo Stage 2 NW",
+      "type": "workshop",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_2026_06_29_expo_stage_03_1800",
+      "title": "Expo Welcome Speech",
+      "day": "Day 1 — Workshop Day",
+      "time": "6:00pm-6:15pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_2026_06_29_expo_stage_03_1815",
+      "title": "Runway AI Film Festival",
+      "day": "Day 1 — Workshop Day",
+      "time": "6:15pm-7:15pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_microsoft_presenting_sponsor_0900_2026_06_20t09_03_28_193z",
+      "title": "Get Started with Models in Microsoft Foundry to Build AI Apps",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-10:15am",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_01_0900",
+      "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 101",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 1",
+      "type": "sponsor",
+      "track": "Track 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_02_1105",
+      "title": "AI on Your Lakehouse: Context Comes in Shapes, Not Queries",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Track 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_03_0900_2026_06_13t06_05_35_605z",
+      "title": "Cooking with Codex",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 3",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_02_1210",
+      "title": "The best SDLC is the one you build yourself: Why orchestration changes everything",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 4",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_05_0900_2026_06_23t07_56_22_051z",
+      "title": "AI Security Engineer Foundations + Certificate",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_06_0900",
+      "title": "Total Recall: Agent Memory and Harness Engineering",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 6",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_09_1420",
+      "title": "Agents That Own Their Inference: Building Production AI Agents on Dedicated GPUs",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 7",
+      "type": "sponsor",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_08_0900",
+      "title": "Open-Source Inference Engineering for the Agentic Era",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 8",
+      "type": "sponsor",
+      "track": "Workshops Day 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_05_0900",
+      "title": "Advanced workshop: Mastering AI Observability",
+      "day": "Day 1 — Workshop Day",
+      "time": "9:00am-11:00am",
+      "room": "Track 9",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_0950_2026_06_18t10_42_03_611z",
+      "title": "Thom Wolf keynote",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:05am-10:25am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1025_2026_06_25t09_02_28_031z",
+      "title": "Security Track intro",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:25am-10:30am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_2026_06_30_expo_stage_01_1045",
+      "title": "Every AI company is accidentally building a bank.",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": "Expo Stage NE"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_04_1140_2026_06_12t01_48_00_321z",
+      "title": "The Enterprise Agentic Gap: When Developer-Level AI Tools Hit Millions of Lines",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1045",
+      "title": "How PayPal Enterprise Payments handles agent-initiated payments across ChatGPT and Google AI Mode",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1045",
+      "title": "Agentic Search for Coding Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1110_2026_06_05t14_59_37_210z",
+      "title": "Inside the AI economy: What Stripe’s data reveals",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1450_2026_06_05t12_34_42_722z",
+      "title": "Governance Is the Real Bottleneck to AI ROI",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1045_2026_06_08t09_14_59_524z",
+      "title": "Getting the most out of Codex",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1110_2026_06_03t11_26_09_173z",
+      "title": "Security Firewall for Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1045_2026_06_03t11_21_24_356z",
+      "title": "The State of Vision",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1045_2026_06_11t06_54_22_094z",
+      "title": "Pinecone 2.0",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_2026_06_29_workshop_track_09_0900",
+      "title": "Claude Managed Agents Workshop (Part 1)",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1045_2026_06_17t02_38_28_044z",
+      "title": "Through the AI Fog: The architectural decision the next 24 months of agentic security depends on.",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1045_2026_06_07t19_24_52_130z",
+      "title": "The New Primitives: Building AI-Native Software",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1045_2026_06_03t12_47_35_768z",
+      "title": "Tokens In, Engagement Out: Training LLM-Recommenders",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1045_2026_06_20t00_13_35_555z",
+      "title": "How Forward Deployed Engineering is done at Factory",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1355_2026_06_03t13_02_04_503z",
+      "title": "Data Quality is the Compute Multiplier",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_2026_06_30_breakout_microsoft_presenting_sponsor_1045",
+      "title": "Build agents fast with GitHub Copilot (from idea to working app)",
+      "day": "Day 2 — Session Day 1",
+      "time": "10:45am-11:05am",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1110",
+      "title": "Give your coding agents the power of turbogrep!",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1110_2026_06_24t17_53_52_799z",
+      "title": "Actionable Knowledge For Agents With Context Graphs",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1110",
+      "title": "Frontier models for the hard parts, open weights for the rest",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1110",
+      "title": "Agents, codebases, and teams: what it actually takes to ship together",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1045_2026_06_11t05_05_23_486z",
+      "title": "Building the engine while flying the plane — launching the Figma MCP server",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1330_2026_06_11t07_54_30_466z",
+      "title": "Your Agent Evolved. Your Evals Didn't.",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1110_2026_06_15t11_52_25_242z",
+      "title": "Rise of the Software Factory",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1045_2026_06_11t06_28_18_050z",
+      "title": "Your Agent Didn’t Fail. Your Harness Did.",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1110_2026_06_13t08_03_27_169z",
+      "title": "Building the Document Context Layer for AI Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1110_2026_06_05t12_43_05_949z",
+      "title": "The unreasonable effectiveness of BM25 for agentic search",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1110_2026_06_03t10_53_30_517z",
+      "title": "Claude Managed Agents workshop (Part 2)",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1140_2026_06_03t13_10_28_341z",
+      "title": "Your LLM Stack Is a 2008 Database With Better Marketing: Why ML Security Is Dominated by Misconfiguration, Not Missing Features",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1110_2026_06_07t19_24_53_017z",
+      "title": "Speech-to-Speech Model Research at Google DeepMind",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1045_2026_06_24t22_00_43_489z",
+      "title": "Spotify LLM Recsys",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1110_2026_06_20t00_13_36_943z",
+      "title": "How Forward Deployed Engineering is done at Cursor",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1110_2026_06_03t12_41_43_524z",
+      "title": "The Messy Reality of Scale: Synthetic Data and Pre-Training at Poolside",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:10am-11:30am",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1140",
+      "title": "Agentic vs. Vector Search: An Eval-Driven Approach to Coding Agent Performance",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1140",
+      "title": "Agents Don't Have Coworkers, They Have Hostages",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1140",
+      "title": "Would your AI agent get the job? A performance review framework for enterprise agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1140_2026_06_05t12_50_14_968z",
+      "title": "Agentic SDLC at Uber: Building Blocks for Uber's Software Factory",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1205_2026_06_11t08_38_27_056z",
+      "title": "The Last Human Code Review: Building Trust in AI-Generated Code",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1205_2026_06_14t18_38_34_255z",
+      "title": "Orchestras, not Factories",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1520_2026_06_05t12_34_45_716z",
+      "title": "Everyone Gets A Software Company",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1140_2026_06_05t12_40_31_553z",
+      "title": "Skill issue: stop deploying vision language models, use them with Skills to build e2e vision apps on edge",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1140_2026_06_05t12_43_12_637z",
+      "title": "The Search Engine for the Agentic Web",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1140_2026_06_03t10_53_31_663z",
+      "title": "Claude Managed Agents workshop (Part 3)",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1355_2026_06_03t13_10_17_873z",
+      "title": "We Gave an Agent Production Code Access and Then Tried to Sleep at Night",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1140_2026_06_07t19_24_53_829z",
+      "title": "Voice Agents Can Just Do Things",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1045_2026_06_26t08_34_33_246z",
+      "title": "LLM Recsys at DoorDash",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1045_2026_06_03t12_45_58_466z",
+      "title": "AI tools for Forward Deployed Engineering",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1205_2026_06_15t11_33_15_101z",
+      "title": "Rethinking Environments for Long Horizon Work",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_2026_06_30_breakout_microsoft_presenting_sponsor_1140",
+      "title": "Use Copilot across CLI, dev, and cloud workflows to move faster end-to-end",
+      "day": "Day 2 — Session Day 1",
+      "time": "11:40am-12:00pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1205_2026_06_12t01_48_01_405z",
+      "title": "Your Agent Is Lying to You About Whether It Worked",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1205",
+      "title": "Why building building agent quality platforms is hard.",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1425_2026_06_12t01_48_03_998z",
+      "title": "Can LLMs write fast multi-GPU kernels? We built a benchmark to find out.",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1205",
+      "title": "Self-Improving Agents That Teach the Company Back",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1205_2026_06_05t12_50_27_465z",
+      "title": "Scaling Code Quality: Building uReview, Uber’s Multi-Agent Code Review Engine",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1205_2026_06_15t11_54_57_383z",
+      "title": "Prototyping as Leadership: How a CTO Ships with AI Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1205_2026_06_03t11_49_33_671z",
+      "title": "What we learned by analyzing 1M AI-generated PRs",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1205_2026_06_05t12_34_30_831z",
+      "title": "Tethered: Our Agents Are Us",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1110_2026_06_05t13_01_35_467z",
+      "title": "Modality Misalignment and Originality Attribution in Short-Form Video: A Multi-Agent Approach at Platform Scale",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1205_2026_06_24t07_49_18_242z",
+      "title": "Rebuilding the web for agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1205_2026_06_03t10_53_33_453z",
+      "title": "Claude Managed Agents workshop (Part 4)",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1205_2026_06_25t09_43_28_672z",
+      "title": "Agentic Development Security",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1140_2026_06_05t23_51_17_170z",
+      "title": "Your Voice Agent is Just a Walkie-Talkie",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1205_2026_06_28t16_59_02_026z",
+      "title": "Open Q&A: LLM Recsys",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1205_2026_06_20t00_13_38_383z",
+      "title": "How Forward Deployed Engineering is done at Cognition",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1205_2026_06_22t00_02_08_668z",
+      "title": "Bugcrowd posttraining talk",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1230_2026_06_25t07_57_06_000z",
+      "title": "Fireside Chat: Gergely Orosz × Simon Eskildsen",
+      "day": "Day 2 — Session Day 1",
+      "time": "12:30pm-1:30pm",
+      "room": "Main Stage",
+      "type": "plenary",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1330",
+      "title": "Every Agent, Everywhere, All at Once",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1450_2026_06_12t01_48_04_289z",
+      "title": "Designing Evals That Earn User Trust",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1330",
+      "title": "Stop prompting",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": "Expo Stage 4"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1330_2026_06_09t22_55_53_711z",
+      "title": "Spin at the Gate Until Green: The Engineering Primitives Behind Self-Driving Codebases",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1205_2026_06_05t12_59_25_120z",
+      "title": "Serving 2 Million Models Without Melting: Scaling the Hugging Face Hub",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1330_2026_06_19t16_59_08_350z",
+      "title": "Get Out of the Model's Way",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1330_2026_06_11t09_55_41_463z",
+      "title": "Agents' next frontier: agent-to-agent and network effects",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1330_2026_06_11t08_18_55_032z",
+      "title": "From Ingestion to Agents: How Leading AI Teams Build on Document Intelligence",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1205_2026_06_08t11_14_37_711z",
+      "title": "If we want them to do Knowledge Work, we need to design Knowledge Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1330_2026_06_06t19_52_56_308z",
+      "title": "Everybody Gets a Digital Clone! (Part 1 of 3)",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1355_2026_06_17t02_42_02_326z",
+      "title": "Using LLMs to Secure Source Code",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1045_2026_06_03t10_25_59_717z",
+      "title": "Tolan: Voice-First AI Companion",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1330_2026_06_29t22_29_50_704z",
+      "title": "From approval loops to autonomous agents with Docker pt1",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1330_2026_06_20t00_13_39_921z",
+      "title": "The Dirty Secret of Forward Deployed Engineering",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1330_2026_06_14t19_45_26_342z",
+      "title": "The Base Model is Dead",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_2026_06_30_breakout_microsoft_presenting_sponsor_1330",
+      "title": "Modernize CI/CD using agent-assisted workflows that reduce manual debugging",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:30pm-1:50pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1355",
+      "title": "Who Approved That MCP Server? Governing the Tool Layer",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1355",
+      "title": "Voice Agents Are Mostly Invisible. Here's How to See Them.",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1355",
+      "title": "what we learned by analyzing 1M AI generated PRs",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1355",
+      "title": "Deploying browser agents at scale",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1330_2026_06_05t12_53_10_458z",
+      "title": "AI Evals Platform for Cross-Functional Teams at Scale",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1355_2026_06_05t12_59_51_302z",
+      "title": "IT Admin for the AI Workforce: Why Your AI Agents Will Need Their Own IT Department",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1355_2026_06_09t22_55_54_177z",
+      "title": "Self-Improving software factories: The new open source model\"",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1630_2026_06_04t12_15_40_558z",
+      "title": "Claude for long-horizon tasks",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1110_2026_06_05t12_40_19_062z",
+      "title": "The Best Models Still Reason Like Toddlers",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1330_2026_06_10t15_27_42_656z",
+      "title": "Your Agreements Are a Database You Can't Query. We're Fixing That",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1355_2026_06_06t19_52_56_660z",
+      "title": "Everybody Gets a Digital Clone! (Part 2 of 3)",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1045_2026_06_05t15_09_36_006z",
+      "title": "Dual-Surface Architecture: Serving Humans and Agents from the Same Tool Layer",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1355_2026_06_07t19_24_55_540z",
+      "title": "5 Voice Agent Failure Modes You'll Hit in Week One",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1355_2026_06_29t22_30_40_284z",
+      "title": "From approval loops to autonomous agents with Docker pt2",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1355_2026_06_20t00_13_41_491z",
+      "title": "How Forward Deployed Engineering is done at Decagon",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1355_2026_06_04t01_06_42_411z",
+      "title": "Ending AI Slop",
+      "day": "Day 2 — Session Day 1",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1425",
+      "title": "Beyond Golden Signals: Monitoring in the Age of GenAI",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1425_2026_06_12t02_41_23_247z",
+      "title": "Build agents fast with GitHub Copilot (from idea to working app)",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1140",
+      "title": "Building agents is trivial now, context is the next frontier",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1425",
+      "title": "Continuous Engineering: Software Development for the Age of Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1425_2026_06_05t12_53_01_385z",
+      "title": "Productionizing LLM Gateways: Architecture, Tradeoffs, and Hard Lessons from the Trenches",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1425_2026_06_18t08_24_10_976z",
+      "title": "The Era of Compound Engineering",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1425_2026_06_30t02_30_35_907z",
+      "title": "We're the bottleneck, but we don't have to be",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1425_2026_06_05t12_34_51_428z",
+      "title": "From coding to Knowledge work agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1425_2026_06_05t12_40_26_312z",
+      "title": "You’re Not Thinking Big Enough: Rebuilding Food Systems from First Principles with AI Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1330_2026_06_11t06_38_49_318z",
+      "title": "How to Connect AI to Billions of Legal Documents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1425_2026_06_06t19_52_56_996z",
+      "title": "Everybody Gets a Digital Clone! (Part 3 of 3)",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1425_2026_06_23t08_06_58_020z",
+      "title": "Agentic Security: Permissions, Provenance, and the Agent Supply Chain",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1425_2026_06_07t19_24_56_420z",
+      "title": "I Monitored Crime Audio. Voice Agents Scare Me More.",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1425_2026_06_29t22_30_58_945z",
+      "title": "From approval loops to autonomous agents with Docker pt3",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1425_2026_06_20t00_13_43_081z",
+      "title": "How Forward Deployed Engineering is done at Ramp",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1045_2026_06_03t09_29_27_238z",
+      "title": "Scaling to Long-Horizons: Algorithms, Environments, Compute",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_2026_06_30_breakout_microsoft_presenting_sponsor_1425",
+      "title": "Using AI tools to teach old apps new tricks",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:25pm-2:45pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1450",
+      "title": "6 Pillars of an Agentic Harness That Fixes Production Incidents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1450",
+      "title": "Video Discovery for Agentic World-Model Training",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1450",
+      "title": "Self-Driving Production: AI Wrote your Code. AI Should Fix It, Too",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1330_2026_06_05t14_33_19_684z",
+      "title": "From AI-Assisted to AI-Native: Building a Frontier Development Team",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1450_2026_06_05t12_59_42_723z",
+      "title": "How I automate my own job at Hugging Face using agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_0930_2026_06_03t11_49_33_035z",
+      "title": "Notion's Token Town",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1450_2026_06_25t17_50_26_495z",
+      "title": "Your company brain will leak secrets. Here's how we stopped it for big banks and ourselves.",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1450_2026_06_03t11_21_31_137z",
+      "title": "From VLM/VLA's to Embodied Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1355_2026_06_22t14_28_56_883z",
+      "title": "Where RL Will Take Search",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1450_2026_06_08t09_16_33_697z",
+      "title": "Setting Yourself Up for Success — Part 1",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1205_2026_06_03t13_10_21_852z",
+      "title": "It's 10pm. Do You Know Where Your Agents Are?",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1205_2026_06_07t19_24_54_688z",
+      "title": "Realtime Voice Agents with Frontier Intelligence",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1450_2026_06_29t22_31_08_962z",
+      "title": "From approval loops to autonomous agents with Docker pt4",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1450_2026_06_20t00_13_44_685z",
+      "title": "Forward Deployed Engineering 101",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1425_2026_06_05t12_59_46_758z",
+      "title": "When Will The Benchmaxxing Plague End?",
+      "day": "Day 2 — Session Day 1",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1425_2026_06_29t21_54_09_207z",
+      "title": "Can Your Agent Hear You Now?",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1520",
+      "title": "From Context to Memory: Your Agents Need a Real Memory Layer",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1520",
+      "title": "Running a 20T-Token Data Pipeline: Infrastructure Lessons from Production",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1520",
+      "title": "From raw documents to AI-ready data",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_01_1520_2026_06_05t12_51_15_895z",
+      "title": "How to Get Your Org to Adopt Coding Agents (Without Shipping Garbage)",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1330_2026_06_05t12_59_38_718z",
+      "title": "Your Fine-Tuned Model Is Tech Debt: A 50x ROI House of Cards",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1520_2026_06_14t18_20_36_224z",
+      "title": "fighting slop with slop",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_01_1330_2026_06_05t12_34_59_511z",
+      "title": "Every Harness Will Become A Claw",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Claws & Personal Agents"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_02_1355_2026_06_05t12_40_22_343z",
+      "title": "From Scratch to SOTA: Training a 3B State-Space Vision Model for 1.4 Billion People",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Vision & OCR"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1205_2026_06_05t12_43_18_344z",
+      "title": "Stop Chunking Like It's 2022",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Search & Retrieval"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1520_2026_06_08t09_16_34_084z",
+      "title": "Setting Yourself Up for Success — Part 2",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1330_2026_06_15t13_12_31_834z",
+      "title": "AI’s Jurassic Park Period",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1520_2026_06_08t00_13_58_655z",
+      "title": "\"My name is... my name is...\": A Linguistic Map for Building and Debugging Voice Agents",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_07_1520_2026_06_29t22_32_10_007z",
+      "title": "From approval loops to autonomous agents with Docker pt5",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "LLM Recsys"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_08_1520_2026_06_22t05_37_37_625z",
+      "title": "How Forward Deployed Engineering is done at Kepler",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Forward Deployed Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1140_2026_06_11t05_45_25_879z",
+      "title": "Building Worlds for Models",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_2026_06_30_breakout_microsoft_presenting_sponsor_1520",
+      "title": "Surviving Your Own Velocity: How VS Code Ships Weekly with 40 People",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:20pm-3:40pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1545",
+      "title": "How We Built the Airbyte Agent MCP Server and CLI",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": "Expo Stage 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_02_1545",
+      "title": "From Chatbots to Agents: How Reducto builds for Agent Experience to Enable Real Work",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_03_1545",
+      "title": "Towards Reliable Financial Agents: How a 4B Model Outsmarted a 235B Giant",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_04_1545",
+      "title": "AI Enablement at Automattic: How a Remote Company Builds AI Fluency",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1545_2026_06_11t08_11_24_152z",
+      "title": "Unlock Agent Autonomy: The Runtime for AI-Native Systems",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Show my Workflow"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1545_2026_06_23t10_10_38_051z",
+      "title": "Loop Engineering from first principles",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_0950_2026_06_04t16_29_47_780z",
+      "title": "Gadgets: Personal app vibe coding that is actually safe",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1545_2026_06_08t09_16_34_470z",
+      "title": "Setting Yourself Up for Success — Part 3",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_05_1545_2026_06_27t02_22_04_324z",
+      "title": "Secure Cloud Compute",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Security"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_06_1545_2026_06_08t00_18_40_850z",
+      "title": "Act, Confirm, or Stop? Smarter behavior for AI assistants, wearables & robots",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Voice & Realtime AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1520_2026_06_11t05_45_28_297z",
+      "title": "Data and Environment Curation for Post-training LLMs",
+      "day": "Day 2 — Session Day 1",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1450_2026_06_11t04_22_24_160z",
+      "title": "Harness Engineering is not Enough: Why Software Factories Fail",
+      "day": "Day 2 — Session Day 1",
+      "time": "4:30pm-4:50pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_0900_2026_06_04t12_24_42_870z",
+      "title": "In Code They Act, In Proof We Trust",
+      "day": "Day 2 — Session Day 1",
+      "time": "4:50pm-5:10pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1450_2026_06_18t18_28_08_450z",
+      "title": "Recursive Model Improvement",
+      "day": "Day 2 — Session Day 1",
+      "time": "5:10pm-5:30pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_0900_2026_06_09t19_26_48_493z",
+      "title": "The Highest Loop",
+      "day": "Day 2 — Session Day 1",
+      "time": "9:00am-9:05am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_0910_2026_06_09t20_16_03_148z",
+      "title": "On AI and Knowledge",
+      "day": "Day 2 — Session Day 1",
+      "time": "9:05am-9:25am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_0930_2026_06_13t02_44_22_994z",
+      "title": "The Golden Age of AI Engineering",
+      "day": "Day 2 — Session Day 1",
+      "time": "9:25am-9:45am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1010_2026_06_18t10_40_22_580z",
+      "title": "GLM-5.2: Frontier Intelligence, Open Weights.",
+      "day": "Day 2 — Session Day 1",
+      "time": "9:45am-10:05am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1010_2026_06_19t21_58_46_011z",
+      "title": "Research to Reality with Google DeepMind",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:05am-10:25am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1025_2026_06_25t09_02_28_031z",
+      "title": "Evals Track Intro",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:25am-10:30am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1045_2026_06_12t00_34_10_909z",
+      "title": "AI Engineering & Governance 2026 Trends",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1045_2026_06_12t00_34_12_435z",
+      "title": "Why AI Didn't Actually Make You Ship Faster",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_04_1045_2026_06_12t00_34_13_332z",
+      "title": "Redesigning how software gets built",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": "Expo Stage 4"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1045_2026_06_11t04_43_41_203z",
+      "title": "How do you diffuse AI into the real world?",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1110_2026_06_05t14_14_13_475z",
+      "title": "The Z/L Continuum: Should AI Engineers Still Read Code?",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1045_2026_06_13t06_10_40_547z",
+      "title": "First Steps Toward Automated AI Research",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1045_2026_06_22t19_07_38_134z",
+      "title": "Don’t build agents, build environments",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1140_2026_06_04t13_29_24_357z",
+      "title": "Building the simulation infrastructure for practical world model use",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1355_2026_06_03t12_59_38_161z",
+      "title": "Beyond Static Intelligence: Evaluating Continual Learning",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1450_2026_06_03t12_02_29_056z",
+      "title": "Build realtime multimodal agents with Gemini Live",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1045_2026_06_03t09_57_18_266z",
+      "title": "Vending-Bench: Long-Horizon Agent Evals for a Simulated Vending Business",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1545_2026_06_03t11_33_40_915z",
+      "title": "Understanding is the new bottleneck",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1330_2026_06_11t04_41_40_971z",
+      "title": "Computer-use models will agentify the web, not APIs",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1140_2026_06_04t11_51_41_115z",
+      "title": "Build-Time vs. Run-Time: Why Your Dev Tools Will Fail in Production",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1330_2026_06_08t03_16_14_313z",
+      "title": "What's next after RLHF?",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_2026_07_01_breakout_microsoft_presenting_sponsor_1045",
+      "title": "From framework to runtime: running agents with Foundry Agent Service",
+      "day": "Day 3 — Session Day 2",
+      "time": "10:45am-11:05am",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_2026_07_01_leadership_lounge_1100",
+      "title": "Tokenomics: From AI Spend to AI Value",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:00am-12:00pm",
+      "room": "Leadership Lounge",
+      "type": "session",
+      "track": "CTO Circle"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1520_2026_06_12t01_48_13_580z",
+      "title": "Harnessing Agents: The Durable Runtime for Dynamic Workflows",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1110_2026_06_12t00_34_14_202z",
+      "title": "AI-Assisted Engineering: 5 Trends We're Seeing From 500+ Organizations",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1110_2026_06_12t00_34_15_021z",
+      "title": "The Death of Keyword Search and the Rise of Agent-Readable Catalogs",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_04_1110_2026_06_12t00_34_16_045z",
+      "title": "FDE Playbook: Build an AI Support Agent and Give It a Voice",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": "Expo Stage 4"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1110_2026_06_05t13_56_10_658z",
+      "title": "How to avoid disaster when vibe-coding a billing engine",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_02_1330_2026_06_11t07_52_51_559z",
+      "title": "Is Orchestration the Future?",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1520_2026_06_22t14_21_25_611z",
+      "title": "Autoresearch for Dense Retrieval: Test-Time Compute with Frozen Embedding Models",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1110_2026_06_13t06_34_39_848z",
+      "title": "Letting the Interns Loose — How We Accelerated AI Adoption.",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1110_2026_06_04t13_33_19_844z",
+      "title": "Building the simulation infrastructure for practical world model use (Part 2)",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1110_2026_06_05t13_31_20_903z",
+      "title": "Scaling up Continual Learning",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1520_2026_06_03t12_03_26_484z",
+      "title": "Build realtime multimodal agents with Gemini Live (continued 2)",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1110_2026_06_18t08_10_22_903z",
+      "title": "From Signal to PR: Anatomy of a Self-Improving Agent",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1110_2026_06_05t13_40_02_009z",
+      "title": "The Spatial Harness: Bringing Agents to the Canvas",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1045_2026_06_08t03_31_05_816z",
+      "title": "Computer Use at the Edge of the Statistical Precipice",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1205_2026_06_05t13_34_00_779z",
+      "title": "It’s Tokens All The Way Down: How RLMs are Different",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_09_1045_2026_06_11t05_20_35_573z",
+      "title": "State of Data",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:10am-11:30am",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1140",
+      "title": "Fault-Tolerant Training at Scale: Making Hardware Failures a Non-Event",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1140",
+      "title": "How to generate mergeable code with a context engine",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1545_2026_06_12t01_48_00_922z",
+      "title": "AI agents don't read your policy docs. They hit your APIs.",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_29_workshop_track_06_1630_2026_06_23t07_46_58_618z",
+      "title": "Your Code Has Bugs. Lean4 Has Proofs. A Practical Guide to Formal Verification for Engineers",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1140_2026_06_05t14_14_19_870z",
+      "title": "How to Kill the Code Review",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1205_2026_06_15t11_47_11_620z",
+      "title": "Memory Harnesses for Long-Running Research Agents",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1110_2026_06_03t11_04_15_520z",
+      "title": "Kubernetes Is Not Your Sandbox",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1140_2026_06_12t06_26_42_837z",
+      "title": "Commercial Grade-Robots for Real World Usage",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1140_2026_06_03t10_10_52_493z",
+      "title": "Scaling Compute on Context",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1545_2026_06_03t12_03_27_297z",
+      "title": "Build realtime multimodal agents with Gemini Live (continued 3)",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1140_2026_06_25t00_49_59_757z",
+      "title": "Building Closed-Loop Evals for a Multimodal Agent at Uber Scale",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1140_2026_06_05t13_40_09_719z",
+      "title": "The Design-Code Roundtrip That Isn't",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1450_2026_06_11t07_58_24_801z",
+      "title": "Bringing agents onto the world wide web",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1425_2026_06_05t13_34_11_829z",
+      "title": "500 Skills, Zero Fine-Tuning: LinkedIn's Playbook for AI Agents That Actually Know Your Codebase",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1355_2026_06_11t05_45_27_853z",
+      "title": "Training Frontier Models to Out-Think Hackers",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Data Quality"
+    },
+    {
+      "sessionId": "asn_2026_07_01_breakout_microsoft_presenting_sponsor_1140",
+      "title": "OpenAI, Anthropic, or agent frameworks: choose the right AI stack",
+      "day": "Day 3 — Session Day 2",
+      "time": "11:40am-12:00pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1205",
+      "title": "Your agent architecture has a half-life of 6 months",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1205_2026_06_12t01_48_07_445z",
+      "title": "From Stateless to Stateful: Orchestrating Real-Time Voice & Messaging Agents with Twilio and Amazon Bedrock",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1355",
+      "title": "Harnessing Collective Agent Intelligence for Open Science",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1045",
+      "title": "Prompt, Memory, Weights: The Architecture Decisions Most AI Teams Make by Accident",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1045_2026_06_05t12_55_46_791z",
+      "title": "AI-Native Organisations runs on Skills: How to Extract, Structure, evaluate and Scale Them",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1205_2026_06_15t09_56_14_395z",
+      "title": "The Death of the Code Review",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_0900_2026_06_08t03_48_01_126z",
+      "title": "« the era of (auto) research »",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1205_2026_06_05t13_26_47_982z",
+      "title": "Your agent needs a sandbox, not a desert",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1330_2026_06_03t10_12_59_308z",
+      "title": "Intelligence + Continual Learning = Expertise",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_04_1205_2026_06_15t09_32_03_198z",
+      "title": "Build realtime multimodal agents with Gemini Live (continued 4)",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1205_2026_06_25t09_34_51_457z",
+      "title": "From Agent Traces to Agent Simulations: The next era of agent evaluation",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1205_2026_06_05t13_40_08_218z",
+      "title": "Mousepower: agents that can’t be measured, can’t be managed.",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1110_2026_06_08t03_44_26_973z",
+      "title": "The Dark Arts of Web Automation: Teaching Agents to Use Websites Like Humans",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1330_2026_06_11t07_26_51_469z",
+      "title": "Your agents lack context: Here's how to fix \"You're absolutely right!\"",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1205_2026_06_03t09_44_36_587z",
+      "title": "Learning on the job: the future of post-training",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1230_2026_06_08t09_35_43_039z",
+      "title": "This Year in Claude",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:30pm-1:30pm",
+      "room": "Expo Stage 2 NW",
+      "type": "plenary",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1230_2026_06_19t17_12_23_462z",
+      "title": "SOTA Generative Media Panel",
+      "day": "Day 3 — Session Day 2",
+      "time": "12:30pm-1:30pm",
+      "room": "Main Stage",
+      "type": "plenary",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1330",
+      "title": "Surviving Your Own Velocity: How VS Code Ships Weekly with 40 People",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1330_2026_06_29t21_54_09_713z",
+      "title": "Why Agents Should Have Their Own Sandbox",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1045_2026_06_03t13_00_52_766z",
+      "title": "The Half Life of Agent Infrastructure",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1330_2026_06_05t14_14_29_415z",
+      "title": "Tokenmaxxing is the New \"Lines of Code\"",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1425_2026_06_10t15_57_34_716z",
+      "title": "Closing the Loop: An Autonomous AI Research Agent",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1110_2026_06_03t10_59_57_228z",
+      "title": "From fork() to Fleet: Designing an Agent Sandbox Cloud Pt 1",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1330_2026_06_05t13_28_15_507z",
+      "title": "Unitree: Building Mass Produced Humanoids",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1045_2026_06_03t10_10_50_145z",
+      "title": "Adaption Labs — Gradient-Free Continual Learning",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1330_2026_06_03t11_53_13_237z",
+      "title": "The Agentic Power User's Playbook: Tips and Tricks for Swarm-Style Agentic Development",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1330_2026_06_17t05_40_43_398z",
+      "title": "Model Whisperers: How Evals and Prompts Shape Agent Behavior",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1425_2026_06_08t11_00_23_381z",
+      "title": "Design at the Speed of Adjectives",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1330_2026_06_11t07_38_53_842z",
+      "title": "From RL to IRL",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1330_2026_06_25t09_31_17_376z",
+      "title": "How long can your skills be before your agent forgets what you told it?",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1045_2026_06_03t08_53_04_716z",
+      "title": "Reinforcement Learning without Verifiable Rewards",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1045_2026_06_12t00_34_17_084z",
+      "title": "Edge-Native AI: Building Ultra-Fast Agents and MCP Servers with Spin",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1355_2026_06_12t01_48_01_968z",
+      "title": "Why your company needs a context graph, and how to build it",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1355_2026_06_12t01_48_13_297z",
+      "title": "Warp: Building Self-Improving Agent Software Factories",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_04_1355_2026_06_12t01_48_08_709z",
+      "title": "Natively Multimodal from Step Zero",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1355_2026_06_05t13_56_41_463z",
+      "title": "Guardians of the State: How We Built an Air-Gapped AI Fortress for Consumer Data",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1355_2026_06_05t14_15_03_051z",
+      "title": "Engineering Agency out of the Happy Path",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1140_2026_06_07t18_45_30_022z",
+      "title": "An AI Agent Became the #1 Contributor in OpenAI's Hiring Challenge",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1205_2026_06_03t11_00_49_534z",
+      "title": "From fork() to Fleet: Designing an Agent Sandbox Cloud Pt2",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1330_2026_06_12t20_34_30_090z",
+      "title": "Frontier Robotics Research",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1330_2026_06_11t06_33_38_179z",
+      "title": "Improving Agents is a Data Mining Problem",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1355_2026_06_03t11_53_14_337z",
+      "title": "The Agentic Power User's Playbook: Tips and Tricks for Swarm-Style Agentic Development (continued 2)",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1355_2026_06_17t05_41_37_060z",
+      "title": "Evaling Video Slop",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1450_2026_06_05t20_31_09_640z",
+      "title": "Training Taste",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1425",
+      "title": "The Rise of CaaS: Context-as-a-Service for Agentic AI",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1330_2026_06_05t13_34_07_239z",
+      "title": "WTF Is the Context Layer? The Missing Infrastructure for Production Agents",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1545_2026_06_11t05_45_28_755z",
+      "title": "Emulated: The data for fully autonomous software engineers and companies",
+      "day": "Day 3 — Session Day 2",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1425_2026_06_26t06_07_52_016z",
+      "title": "Power agents with Microsoft IQ",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": "Expo Stage 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1425",
+      "title": "Beyond Code Generation: API Context for Agentic Engineering",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1545_2026_06_12t01_48_15_603z",
+      "title": "Latency Is a Budget. Humanlike Is the Goal.",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_expo_stage_01_1140",
+      "title": "Your Stack Has a Latency Problem You Can’t See",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1425_2026_06_15t12_21_55_266z",
+      "title": "From Tokenmaxxing to Trusted Throughput",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1205_2026_06_05t14_14_27_299z",
+      "title": "I Let Agents Refactor My Codebase for 3 Weeks. Then I Read the Code.",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_0900_2026_06_03t09_49_39_605z",
+      "title": "Self-Improvement of Context, Harness, and Model Weights through Reflective Optimization",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1425_2026_06_11t04_39_49_741z",
+      "title": "1,000 Agent Tasks in a Sandbox: What Breaks When LLMs Write and Run Code",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1330_2026_06_05t13_27_42_610z",
+      "title": "From Manual Drones to Autonomous Multi-Agent Missions",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1045_2026_06_03t09_44_26_941z",
+      "title": "Bringing Continual Learning into Enterprises",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_04_1425_2026_06_03t11_53_15_367z",
+      "title": "The Agentic Power User's Playbook: Tips and Tricks for Swarm-Style Agentic Development (continued 3)",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_breakout_track_03_1330_2026_06_05t12_43_23_011z",
+      "title": "Ask YouTube — Open Q&A",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1425_2026_06_25t08_32_22_260z",
+      "title": "Imagination Engineering",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1330_2026_06_07t20_47_33_334z",
+      "title": "Computer-Use 2.0: Agents Just Got Multi-Cursor",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1045_2026_06_11t05_02_54_083z",
+      "title": "MCP Apps - Extending the frontier",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1330_2026_06_11t05_45_26_654z",
+      "title": "LatchBio",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_2026_07_01_breakout_microsoft_presenting_sponsor_1425",
+      "title": "Power agents with Microsoft IQ",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:25pm-2:45pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1450",
+      "title": "Inference performance as a competitive advantage",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1450",
+      "title": "Building an Agent Harness for the Business, Not the Builder",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1450_2026_06_12t01_48_02_735z",
+      "title": "The Frontier Is Coming Home",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1450_2026_06_12t01_48_10_791z",
+      "title": "Continuous Offensive Security the only approach in an agent-first world",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1330_2026_06_05t13_56_37_973z",
+      "title": "Agents Are Where Microservices Were in 2015. We're Making All the Same Mistakes.",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1425_2026_06_05t13_26_51_110z",
+      "title": "Intelligent Model Routing: Frontier Performance Without Frontier Bills",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1355_2026_06_05t13_43_08_694z",
+      "title": "Autoresearch for Kernels",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1450_2026_06_15t12_54_33_192z",
+      "title": "The Next Trillion Users of the Internet Still Don't Have an Identity",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1330_2026_06_11t19_15_36_721z",
+      "title": "Why Large? Tiny LMs & Agents on Edge/Robotics",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1425_2026_06_23t08_41_06_130z",
+      "title": "Designing Agents (The Floor Is the Frontier)",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_04_1450_2026_06_08t03_26_56_627z",
+      "title": "Don't Write Skills, Train Models",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1330_2026_06_05t12_30_25_611z",
+      "title": "Evals Driven-Development: Engineering a Mental Health AI Coach Ethically & Safely",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_unscheduled_2026_06_05t13_40_03_593z",
+      "title": "The Missing Layer: Design Taste in AI Agents // Stop Letting Your Agents Ship Ugly UIs",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1520_2026_06_17t05_42_18_877z",
+      "title": "Will AI predict people like we predict the weather? (alternate title “A field guide to synthetic personas for market research”)",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1110_2026_06_11t05_02_54_910z",
+      "title": "MCP Apps: Give the Model Data, Give the User a UI",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1450",
+      "title": "Agents at Scale: Inside MiniMax's Model and the Infrastructure Behind It",
+      "day": "Day 3 — Session Day 2",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1520",
+      "title": "The Self-Improving OSS Agent Stack",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1110",
+      "title": "AI Applications in a flash! No Dev Ops. Just code.",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1520_2026_06_12t01_48_03_759z",
+      "title": "The Infinite Context Window Is a Myth: Context Engineering for AI Agents",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_04_1520_2026_06_12t01_48_12_152z",
+      "title": "Vibe Code Safely: Introducing Gadgets",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_01_1140_2026_06_05t13_56_26_270z",
+      "title": "Agentic Sites: Building Hyper Personalized Websites",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1425_2026_06_05t13_43_11_549z",
+      "title": "Inference is the New Training Loop: Architecting High-Reliability Agents and Continuous AI Systems",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1140_2026_06_08t03_48_01_899z",
+      "title": "Autoresearch in the wild",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1140_2026_06_05t13_26_39_017z",
+      "title": "Sandboxes Aren't Optional: Runtime Isolation Patterns for Coding Agents at Scale",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1355_2026_06_05t13_27_46_872z",
+      "title": "From Self-Driving Monorepo to Self-Driving Cars",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1110_2026_06_03t10_10_51_533z",
+      "title": "Lessons from Studying Every Memory System",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_04_1520_2026_06_08t03_26_57_023z",
+      "title": "Don't Write Skills, Train Models (cont. 2/3)",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1545_2026_06_26t08_57_00_975z",
+      "title": "Don't Ship Skills Without Evals",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1520_2026_06_05t13_41_41_325z",
+      "title": "Generative UI... in Python?",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_07_1520_2026_06_11t08_30_03_303z",
+      "title": "How Web Data Infrastructure Powers the Next Generation of AI",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "Computer Use"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1140_2026_06_11t05_02_56_716z",
+      "title": "MCP Tasks (async)/ Why the heck aren't any agents supporting MCP tasks/async?",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_09_1520_2026_06_24t12_17_04_182z",
+      "title": "Benchmarks: The Good, the Bad, and the Ugly",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Posttraining & Midtraining"
+    },
+    {
+      "sessionId": "asn_2026_07_01_breakout_microsoft_presenting_sponsor_1520",
+      "title": "Deploy agents to users in M365, Teams, and apps",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:20pm-3:40pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1545",
+      "title": "Modular: Taming the AI Hardware Cambrian Explosion",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_02_1545",
+      "title": "Building on the Codex Harness",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1545_2026_06_12t01_48_06_964z",
+      "title": "Stop Renting Intelligence: The Train-to-Deploy Loop for Specialized AI",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_04_1545_2026_06_12t01_48_04_893z",
+      "title": "Ray Actors, Vision Tokens, and the GIL: Engineering an SFT Data Pipeline That Keeps GPUs Busy",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1045_2026_06_05t14_14_05_159z",
+      "title": "The Chief AI Officer: A framework for the emerging Swiss Army Knife of roles",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1545_2026_06_11t07_50_11_226z",
+      "title": "The state of AI in software development: Insights across 400+ organizations",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: Tokenmaxxing"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1330_2026_06_09t23_25_53_097z",
+      "title": "Autoresearch in a Multi-Agent AI Village",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_01_1545_2026_06_23t08_31_56_905z",
+      "title": "Building ambitious software",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Sandbox & Platform Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1330_2026_06_08t10_21_26_749z",
+      "title": "I gave an AI a body",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Robotics & World Models"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_03_1330_2026_06_05t13_31_26_599z",
+      "title": "LLM Knowledge Bases: a practical guide",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "Memory & Continual Learning"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_04_1545_2026_06_08t03_26_57_397z",
+      "title": "Don't Write Skills, Train Models (cont. 3/3)",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Workshops Day 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_05_1520_2026_06_27t23_27_42_434z",
+      "title": "Everything Is a Rollout",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Evals"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_06_1545_2026_06_11t20_29_26_781z",
+      "title": "One Designer + Al. Hundreds of Deliverables.",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "Design Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_08_1330_2026_06_08t03_53_38_712z",
+      "title": "The Universal Remote Control for AI",
+      "day": "Day 3 — Session Day 2",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Context Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1630_2026_06_24t19_44_50_508z",
+      "title": "Closing Keynote",
+      "day": "Day 3 — Session Day 2",
+      "time": "4:30pm-4:50pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1650_2026_06_25t07_28_22_389z",
+      "title": "Trends in AI",
+      "day": "Day 3 — Session Day 2",
+      "time": "4:50pm-5:10pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_1710_2026_06_25t23_38_40_379z",
+      "title": "Closing Keynote",
+      "day": "Day 3 — Session Day 2",
+      "time": "5:10pm-5:30pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_0910_2026_06_18t10_34_19_797z",
+      "title": "Field Guide to Fable",
+      "day": "Day 3 — Session Day 2",
+      "time": "9:05am-9:25am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1010_2026_06_09t20_29_18_622z",
+      "title": "In the Land of AI Agents, the Verifiers Are King",
+      "day": "Day 3 — Session Day 2",
+      "time": "9:25am-9:45am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_0950_2026_06_08t10_14_44_229z",
+      "title": "Perception Agents",
+      "day": "Day 3 — Session Day 2",
+      "time": "9:45am-10:05am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Autoresearch"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_0930_2026_06_08t10_02_35_056z",
+      "title": "How Anthropic Builds: Lessons from Labs",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:00am-10:20am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1025_2026_06_25t09_02_28_031z",
+      "title": "Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:20am-10:30am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1045_2026_06_12t00_34_11_698z",
+      "title": "AI Engineering & Governance 2026 Trends",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": "Expo Stage 1"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_01_1355",
+      "title": "Your Agent Can't Tell If It's Right",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1045_2026_06_12t00_34_18_751z",
+      "title": "No, That's Not a Software Factory",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1045_2026_06_12t01_48_08_238z",
+      "title": "Vector Isn't Enough: Hybrid Search & Retrieval for AI Engineers",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1545_2026_06_05t14_59_37_943z",
+      "title": "Building safe payment infrastructure for machine-to-machine commerce",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_02_1425_2026_06_05t12_05_16_657z",
+      "title": "The Agent Behind the Curtain: Building the Oz Cloud Agent Platform",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_0900_2026_06_05t14_17_19_767z",
+      "title": "Tokens Should Have Jobs",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1045_2026_06_27t23_16_10_734z",
+      "title": "Training Krea 2 - What matters in generative model training.",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1205_2026_06_08t02_27_10_906z",
+      "title": "Designing Multimodal Collaborative Agents for Next-Gen Commerce",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1330_2026_06_06t22_10_44_155z",
+      "title": "ALPHALAB: Autonomous Multi-Agent Research Across Optimization Domains with Frontier LLMs",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1045",
+      "title": "State of the Union: Why Local, Why Now",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1045_2026_06_11t09_06_59_483z",
+      "title": "CrabRAG: Why Automated Assistants Need Graph Memory, Not More Tokens",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1140_2026_06_03t13_09_28_773z",
+      "title": "GTM Engineering: The Technical Bits",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1140_2026_06_07t01_31_22_582z",
+      "title": "From Ambient Documentation to Clinical Intelligence",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1110_2026_06_03t12_55_26_308z",
+      "title": "DeepSWE: expert code datasets",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1140_2026_06_05t23_45_22_170z",
+      "title": "Operating Distributed Inference Systems at Scale",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_02_breakout_microsoft_presenting_sponsor_1045",
+      "title": "Diagnosing agent failures in production",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-11:05am",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_2026_07_02_startup_battlefield_main",
+      "title": "$100,000 AIE Startup Battlefield — presented by Hyperagent",
+      "day": "Day 4 — Session Day 3",
+      "time": "10:45am-1:00pm",
+      "room": "Networking Room",
+      "type": "session",
+      "track": "Startup Battlefield"
+    },
+    {
+      "sessionId": "asn_2026_07_02_leadership_lounge_1100",
+      "title": "The Agentic Product Development Organization",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:00am-12:00pm",
+      "room": "Leadership Lounge",
+      "type": "session",
+      "track": "CTO Circle"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1110_2026_06_12t01_48_03_228z",
+      "title": "Beyond RAG: See a relational context engine reduce token burn",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1110_2026_06_30t20_04_32_137z",
+      "title": "ARIA, how we built autoresearch with autoresearch",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1110_2026_06_12t01_48_06_740z",
+      "title": "The Lethal Trifecta Is Already on Your Developers' Laptops",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1110_2026_06_12t01_48_02_284z",
+      "title": "Your AI Agent Has No Nervous System",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1110_2026_06_15t12_34_24_414z",
+      "title": "Tribal Dungeons of Global Shipping: AI Agents at Global Scale",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1425_2026_06_09t23_27_41_192z",
+      "title": "FinOps for AI Agents: Who Spent All the Tokens?",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1330_2026_06_11t06_26_57_559z",
+      "title": "MCPs, CLIs, and Skills: Choosing the Right Tooling Layer for Agentic Development",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1110_2026_06_03t10_58_06_236z",
+      "title": "HTML Is All Agents Need",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1110_2026_06_11t08_05_51_252z",
+      "title": "Why Your AI Agent Needs a Wallet: Agentic commerce on Arc with USDC and Nanopayments",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1330_2026_06_18t08_02_10_957z",
+      "title": "Why Off-the-Shelf AI Doesn't Understand Money",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1110",
+      "title": "State of the Union: Why Local, Why Now",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1110_2026_06_11t09_08_50_868z",
+      "title": "Active Graph Agent Runtime (BabyAGI 4)",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1205_2026_06_09t15_21_50_558z",
+      "title": "Reverse-Engineering the AI Buyer",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1110_2026_06_08t01_21_54_467z",
+      "title": "Guardrails First: Engineering Member-Facing Health AI",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1110_2026_06_11t09_24_08_461z",
+      "title": "Anthropic's CCA Exam as a Field-Guide for Agentic Engineering",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1520_2026_06_04t12_45_56_908z",
+      "title": "Routing LLM Inference in Production: From Engine Signals to Policy",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_02_breakout_microsoft_presenting_sponsor_1110",
+      "title": "Tracing and debugging agents across systems with OpenTelemetry",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:10am-11:30am",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1140_2026_06_12t01_48_01_733z",
+      "title": "The Art of Building Verifiers for Computer Use Agents",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1140_2026_06_12t01_48_06_262z",
+      "title": "Seeing the Plumbing: Profiling vLLM Speculative Decoding on NVIDIA Blackwell",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1140_2026_06_12t01_48_03_443z",
+      "title": "Voice is the universal interface",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1140_2026_06_12t01_48_06_021z",
+      "title": "The Next Run Should Be Better",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1425_2026_06_03t11_12_20_050z",
+      "title": "All the Things We Have to Do to Satisfy Your Insatiable Need for Tokens",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_leadership_track_02_1110_2026_06_05t12_59_13_337z",
+      "title": "What If Your Chip Design Team Moved Like a Single Body?",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1045_2026_06_11t07_11_06_613z",
+      "title": "Auth for Agents: Unblock Autonomous AI with auth.md",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1205_2026_06_03t12_56_47_727z",
+      "title": "Building an Agentic Video Editor for Mass Consumer",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1140_2026_06_08t02_34_04_630z",
+      "title": "When AI Agents Pay and Sellers Monetize: Building x402 Apps for Agentic Commerce on AWS",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1205_2026_06_08t02_20_48_498z",
+      "title": "Let's integrate AI Agents in Event-Sourced Systems",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1140",
+      "title": "Demo: GLM 5.2 on DGX Station — Frontier Intelligence Under Your Desk",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1140_2026_06_11t09_10_26_353z",
+      "title": "Your Moat Is Your Data Model",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1140_2026_06_16t05_01_23_825z",
+      "title": "AI in GTM at Notion",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1140_2026_06_18t08_43_56_426z",
+      "title": "Shipping AI to a Million Patients Without an A/B Test",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1110_2026_06_11t08_47_19_542z",
+      "title": "Guide, Verify, Solve: The Engineering Discipline Agentic Development Demands",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1140_2026_06_05t23_47_55_354z",
+      "title": "Are LLM Performance Benchmarks Reliable?",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_02_breakout_microsoft_presenting_sponsor_1140",
+      "title": "Benchmarking VS Code with VSC-Bench: How to measure agent performance",
+      "day": "Day 4 — Session Day 3",
+      "time": "11:40am-12:00pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1205_2026_06_12t01_48_05_781z",
+      "title": "The Missing Layer in Agentic AI",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1140_2026_06_12t01_48_00_605z",
+      "title": "While You Were Generating: The Verification Gap Nobody Talked About",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1205_2026_06_12t01_48_13_072z",
+      "title": "Move fast and (don’t) break things",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1205_2026_06_12t01_48_07_665z",
+      "title": "Agents That Forge Their Own Tools: Self-Modifying AI in the Wild",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1520",
+      "title": "Stop Model Shopping: Why Ownership Beats Choice in the Agent Stack",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_02_1205_2026_06_11t08_09_55_323z",
+      "title": "Preferences > Benchmarks: Model Routing for How Teams Actually Build",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1330_2026_06_11t09_03_26_579z",
+      "title": "Harness Engineering: Building the Production Cage for Powerful Domain Agents",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1520_2026_06_08t02_59_23_424z",
+      "title": "The Next Game Engine Won't Have a Manual",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1205_2026_06_08t02_36_14_392z",
+      "title": "x402 isn’t good (yet)",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1450_2026_06_22t05_39_49_886z",
+      "title": "How Kepler Built Verifiable AI for Financial Services",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1205",
+      "title": "Local AI Demos",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1140_2026_06_11t09_12_03_097z",
+      "title": "From Systems of Record to Systems of Context",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1425_2026_06_03t13_09_24_539z",
+      "title": "The Building Blocks of GTM Orchestration",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1110_2026_06_08t00_37_41_606z",
+      "title": "200 Million Patient Interactions Later: What the Generic Voice Stack Misses",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1205_2026_06_17t04_56_38_163z",
+      "title": "Benchmarking Coding Agents on New vs Legacy Code bases",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1425_2026_06_05t12_15_25_963z",
+      "title": "Vertical Mobility: Building an AI Inference Platform That Scales from MVP to Trillion-Parameter Workloads",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_01_breakout_microsoft_presenting_sponsor_1330",
+      "title": "Design multi-agent systems that actually work",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:05pm-12:25pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_2026_07_02_expo_stage_02_1230",
+      "title": "Latent Space Live: the Inference Inflection from First Principles",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:30pm-1:30pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1230_2026_06_24t22_27_43_481z",
+      "title": "The Great Loops Debate",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:30pm-1:30pm",
+      "room": "Main Stage",
+      "type": "plenary",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1330",
+      "title": "Trust, But Verify: Human-in-the-Loop for Agents That Actually Matter",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1330_2026_06_12t01_48_07_190z",
+      "title": "YOLO Mode, Safely: microVM Sandboxes for Any Agent",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1330_2026_06_12t01_48_05_195z",
+      "title": "Your Model is Private. Your System Isn't.",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1330_2026_06_12t01_48_09_202z",
+      "title": "Video Discovery for Agentic World-Model Training",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1330_2026_06_15t12_36_00_930z",
+      "title": "From Zero to AI-Native: Scaling AI Across the Org",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_02_1330_2026_06_18t08_31_13_445z",
+      "title": "Coding Agents Don't Scale Themselves. Neither Do Your Teams.The Rise of Agent Enablement.",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1330_2026_06_08t03_05_49_658z",
+      "title": "Loophole - Adversarial Agents To Stress Test Your Morality",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1140_2026_06_08t02_53_39_910z",
+      "title": "While my guitar gently speaks",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1330_2026_06_05t14_59_45_736z",
+      "title": "Agent Spending Without Controls: The Missing Infrastructure Layer for AI Pa…",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1110_2026_06_08t02_10_14_930z",
+      "title": "Build for the Memo, Not the Demo — Notes from 200 Investment Committees",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1330",
+      "title": "Local Models: Trust, Control, Optimization",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1330_2026_06_11t09_15_30_548z",
+      "title": "AI : Learned Execution Graphs for Real-Time Anomaly Detection & Drift Classification in APIs",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1330_2026_06_03t13_09_27_149z",
+      "title": "How Juries and Librarians Can Solve GTM's AI Trust Problem",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1520_2026_06_08t01_26_46_716z",
+      "title": "Al is becoming the World's largest Relationship Therapist. We Can't Afford to Get it Wrong.",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_08_1330_2026_06_22t14_49_12_345z",
+      "title": "Codex, Behind the Harness",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1330_2026_06_18t12_09_37_199z",
+      "title": "What's New in Inference Engineering",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_02_breakout_microsoft_presenting_sponsor_1330",
+      "title": "Evaluating and optimizing AI agents: from observability to continuous improvement",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:30pm-1:50pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_expo_stage_03_1205_2026_06_12t01_48_10_583z",
+      "title": "MCP doesn’t suck — your agent does",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1355_2026_06_12t01_48_10_058z",
+      "title": "Everyone talks about document search, but what about results?",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1330_2026_06_05t12_01_42_698z",
+      "title": "Which AI startups actually land enterprise contracts? Lessons from evaluating 100+ AI startups at Millennium Management",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1450_2026_06_05t14_41_19_019z",
+      "title": "Agent Frameworks Considered Harmful",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1355_2026_06_05t14_41_17_671z",
+      "title": "🎵 Every step you take, every call you make - the reliable agent stack",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1045_2026_06_03t10_55_59_615z",
+      "title": "Voice agents with Realtime Video",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1520_2026_06_05t14_59_37_565z",
+      "title": "Teaching agents to pay",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1355_2026_06_15t13_02_19_228z",
+      "title": "We Vetted 2,000 AI Skills Before They Reached Developers",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1355",
+      "title": "Local Models: Trust, Control, Optimization",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1520_2026_06_11t09_20_23_547z",
+      "title": "Why Agentic Systems Need Ontologies",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1205_2026_06_11t06_00_33_028z",
+      "title": "How We Got LLMs to Recommend Our Open Source Library (Without Paying or Plug-ins)",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1330_2026_06_08t01_23_40_432z",
+      "title": "Healthcare’s Agent Bytecode: X12 as the Harness for AI Agents",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1355_2026_06_11t08_53_44_231z",
+      "title": "Multiplayer agentic engineering: enabling your whole team and your best agents to work together",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1355_2026_07_02t06_23_52_685z",
+      "title": "Large clusters for small models",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_02_breakout_microsoft_presenting_sponsor_1355",
+      "title": "Blast Radius Zero: One‑Command OpenClaw Sandboxes in the Cloud",
+      "day": "Day 4 — Session Day 3",
+      "time": "1:55pm-2:15pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1425_2026_06_12t01_48_13_897z",
+      "title": "Optimizing Open Models for Production Grade Inference",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1425_2026_07_02t12_19_43_417z",
+      "title": "Improving AIE: Q&A and Feedback Session",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1425_2026_06_12t01_48_05_491z",
+      "title": "The Human Is an Async API",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1425_2026_06_15t12_40_24_904z",
+      "title": "Your Hero Agent Needs a Party",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1425_2026_06_05t14_41_18_364z",
+      "title": "We let an AI agent execute Bash and lived to talk about it",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1330_2026_06_05t14_45_44_483z",
+      "title": "Generative Video at the Speed of Light",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1425_2026_06_17t00_10_10_001z",
+      "title": "The Agentic Commerce Stack",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1425_2026_06_08t02_23_04_633z",
+      "title": "Your Finance Agent's Bottleneck Is You",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1425",
+      "title": "Compression at the Edge",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1355_2026_06_11t09_15_31_262z",
+      "title": "Video Has No Memory. Here's How We Built One.",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1355_2026_06_03t13_09_26_310z",
+      "title": "Knowledge Systems: The New GTM Stack",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1450_2026_06_05t12_30_08_824z",
+      "title": "Trading Desks to Clinical Trials: Parallels in Applied Vertical AI",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1425_2026_06_11t08_43_51_782z",
+      "title": "Always-on agents run production without the on-call tax",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_02_1450_2026_06_11t08_23_29_551z",
+      "title": "The Frontier AI Inference Cloud for Agents",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_2026_07_02_breakout_microsoft_presenting_sponsor_1425",
+      "title": "Operate agents safely at scale with enterprise governance",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:25pm-2:45pm",
+      "room": "Track M",
+      "type": "sponsor",
+      "track": "Track M"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1450_2026_06_12t01_48_02_500z",
+      "title": "Harness Engineering: The New Core Skill for Agentic Developers",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_03_1450",
+      "title": "Small Claws Are Beautiful: Edge Agents with NanoClaw, Raspberry Pi, and Graph Memory",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1450_2026_06_12t01_48_02_939z",
+      "title": "The Software Factory",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_01_1450_2026_06_15t12_43_10_321z",
+      "title": "AI Agents Are Just Distributed Systems Now",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1425_2026_06_05t12_30_20_890z",
+      "title": "Inside 847 Production Clinical AI Notes",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1450_2026_06_11t09_29_08_527z",
+      "title": "No Memory, No Harness: Why the Database Is the Last Line of Defense",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1520_2026_06_27t23_16_11_717z",
+      "title": "Infra behind Krea 2 - How to train and serve at scale",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1450_2026_06_11t08_30_36_504z",
+      "title": "Your Agent Just Authorized What?!",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1330_2026_06_19t08_54_58_594z",
+      "title": "Simulation-Maxxing: How Nubank ships agents 20× faster with simulations",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1450",
+      "title": "Compression at the Edge",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1425_2026_06_11t09_18_29_651z",
+      "title": "On-Device Agentic AI for the New York Times Games",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1450_2026_06_15t10_46_08_923z",
+      "title": "How AI Agents Let GTM Teams Scale",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1520_2026_06_05t12_30_15_407z",
+      "title": "How to build an AI-Native Health Company",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1330_2026_06_09t23_16_08_549z",
+      "title": "Realtime multiplayer, automation, and you!",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1425_2026_06_05t12_22_16_218z",
+      "title": "KV Cache-Aware Routing and P/D Disaggregation on Kubernetes: The Parts Public Benchmarks Don't Show",
+      "day": "Day 4 — Session Day 3",
+      "time": "2:50pm-3:10pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1520_2026_06_12t01_48_06_488z",
+      "title": "Agent Memory Is a Solved Problem. Agent Learning Is Not.",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1520_2026_07_02t12_19_43_771z",
+      "title": "Improving AIE: Q&A and Feedback Session (repeat)",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": "Expo Stage 2"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1205_2026_06_12t01_48_09_746z",
+      "title": "An Interaction Is All You Need",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 3 SW",
+      "type": "session",
+      "track": "Expo Stage 3"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_04_1520_2026_06_12t01_48_01_210z",
+      "title": "An AI Future Without the Lock-In",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Expo Stage 4 SE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_leadership_track_02_1450_2026_06_11t09_26_53_266z",
+      "title": "The Signal Layer: What to Build When Anything Can Be Built",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_leadership_track_02_1045_2026_06_11t19_23_17_044z",
+      "title": "Give the Agent a Budget, Not a Token",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Leadership 2",
+      "type": "session",
+      "track": "AI Architects: AI Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1520_2026_06_05t14_41_19_678z",
+      "title": "How we Solved Agent Building",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_01_1355_2026_06_05t14_45_45_128z",
+      "title": "The Next Medium: Why Real-Time Interactive Video Changes Everything for Developers",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 1",
+      "type": "session",
+      "track": "Generative Media"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1425_2026_06_08t02_37_47_197z",
+      "title": "The End of the Static Screen: Architecting Intent-Driven UX with Agentic Orchestration",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1520_2026_06_05t16_31_57_250z",
+      "title": "Skills are new features: Building Skill-Centric Harness for Agentic Products",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1520",
+      "title": "Model Routing",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1545_2026_06_11t09_20_59_805z",
+      "title": "Citation Needed: Provenance for LLM-Built Knowledge Graphs",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1520_2026_06_29t17_43_55_898z",
+      "title": "Building GTM AI Agents: Lessons from Deploying to 6,000 Users",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1520_2026_06_08t01_30_11_351z",
+      "title": "Don't be data poor",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_04_1425_2026_06_11t08_41_04_701z",
+      "title": "Velocity Sickness: What Happens When Your Whole Team Gets 10x Faster",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1450_2026_06_05t12_14_09_453z",
+      "title": "Two Bugs That Hid in Plain Sight: A vLLM Debugging Detective Story",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:20pm-3:40pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_01_1545_2026_06_12t01_48_11_255z",
+      "title": "Taking Reinforcement Learning Cross Datacenter",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 1 NE",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_expo_stage_02_1545_2026_06_12t01_48_14_112z",
+      "title": "Dashboards are Dead",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Expo Stage 2 NW",
+      "type": "session",
+      "track": ""
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_breakout_track_02_1205_2026_06_08t10_21_30_420z",
+      "title": "Tell the Robot What You Want",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Leadership 1",
+      "type": "session",
+      "track": "AI-Native Enterprises"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1330_2026_06_04t12_50_51_105z",
+      "title": "Agents Without Code: How Skills, YAML, and Filesystems Replaced Python",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_02_1140_2026_06_08t02_31_15_771z",
+      "title": "Beyond the Lethal Trifecta: Agentic Commerce on the Open Internet at Machine Speed",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 2",
+      "type": "sponsor",
+      "track": "Agentic Commerce"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_03_1545_2026_06_05t22_53_49_079z",
+      "title": "Wearing the Agent: Engineering a Family-and-Friends Personal Agent, from Group Chats to Glasses",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 3",
+      "type": "session",
+      "track": "AI in Finance"
+    },
+    {
+      "sessionId": "asn_local_ai_2026_07_02_1545",
+      "title": "Model Routing",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 4",
+      "type": "session",
+      "track": "Local AI"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_05_1545_2026_06_25t19_33_40_514z",
+      "title": "Why We Killed Our Multi-Agent Pipeline: Lessons From Pharma Commercial Intelligence",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 5",
+      "type": "sponsor",
+      "track": "Graphs"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_06_1450_2026_06_03t13_09_28_038z",
+      "title": "The Death of Developer Advocates",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 6",
+      "type": "session",
+      "track": "AI in GTM"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_07_1545_2026_06_23t10_23_57_401z",
+      "title": "Why Your Enterprise Tech Stack Isn't Ready for AI Agents - And What to Build Instead",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 7",
+      "type": "session",
+      "track": "AI in Healthcare"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_08_1545_2026_06_23t23_58_36_018z",
+      "title": "Open Source Is Dead. Long Live Open Source.",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 8",
+      "type": "session",
+      "track": "Agentic Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_breakout_track_09_1110_2026_06_05t12_18_53_217z",
+      "title": "Weight Folding, CUDA Streams, and the Bug That Made My Model Speak Backwards",
+      "day": "Day 4 — Session Day 3",
+      "time": "3:45pm-4:05pm",
+      "room": "Track 9",
+      "type": "session",
+      "track": "Inference"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1630_2026_06_03t12_53_09_071z",
+      "title": "Closing Keynote — Theo Browne",
+      "day": "Day 4 — Session Day 3",
+      "time": "4:30pm-4:50pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Main Stage"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1650_2026_06_03t13_31_56_662z",
+      "title": "Closing Keynote: Garry Tan",
+      "day": "Day 4 — Session Day 3",
+      "time": "4:50pm-5:10pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Main Stage"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1710_2026_06_03t13_31_58_115z",
+      "title": "Startup Battlefield",
+      "day": "Day 4 — Session Day 3",
+      "time": "5:10pm-5:30pm",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Main Stage"
+    },
+    {
+      "sessionId": "asn_2026_07_02_startup_battlefield_setup",
+      "title": "Battlefield setup",
+      "day": "Day 4 — Session Day 3",
+      "time": "8:30am-10:30am",
+      "room": "Networking Room",
+      "type": "session",
+      "track": "Startup Battlefield"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_01_main_stage_0900_2026_06_11t07_46_15_572z",
+      "title": "The 2026 State of AI Engineering",
+      "day": "Day 4 — Session Day 3",
+      "time": "9:00am-9:20am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Harness Engineering"
+    },
+    {
+      "sessionId": "asn_slot_2026_06_30_main_stage_1450_2026_06_15t10_04_08_812z",
+      "title": "TCP and RDMA are Killing Inference Throughput; Homa can Fix It",
+      "day": "Day 4 — Session Day 3",
+      "time": "9:20am-9:40am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Software Factories"
+    },
+    {
+      "sessionId": "asn_slot_2026_07_02_main_stage_1140_2026_06_15t11_56_48_892z",
+      "title": "The Unreasonable Effectiveness of Separating the Task from the Model",
+      "day": "Day 4 — Session Day 3",
+      "time": "9:40am-10:00am",
+      "room": "Main Stage",
+      "type": "keynote",
+      "track": "Harness Engineering"
+    }
+  ]
+}

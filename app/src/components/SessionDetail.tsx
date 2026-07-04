@@ -1,4 +1,4 @@
-import { Box, Chip, IconButton, Paper, Stack, Typography } from "@mui/material";
+import { Box, Chip, IconButton, Link, Paper, Stack, Typography } from "@mui/material";
 import {
   ScheduleSession,
   TYPE_LABEL,
@@ -78,6 +78,16 @@ export function SessionDetail({
           <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
             {session.description}
           </Typography>
+        )}
+        {session.videoUrl && (
+          <Link
+            href={session.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="body2"
+          >
+            Watch video
+          </Link>
         )}
         <Box>
           <IconButton

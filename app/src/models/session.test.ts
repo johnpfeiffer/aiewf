@@ -12,6 +12,7 @@ import {
   sortSessionsByTime,
   sessionsOverlap,
   uniqueTracks,
+  scheduleSessions,
 } from "./session";
 
 function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession {
@@ -47,6 +48,27 @@ describe("durationLabel", () => {
 
   it("returns a dash for non-positive durations", () => {
     expect(durationLabel(makeSession({ startMin: 540, endMin: 540 }))).toBe("—");
+  });
+});
+
+describe("schedule video links", () => {
+  it("attaches keynote video URLs from derived metadata", () => {
+    const goldenAge = scheduleSessions.find(
+      (session) => session.title === "The Golden Age of AI Engineering",
+    );
+    expect(goldenAge?.videoUrl).toBe(
+      "https://www.youtube.com/watch?v=htM02KMNZnk&t=1717s",
+    );
+
+    const fable = scheduleSessions.find((session) => session.title === "Field Guide to Fable");
+    expect(fable?.videoUrl).toBe("https://www.youtube.com/watch?v=4sX_He5c4sI&t=992s");
+
+    const stateOfAI = scheduleSessions.find(
+      (session) => session.title === "The 2026 State of AI Engineering",
+    );
+    expect(stateOfAI?.videoUrl).toBe(
+      "https://www.youtube.com/watch?v=I2cbIws9j10&t=967s",
+    );
   });
 });
 

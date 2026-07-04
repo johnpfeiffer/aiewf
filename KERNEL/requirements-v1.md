@@ -1,68 +1,59 @@
-# AIEWF App — Requirements
+# AIEWF Web App
 
-A client-side single-page app for the AI Engineer World's Fair 2026 that serves
-three purposes: conference schedule browsing with personal scheduling, an
-interactive port of swyx's "The Highest Loop" talk, and an interactive Homa
-datacenter transport tutorial.
+A client-side single-page app for the AI Engineer World's Fair 2026
+
+3 purposes:
+
+- conference schedule browsing with personal scheduling
+- interactive port of swyx's "The Highest Loop" talk
+- interactive HOMA protocol tutorial
 
 ## Audience
 
-- Primary: conference attendees planning and managing their schedule across
-  Days 2–4.
-- Secondary: post-event visitors reviewing session content, sharing saved
-  schedules, and exploring the interactive modules independently.
+- Primary: conference attendees planning and managing their schedule across Days 2–4.
+- Secondary: post-event visitors reviewing session content, sharing saved schedules, and exploring the interactive modules independently.
 
 ## Architecture constraints
 
-- Purely client-side. No backend, no API. All schedule data is embedded in the
-  build at compile time.
-- Static hosting (GitHub Pages, Netlify, Vercel, or equivalent).
+- Purely client-side. No backend, no API. All schedule data is embedded in the build at compile time.
+- Static hosting
 - Desktop-first responsive layout; mobile is best-effort.
 - Browser persistence via localStorage only; no accounts or server-side state.
-- Vite + React + TypeScript + MUI (defaults only, light mode, minimalist).
+- Vite + React + TypeScript + MUI (defaults only, light mode, minimalist) - also see DESIGN.md
 
 ---
 
-## Module 1 — Schedule Browser
+## Module 1 Schedule Browser
 
 ### Goal
 
-Let attendees browse the full multi-day conference schedule, search and filter
-sessions, save a personal schedule, detect conflicts, and share it via URL.
+Let attendees browse the full multi-day conference schedule, search and filter sessions, save a personal schedule, detect conflicts, and share it via URL.
 
 ### Features
 
-1. **Multi-day tabs**: Day 2, Day 3, Day 4. Each tab shows only that day's
-   sessions.
-2. **Time-slot grouping**: Sessions grouped by start time. Each group is
-   collapsible; expand/collapse all toggle available. Session count displayed
-   before the collapse control.
-3. **Two-column layout**: Session list on the left, session detail panel on the
-   right. Clicking a session shows its full description, speaker bios, type,
-   and track.
-4. **Search**: Full-text across title, description, speaker name, speaker role,
-   and track. Results update in real time.
+1. **Multi-day tabs**: Day 2, Day 3, Day 4. Each tab shows only that day's sessions.
+2. **Time-slot grouping**: Sessions grouped by start time. Each group is collapsible; expand/collapse all toggle available. Session count displayed before the collapse control.
+3. **Two-column layout**: Session list on the left, session detail panel on the right. Clicking a session shows its full description, speaker bios, type, and track.
+4. **Search**: Full-text across title, description, speaker name, speaker role, and track. Results update in real time.
 5. **Filters**:
    - By session type (Keynote, Session, Sponsor, Workshop).
    - By track. Leadership track hidden by default but togglable.
    - Filters compose with search (intersection).
 6. **My Schedule (favorites)**:
    - Star/unstar sessions from the detail panel or session card.
-   - Persisted in localStorage under `aiewf.day2.favorites`.
+   - Persisted in localStorage
    - Dedicated "My Schedule" view showing only saved sessions.
 7. **Conflict detection**:
    - Overlapping saved sessions on the same day flagged with a visual warning.
    - Cross-day sessions do not conflict.
 8. **Share URL**:
    - Compact bitmask-encoded query parameter (`?s=<encoded>`).
-   - Recipient sees the shared selection without overwriting their own saved
-     schedule.
-9. **Tentative sessions**: Labeled visually when marked tentative in source
-   data.
+   - Recipient sees the shared selection without overwriting their own saved schedule.
+9. **Tentative sessions**: Labeled visually when marked tentative in source data.
 
 ### Data
 
-- `sessions.json`: ~400 sessions with id, day, type, track, start/end times,
+- `sessions.json`: ~500+ sessions with id, day, type, track, start/end times,
   speaker references, description.
 - `speakers.json`: Speaker name, role, company, bio.
 - Both files embedded at build time; no runtime fetching.
