@@ -35,6 +35,8 @@ Clarity:
 - provide a spinner or UI element to indicate loading when the user has to wait.
 - if text or content continues downward below then provide a scroll bar or simple and obvious way to continue
 - have at least a 1 px border thickness so that items and text do not run into each other or overlap 
+- make it easy to read: use at least 14px font
+
 
 ## Implementation Decisions
 

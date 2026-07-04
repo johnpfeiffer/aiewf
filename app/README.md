@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:8080.
+Open the local URL printed by Vite, usually http://localhost:5173.
 
 ## Validate
 

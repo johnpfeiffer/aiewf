@@ -2,7 +2,7 @@
   "source": "app/src/data/keynotes-day4.txt",
   "segments": [
     {
-      "session_id": "day_4_session_day_3_9_00am_9_20am_main_stage_the_2026_state_of_ai_engine_e568662e",
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_11t07_46_15_572z",
       "title": "The 2026 State of AI Engineering",
       "speaker_names": [
         "Barr Yaron"
@@ -15,7 +15,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_4_session_day_3_9_20am_9_40am_main_stage_tcp_and_rdma_are_killing_in_c9b7a812",
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_15t10_04_08_812z",
       "title": "TCP and RDMA are Killing Inference Throughput; Homa can Fix It",
       "speaker_names": [
         "John Ousterhout"
@@ -28,7 +28,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_4_session_day_3_9_40am_10_00am_main_stage_the_unreasonable_effective_9b4cba15",
+      "session_id": "asn_slot_2026_07_02_main_stage_1140_2026_06_15t11_56_48_892z",
       "title": "The Unreasonable Effectiveness of Separating the Task from the Model",
       "speaker_names": [
         "Maxime Rivest",
@@ -42,7 +42,7 @@
       "match_notes": "Matched by title and speakers."
     },
     {
-      "session_id": "day_4_session_day_3_10_00am_10_20am_main_stage_how_anthropic_builds_less_5393ad52",
+      "session_id": "asn_slot_2026_07_02_main_stage_0930_2026_06_08t10_02_35_056z",
       "title": "How Anthropic Builds: Lessons from Labs",
       "speaker_names": [
         "Mike Krieger",
@@ -56,7 +56,7 @@
       "match_notes": "Matched by title and speakers."
     },
     {
-      "session_id": "day_4_session_day_3_10_20am_10_30am_main_stage_thinner_agents_on_a_smart_b6f44b91",
+      "session_id": "asn_slot_2026_07_02_main_stage_1025_2026_06_25t09_02_28_031z",
       "title": "Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer",
       "speaker_names": [
         "Emil Eifrem"
@@ -69,7 +69,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_10_45am_11_05am_main_stage_tokens_should_have_jobs_ac04aa6f",
+      "session_id": "asn_slot_2026_06_30_main_stage_0900_2026_06_05t14_17_19_767z",
       "title": "Tokens Should Have Jobs",
       "speaker_names": [
         "Katelyn Lesse",
@@ -83,7 +83,7 @@
       "match_notes": "Matched by title and speakers."
     },
     {
-      "session_id": "day_4_session_day_3_11_10am_11_30am_main_stage_mcps_clis_and_skills_choo_19298b2e",
+      "session_id": "asn_slot_2026_07_02_breakout_track_04_1330_2026_06_11t06_26_57_559z",
       "title": "MCPs, CLIs, and Skills: Choosing the Right Tooling Layer for Agentic Development",
       "speaker_names": [
         "Nikita Kothari"
@@ -96,7 +96,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_11_40am_12_00pm_main_stage_auth_for_agents_unblock_a_16cd3495",
+      "session_id": "asn_slot_2026_07_02_breakout_track_04_1045_2026_06_11t07_11_06_613z",
       "title": "Auth for Agents: Unblock Autonomous AI with auth.md",
       "speaker_names": [
         "Michael Grinich"
@@ -109,7 +109,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_4_session_day_3_12_05pm_12_25pm_main_stage_harness_engineering_build_6888e63f",
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_11t09_03_26_579z",
       "title": "Harness Engineering: Building the Production Cage for Powerful Domain Agents",
       "speaker_names": [
         "Mike Chambers"
@@ -122,7 +122,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_1_30pm_1_50pm_main_stage_loophole_adversarial_agents_c52b35c9",
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_08t03_05_49_658z",
       "title": "Loophole - Adversarial Agents To Stress Test Your Morality",
       "speaker_names": [
         "Brendan Rappazzo"
@@ -135,7 +135,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_1_55pm_2_15pm_main_stage_every_step_you_take_every_c_55c8be6a",
+      "session_id": "asn_slot_2026_07_02_main_stage_1355_2026_06_05t14_41_17_671z",
       "title": "🎵 Every step you take, every call you make - the reliable agent stack",
       "speaker_names": [
         "Giselle van Dongen"
@@ -148,7 +148,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_2_25pm_2_45pm_main_stage_we_let_an_ai_agent_execute_cec84f03",
+      "session_id": "asn_slot_2026_07_02_main_stage_1425_2026_06_05t14_41_18_364z",
       "title": "We let an AI agent execute Bash and lived to talk about it",
       "speaker_names": [
         "Sarah Sanders"
@@ -161,7 +161,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_4_session_day_3_2_50pm_3_10pm_main_stage_no_memory_no_harness_why_th_15014324",
+      "session_id": "asn_slot_2026_07_02_main_stage_1450_2026_06_11t09_29_08_527z",
       "title": "No Memory, No Harness: Why the Database Is the Last Line of Defense",
       "speaker_names": [
         "Kay Malcolm"
@@ -174,7 +174,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_3_20pm_3_40pm_main_stage_how_we_solved_agent_buildin_d6556a52",
+      "session_id": "asn_slot_2026_07_02_main_stage_1520_2026_06_05t14_41_19_678z",
       "title": "How we Solved Agent Building",
       "speaker_names": [
         "Andrew Qu"
@@ -187,7 +187,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_4_session_day_3_3_45pm_4_05pm_main_stage_agents_without_code_how_ski_f8a95617",
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_04t12_50_51_105z",
       "title": "Agents Without Code: How Skills, YAML, and Filesystems Replaced Python",
       "speaker_names": [
         "Philipp Schmid"
@@ -200,7 +200,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_4_session_day_3_4_30pm_4_50pm_main_stage_closing_keynote_theo_browne_0dad58c7",
+      "session_id": "asn_slot_2026_07_02_main_stage_1630_2026_06_03t12_53_09_071z",
       "title": "Closing Keynote — Theo Browne",
       "speaker_names": [
         "Theo Browne"
@@ -213,7 +213,7 @@
       "match_notes": "Matched by speaker and schedule position."
     },
     {
-      "session_id": "day_4_session_day_3_4_50pm_5_10pm_main_stage_closing_keynote_garry_tan_f302e844",
+      "session_id": "asn_slot_2026_07_02_main_stage_1650_2026_06_03t13_31_56_662z",
       "title": "Closing Keynote: Garry Tan",
       "speaker_names": [
         "Garry Tan"
@@ -226,7 +226,7 @@
       "match_notes": "Matched by speaker and schedule position."
     },
     {
-      "session_id": "day_4_session_day_3_5_10pm_5_30pm_main_stage_startup_battlefield_b635e023",
+      "session_id": "asn_slot_2026_07_02_main_stage_1710_2026_06_03t13_31_58_115z",
       "title": "Startup Battlefield",
       "speaker_names": [
         "Howie Liu",

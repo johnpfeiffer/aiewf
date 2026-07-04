@@ -118,7 +118,7 @@ export function MySchedule({
             onChange={() => {}}
             onFocus={(event) => event.currentTarget.select()}
             slotProps={{ input: { "aria-label": "Shareable schedule link" } }}
-            sx={{ flex: 1, minWidth: 220, fontSize: 13 }}
+            sx={{ flex: 1, minWidth: 220 }}
           />
           <Typography variant="caption" color={copied ? "success.main" : "text.secondary"}>
             {copied ? "Link copied to clipboard!" : "Copy this link to share your schedule"}

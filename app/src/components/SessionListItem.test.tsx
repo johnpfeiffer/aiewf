@@ -86,4 +86,28 @@ describe("SessionListItem", () => {
     expect(screen.getByText("tentative")).toBeInTheDocument();
     expect(screen.getByText("conflict")).toBeInTheDocument();
   });
+
+  it("renders a schedule-row video link without selecting the session", async () => {
+    const user = userEvent.setup();
+    const onSelect = vi.fn();
+    render(
+      <SessionListItem
+        session={makeSession({
+          videoUrl: "https://www.youtube.com/watch?v=4sX_He5c4sI&t=3250s",
+        })}
+        selected={false}
+        isFavorite={false}
+        onSelect={onSelect}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    const link = screen.getByRole("link", { name: "Watch video" });
+    expect(link).toHaveAttribute(
+      "href",
+      "https://www.youtube.com/watch?v=4sX_He5c4sI&t=3250s",
+    );
+    expect(link).toHaveAttribute("target", "_blank");
+    await user.click(link);
+    expect(onSelect).not.toHaveBeenCalled();
+  });
 });

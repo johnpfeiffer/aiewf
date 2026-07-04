@@ -52,7 +52,7 @@ export default function Homa() {
         <SceneStub spec={spec} />
       ) : (
         <>
-          <p style={{ margin: "4px 0 10px", color: "#6b7280", fontSize: 13, maxWidth: 760 }}>
+          <p style={{ margin: "4px 0 10px", color: "#6b7280", fontSize: 14, maxWidth: 760 }}>
             {spec.blurb}
           </p>
           <HomaControls

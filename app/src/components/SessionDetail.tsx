@@ -56,9 +56,25 @@ export function SessionDetail({
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {session.track}
+          {session.videoUrl && (
+            <>
+              {" "}
+              <Link
+                href={session.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="body2"
+              >
+                Watch video
+              </Link>
+            </>
+          )}
         </Typography>
         {hasSpeakers && (
           <Stack spacing={1}>
+            <Typography variant="subtitle2" component="h3">
+              Speakers
+            </Typography>
             {session.speakers.map((speaker) => (
               <Box key={speaker.name}>
                 <Typography variant="body2">
@@ -75,19 +91,21 @@ export function SessionDetail({
           </Stack>
         )}
         {hasDescription && (
-          <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
-            {session.description}
-          </Typography>
-        )}
-        {session.videoUrl && (
-          <Link
-            href={session.videoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="body2"
+          <Box
+            sx={{
+              borderTop: "1px solid",
+              borderColor: "divider",
+              pt: 1.5,
+              mt: hasSpeakers ? 0.5 : 0,
+            }}
           >
-            Watch video
-          </Link>
+            <Typography variant="subtitle2" component="h3" sx={{ mb: 0.5 }}>
+              Session Description
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
+              {session.description}
+            </Typography>
+          </Box>
         )}
         <Box>
           <IconButton

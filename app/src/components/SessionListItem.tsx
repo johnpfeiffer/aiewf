@@ -1,4 +1,4 @@
-import { Chip, IconButton, Paper, Stack, Typography } from "@mui/material";
+import { Box, Chip, IconButton, Link, Paper, Stack, Typography } from "@mui/material";
 import {
   ScheduleSession,
   TYPE_LABEL,
@@ -66,8 +66,26 @@ export function SessionListItem({
           <Typography variant="body2" component="div" noWrap>
             {session.title}
           </Typography>
-          <Typography variant="caption" color="text.secondary" noWrap>
-            {session.track}
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            component="div"
+            sx={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 0.75 }}
+          >
+            <Box component="span" sx={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {session.track}
+            </Box>
+            {session.videoUrl && (
+              <Link
+                href={session.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => event.stopPropagation()}
+                onKeyDown={(event) => event.stopPropagation()}
+              >
+                Watch video
+              </Link>
+            )}
           </Typography>
         </Stack>
         <IconButton

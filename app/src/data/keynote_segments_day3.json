@@ -2,7 +2,7 @@
   "source": "app/src/data/keynotes-day3.txt",
   "segments": [
     {
-      "session_id": "day_3_session_day_2_9_05am_9_25am_main_stage_field_guide_to_fable_c0f1ab7d",
+      "session_id": "asn_slot_2026_07_01_main_stage_0910_2026_06_18t10_34_19_797z",
       "title": "Field Guide to Fable",
       "speaker_names": [
         "Thariq Shihipar"
@@ -15,7 +15,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_9_25am_9_45am_main_stage_in_the_land_of_ai_agents_th_ddb74b86",
+      "session_id": "asn_slot_2026_06_30_main_stage_1010_2026_06_09t20_29_18_622z",
       "title": "In the Land of AI Agents, the Verifiers Are King",
       "speaker_names": [
         "Tariq Shaukat"
@@ -28,7 +28,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_9_45am_10_05am_main_stage_perception_agents_1465f356",
+      "session_id": "asn_slot_2026_07_01_main_stage_0950_2026_06_08t10_14_44_229z",
       "title": "Perception Agents",
       "speaker_names": [
         "Antje Barth"
@@ -41,7 +41,7 @@
       "match_notes": "Matched by title and schedule position; transcript misrecognizes the speaker name."
     },
     {
-      "session_id": "day_3_session_day_2_10_05am_10_25am_main_stage_research_to_reality_with_a690ee12",
+      "session_id": "asn_slot_2026_07_01_main_stage_1010_2026_06_19t21_58_46_011z",
       "title": "Research to Reality with Google DeepMind",
       "speaker_names": [
         "Benoit Schillings"
@@ -54,7 +54,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_10_25am_10_30am_main_stage_evals_track_intro_8c6403b4",
+      "session_id": "asn_slot_2026_07_01_main_stage_1025_2026_06_25t09_02_28_031z",
       "title": "Evals Track Intro",
       "speaker_names": [
         "Laurie Voss",
@@ -68,7 +68,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_10_45am_11_05am_main_stage_first_steps_toward_automa_650f0170",
+      "session_id": "asn_slot_2026_07_01_main_stage_1045_2026_06_13t06_10_40_547z",
       "title": "First Steps Toward Automated AI Research",
       "speaker_names": [
         "Richard Socher"
@@ -81,7 +81,7 @@
       "match_notes": "Matched by title and schedule position."
     },
     {
-      "session_id": "day_3_session_day_2_11_10am_11_30am_main_stage_autoresearch_for_dense_re_40e57de4",
+      "session_id": "asn_slot_2026_06_30_breakout_track_03_1520_2026_06_22t14_21_25_611z",
       "title": "Autoresearch for Dense Retrieval: Test-Time Compute with Frozen Embedding Models",
       "speaker_names": [
         "Han Xiao"
@@ -94,7 +94,7 @@
       "match_notes": "Matched by speaker and shortened transcript TOC title."
     },
     {
-      "session_id": "day_3_session_day_2_11_40am_12_00pm_main_stage_memory_harnesses_for_long_d89654fa",
+      "session_id": "asn_slot_2026_07_01_breakout_track_03_1205_2026_06_15t11_47_11_620z",
       "title": "Memory Harnesses for Long-Running Research Agents",
       "speaker_names": [
         "Stefania Druga"
@@ -107,7 +107,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_12_05pm_12_25pm_main_stage_the_era_of_auto_research_2422758b",
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_08t03_48_01_126z",
       "title": "« the era of (auto) research »",
       "speaker_names": [
         "Elie Bakouch"
@@ -120,7 +120,7 @@
       "match_notes": "Matched by speaker and title wording."
     },
     {
-      "session_id": "day_3_session_day_2_1_30pm_1_50pm_main_stage_closing_the_loop_an_autonom_500c4511",
+      "session_id": "asn_slot_2026_07_01_main_stage_1425_2026_06_10t15_57_34_716z",
       "title": "Closing the Loop: An Autonomous AI Research Agent",
       "speaker_names": [
         "Tim Sweeney"
@@ -133,7 +133,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_1_55pm_2_15pm_main_stage_an_ai_agent_became_the_1_co_38425e74",
+      "session_id": "asn_slot_2026_07_01_main_stage_1140_2026_06_07t18_45_30_022z",
       "title": "An AI Agent Became the #1 Contributor in OpenAI's Hiring Challenge",
       "speaker_names": [
         "Zhengyao Jiang"
@@ -146,7 +146,7 @@
       "match_notes": "Matched by title and speaker; transcript begins near the topic statement."
     },
     {
-      "session_id": "day_3_session_day_2_2_25pm_2_45pm_main_stage_self_improvement_of_context_df854f58",
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_03t09_49_39_605z",
       "title": "Self-Improvement of Context, Harness, and Model Weights through Reflective Optimization",
       "speaker_names": [
         "Lakshya Agrawal"
@@ -159,7 +159,7 @@
       "match_notes": "Matched by title and speaker."
     },
     {
-      "session_id": "day_3_session_day_2_2_50pm_3_10pm_main_stage_autoresearch_for_kernels_5372cdd9",
+      "session_id": "asn_slot_2026_07_01_breakout_track_09_1355_2026_06_05t13_43_08_694z",
       "title": "Autoresearch for Kernels",
       "speaker_names": [
         "Tejas Bhakta"
@@ -172,7 +172,7 @@
       "match_notes": "Matched by title and schedule position; transcript approximates the speaker name."
     },
     {
-      "session_id": "day_3_session_day_2_3_20pm_3_40pm_main_stage_autoresearch_in_the_wild_73b01ce5",
+      "session_id": "asn_slot_2026_07_01_main_stage_1140_2026_06_08t03_48_01_899z",
       "title": "Autoresearch in the wild",
       "speaker_names": [
         "Roland Gavrilescu",
@@ -186,7 +186,7 @@
       "match_notes": "Matched by title and speakers."
     },
     {
-      "session_id": "day_3_session_day_2_3_45pm_4_05pm_main_stage_autoresearch_in_a_multi_age_0a49a54f",
+      "session_id": "asn_slot_2026_07_01_main_stage_1330_2026_06_09t23_25_53_097z",
       "title": "Autoresearch in a Multi-Agent AI Village",
       "speaker_names": [
         "Erina Karati",
@@ -200,7 +200,7 @@
       "match_notes": "Matched by title and schedule position; transcript misrecognizes the speaker name."
     },
     {
-      "session_id": "day_3_session_day_2_4_30pm_4_50pm_main_stage_closing_keynote_36f5d2d4",
+      "session_id": "asn_slot_2026_07_01_main_stage_1630_2026_06_24t19_44_50_508z",
       "title": "Closing Keynote",
       "speaker_names": [
         "Addy Osmani"
@@ -213,7 +213,7 @@
       "match_notes": "Matched by speaker and schedule position."
     },
     {
-      "session_id": "day_3_session_day_2_4_50pm_5_10pm_main_stage_trends_in_ai_f207324f",
+      "session_id": "asn_slot_2026_07_01_main_stage_1650_2026_06_25t07_28_22_389z",
       "title": "Trends in AI",
       "speaker_names": [
         "George Cameron",
@@ -227,7 +227,7 @@
       "match_notes": "Matched by title and speakers."
     },
     {
-      "session_id": "day_3_session_day_2_5_10pm_5_30pm_main_stage_closing_keynote_abcec031",
+      "session_id": "asn_slot_2026_07_01_main_stage_1710_2026_06_25t23_38_40_379z",
       "title": "Closing Keynote",
       "speaker_names": [
         "Wei-Lin Chiang"

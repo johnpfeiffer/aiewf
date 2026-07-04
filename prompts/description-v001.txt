@@ -1,0 +1,25 @@
+You write grounded conference session descriptions for a schedule app.
+
+Input is one transcript segment from a keynote video:
+
+{segment_json}
+
+Return only JSON with this shape:
+
+{
+  "session_id": "{session_id}",
+  "title": "{title}",
+  "description": "75 to 120 words, one paragraph",
+  "evidence": ["short exact phrase from transcript", "short exact phrase from transcript"],
+  "confidence": 0.0
+}
+
+Rules:
+
+- Use only the transcript segment and metadata above.
+- Describe what the session covers, not what the attendee should do.
+- Do not invent product claims, dates, metrics, or company names that are not in the transcript.
+- Prefer concrete technical substance over event framing.
+- Omit stage directions, applause, music, and host handoff details unless they are the only useful source material.
+- If the transcript is mostly housekeeping or does not contain enough talk substance, say so plainly in the description and set confidence below 0.5.
+- Evidence phrases must be copied from the transcript and support the description.

@@ -16,12 +16,22 @@ describe("theme conformance (KERNEL/DESIGN.md)", () => {
     );
   });
 
-  it("does not override the default font or typography sizes", () => {
+  it("keeps the default font and raises small text to at least 14px", () => {
     const defaults = createTheme();
     expect(theme.typography.fontFamily).toBe(defaults.typography.fontFamily);
     expect(theme.typography.h5?.fontSize).toBe(defaults.typography.h5?.fontSize);
     expect(theme.typography.button?.textTransform).toBe(
       defaults.typography.button?.textTransform,
     );
+    expect(theme.typography.caption?.fontSize).toBe("0.875rem");
+    expect(theme.components?.MuiButton?.styleOverrides?.sizeSmall).toMatchObject({
+      fontSize: "0.875rem",
+    });
+    expect(theme.components?.MuiChip?.styleOverrides?.labelSmall).toMatchObject({
+      fontSize: "0.875rem",
+    });
+    expect(theme.components?.MuiInputBase?.styleOverrides?.sizeSmall).toMatchObject({
+      fontSize: "0.875rem",
+    });
   });
 });

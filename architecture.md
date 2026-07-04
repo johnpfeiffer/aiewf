@@ -20,7 +20,7 @@ At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`. `App` 
 
 ## Data Flow
 
-1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `DAY_LABEL`, `DAY_DATE`, and `VENUE`. It also attaches optional video URLs from `app/src/data/session-video-links.json`.
+1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `DAY_LABEL`, `DAY_DATE`, and `VENUE`. It also attaches optional video URLs from `app/src/data/video-links-for-sessions.json`.
 2. `app/src/models/session.ts` exports helpers over that data:
    - `matchesQuery`
    - `applyFilters`
@@ -35,6 +35,8 @@ At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`. `App` 
 6. `TimeGroup` renders a `SessionCard` for each session.
 
 The search box is intentionally broad: query matching checks session title, track, description, speaker name, and speaker role.
+
+On desktop, the schedule uses a master/detail grid where the selected-session detail pane takes roughly two fifths of the available width. The layout collapses to one column on small screens.
 
 ## Favorites and Conflicts
 
@@ -94,34 +96,43 @@ flowchart LR
   rawtx["keynotes-day*.txt"]
   segments["keynote_segments_day*.json"]
   cmd["cmd/lessons CLI"]
+  desc["cmd/descriptions CLI"]
   model["model package"]
   client["client Gemini API"]
   sqlite["SQLite lessons.db"]
   goldens["goldens/*.json"]
+  descjson["description proposals JSON"]
 
   sessions --> model
   speakers --> model
   rawtx --> segments
   segments --> model
+  segments --> desc
   cmd --> model
+  desc --> model
   model --> client
   model --> sqlite
   sqlite --> goldens
   goldens --> model
   model --> sqlite
+  desc --> descjson
 ```
 
 The package split is:
 
 - `cmd/lessons`: command parsing and orchestration for `generate`, `seed-goldens`, `judge`, and `run`.
+- `cmd/descriptions`: command parsing and orchestration for distilling schedule descriptions from one `keynote_segments_day*.json` file.
 - `model`: schedule adaptation, prompt rendering, lesson schema, thin-description handling, hard checks, generator orchestration, and judge orchestration.
 - `client`: Gemini API wrapper using `google.golang.org/genai`.
 - `storage`: SQLite persistence using `modernc.org/sqlite`.
-- `scripts/build_keynote_segments.mjs`: reproducible extraction of keynote transcript segments from the day-specific raw transcripts into `app/src/data/keynote_segments_day*.json` and consolidated `app/src/data/session-video-links.json`.
+- `scripts/reconcile_session_ids.mjs`: reconciles `sessions.json` with authoritative ASN web ids and stores the previous hash id in `source_ids.derived`.
+- `scripts/build_keynote_segments.mjs`: reproducible extraction of keynote transcript segments from the day-specific raw transcripts into `app/src/data/keynote_segments_day*.json` and consolidated `app/src/data/video-links-for-sessions.json`.
 
-The CLI derives stable session ids when the schedule file does not provide one. It joins speaker title/company metadata from the speaker catalog by name, attaches optional transcript segments by session id, but it does not mutate the schedule, speaker, or raw transcript source files.
+The CLI uses canonical `session_id` values from the schedule, falling back to deterministic derived ids only for unreconciled records. It joins speaker title/company metadata from the speaker catalog by name and attaches optional transcript segments by session id.
 
-The schedule app consumes the app-local video-link map by computing the same stable source session id for each raw session. `SessionDetail` renders a "Watch video" link only when `videoUrl` is present.
+The description helper reads one transcript segment file, calls Gemini once per selected session, and emits reviewable JSON with proposed schedule descriptions. It does not write to `sessions.json`; the output is intended for manual review before augmenting source data.
+
+The schedule app consumes the app-local video-link map by canonical `session_id`. `SessionListItem` renders a "Watch video" link beside the schedule-row track/location, and `SessionDetail` renders the same link inline after the displayed track/location when `videoUrl` is present.
 
 The first-pass user journey is:
 

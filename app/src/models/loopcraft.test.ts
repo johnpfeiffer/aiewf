@@ -100,9 +100,9 @@ describe("loopcraft summit + curves + sections", () => {
   it("has five stress-curve steps pointing at the bundled images", () => {
     expect(CURVE_STEPS).toHaveLength(5);
     for (const s of CURVE_STEPS) {
-      expect(s.src.startsWith("/loopcraft/curves/")).toBe(true);
+      expect(s.src.startsWith("loopcraft/curves/")).toBe(true);
     }
-    expect(SHOT_SRC).toBe("/loopcraft/shot.jpeg");
+    expect(SHOT_SRC).toBe("loopcraft/shot.jpeg");
   });
 
   it("defines section totals that match the data", () => {

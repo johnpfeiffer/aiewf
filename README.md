@@ -27,8 +27,6 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:8080.
-
 ## Validate
 
 ```bash
@@ -59,11 +57,13 @@ The CLI reads:
 - `app/src/data/speakers.json`
 - `app/src/data/keynote_segments_day*.json` for optional keynote transcript augmentation
 
-The raw keynote transcripts remain in `app/src/data/keynotes-day*.txt`. The derived `app/src/data/keynote_segments_day*.json` files map transcript segments to schedule session ids without mutating `sessions.json`.
+The raw keynote transcripts remain in `app/src/data/keynotes-day*.txt`. The derived `app/src/data/keynote_segments_day*.json` files map transcript segments to canonical ASN-backed schedule session ids.
 
-The same extraction step writes the consolidated `app/src/data/session-video-links.json`, which the schedule app uses to show timestamped external video links in session details.
+The same extraction step writes the consolidated `app/src/data/video-links-for-sessions.json`, which the schedule app uses to show timestamped external video links in session details.
 
 The CLI writes generated lessons and judge scores to SQLite, and writes seed golden files to `goldens/` for manual review.
+
+`cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator.
 
 ### Setup
 
@@ -81,11 +81,15 @@ go run ./cmd/lessons generate --limit 1
 go run ./cmd/lessons seed-goldens --limit 1
 go run ./cmd/lessons judge --limit 1
 go run ./cmd/lessons run --limit 1
+go run ./cmd/descriptions --limit 1 app/src/data/keynote_segments_day2.json
 ```
+
+Description generation writes JSON to stdout by default. Use `--out descriptions_day2.json` to write a reviewable file, and `--session-id <asn-id>` to generate one session.
 
 Rebuild the derived keynote augmentation file after changing the raw transcript or schedule:
 
 ```bash
+node scripts/reconcile_session_ids.mjs
 node scripts/build_keynote_segments.mjs
 ```
 

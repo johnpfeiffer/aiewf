@@ -191,3 +191,11 @@ MVC-style split documented in `architecture.md`:
 - KERNEL/requirements-v2.md "Lessons Learned Generator" (separate project).
 - Full protocol fidelity to Homa Linux kernel implementation.
 - WAN behavior modeling in the Homa module.
+
+
+---
+
+TODO:
+
+For the keynote segments, if you want to surface them in the app, you'd need to decide on a UI approach — e.g., when a user selects a keynote session, show its segments as a list of timestamped links. That would be a new
+  feature rather than just switching a data source. Would you like me to plan that out?

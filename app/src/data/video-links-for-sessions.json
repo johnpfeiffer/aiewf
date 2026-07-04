@@ -1,0 +1,189 @@
+{
+  "source": [
+    "app/src/data/keynote_segments_day2.json",
+    "app/src/data/keynote_segments_day3.json",
+    "app/src/data/keynote_segments_day4.json"
+  ],
+  "links": [
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0900_2026_06_09t19_26_48_493z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=68s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0910_2026_06_09t20_16_03_148z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=675s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0930_2026_06_13t02_44_22_994z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=1717s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1010_2026_06_18t10_40_22_580z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=3275s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0950_2026_06_18t10_42_03_611z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=4261s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1025_2026_06_25t09_02_28_031z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=5509s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_11t04_22_24_160z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=27206s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_0900_2026_06_04t12_24_42_870z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=28353s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_18t18_28_08_450z",
+      "video_url": "https://www.youtube.com/watch?v=htM02KMNZnk&t=29582s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0910_2026_06_18t10_34_19_797z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=992s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1010_2026_06_09t20_29_18_622z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=2142s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0950_2026_06_08t10_14_44_229z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=3250s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1010_2026_06_19t21_58_46_011z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=4534s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1025_2026_06_25t09_02_28_031z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=5810s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1045_2026_06_13t06_10_40_547z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=6955s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_breakout_track_03_1520_2026_06_22t14_21_25_611z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=8434s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_breakout_track_03_1205_2026_06_15t11_47_11_620z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=10245s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_08t03_48_01_126z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=11707s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1425_2026_06_10t15_57_34_716z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=16795s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1140_2026_06_07t18_45_30_022z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=18354s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_03t09_49_39_605z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=20106s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_breakout_track_09_1355_2026_06_05t13_43_08_694z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=21613s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1140_2026_06_08t03_48_01_899z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=23404s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1330_2026_06_09t23_25_53_097z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=24911s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1630_2026_06_24t19_44_50_508z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=28035s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1650_2026_06_25t07_28_22_389z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=29133s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_1710_2026_06_25t23_38_40_379z",
+      "video_url": "https://www.youtube.com/watch?v=4sX_He5c4sI&t=30345s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_01_main_stage_0900_2026_06_11t07_46_15_572z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=967s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_1450_2026_06_15t10_04_08_812z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=2143s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1140_2026_06_15t11_56_48_892z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=3254s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_0930_2026_06_08t10_02_35_056z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=4342s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1025_2026_06_25t09_02_28_031z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=5997s"
+    },
+    {
+      "session_id": "asn_slot_2026_06_30_main_stage_0900_2026_06_05t14_17_19_767z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=7011s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_breakout_track_04_1330_2026_06_11t06_26_57_559z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=8408s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_breakout_track_04_1045_2026_06_11t07_11_06_613z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=10203s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_11t09_03_26_579z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=11720s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_08t03_05_49_658z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=16914s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1355_2026_06_05t14_41_17_671z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=18304s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1425_2026_06_05t14_41_18_364z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=20105s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1450_2026_06_11t09_29_08_527z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=21666s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1520_2026_06_05t14_41_19_678z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=23406s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1330_2026_06_04t12_50_51_105z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=24899s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1630_2026_06_03t12_53_09_071z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=27736s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1650_2026_06_03t13_31_56_662z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=28690s"
+    },
+    {
+      "session_id": "asn_slot_2026_07_02_main_stage_1710_2026_06_03t13_31_58_115z",
+      "video_url": "https://www.youtube.com/watch?v=I2cbIws9j10&t=31144s"
+    }
+  ]
+}

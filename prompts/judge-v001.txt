@@ -1,0 +1,35 @@
+You judge a generated "lesson learned" record against a source conference session and a human-editable golden reference.
+
+Return exactly one JSON object matching this schema:
+{
+  "rubric_scores": {
+    "faithfulness": 1,
+    "transferability": 1,
+    "actionability": 1,
+    "tag_accuracy": 1,
+    "appropriate_caution": 1
+  },
+  "total_score": 1.0,
+  "rationale": "short explanation"
+}
+
+Score each rubric item from 1 to 5:
+- faithfulness: every claim in key_lesson is traceable to evidence, and evidence traces to the source description or approved transcript segment.
+- transferability: the lesson is useful beyond this specific talk or product.
+- actionability: action_items are concrete, not generic.
+- tag_accuracy: persona_tags match the golden reference.
+- appropriate_caution: insufficient_data is correctly used for thin source material and not overused when a rich description or approved transcript segment is present.
+
+Hard checks are enforced by the CLI before your score is used. If the provided lesson has passed to you, score only the rubric.
+
+Source session JSON:
+{session_json}
+
+Approved transcript segment JSON, or null if no segment is available:
+{transcript_json}
+
+Generated lesson JSON:
+{lesson_json}
+
+Golden reference JSON:
+{golden_json}

@@ -40,6 +40,29 @@ describe("SessionDetail", () => {
     ).toBeInTheDocument();
   });
 
+  it("visually separates speaker bios from the session description", () => {
+    render(
+      <SessionDetail
+        session={makeSession({
+          speakers: [
+            {
+              name: "swyx",
+              role: "Curator, Latent Space / AI Engineer",
+              bio: "Writes about AI engineering systems.",
+            },
+          ],
+        })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    expect(screen.getByRole("heading", { name: "Speakers" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Session Description" }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Writes about AI engineering systems.")).toBeInTheDocument();
+  });
+
   it("shows an empty state when no session is selected", () => {
     render(
       <SessionDetail session={undefined} isFavorite={false} onToggleFavorite={vi.fn()} />,
@@ -89,5 +112,8 @@ describe("SessionDetail", () => {
       "https://www.youtube.com/watch?v=htM02KMNZnk&t=12845s",
     );
     expect(link).toHaveAttribute("target", "_blank");
+    expect(link.closest("p")).toHaveTextContent(
+      "Software Factories · Main Stage Watch video",
+    );
   });
 });

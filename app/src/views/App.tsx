@@ -185,7 +185,10 @@ export default function App() {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1fr) 360px" },
+              gridTemplateColumns: {
+                xs: "1fr",
+                md: "minmax(0, 3fr) minmax(360px, 2fr)",
+              },
               gap: 2,
               alignItems: "start",
             }}
@@ -236,4 +239,3 @@ export default function App() {
     </Box>
   );
 }
-
