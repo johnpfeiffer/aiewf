@@ -18,6 +18,8 @@ At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`. `App` 
 
 `App` then renders either the full schedule tab or the "My Schedule" tab.
 
+The shell also includes attribution links: the app title links to the official AI Engineer World's Fair 2026 page, and the footer credits John Pfeiffer with a LinkedIn link.
+
 ## Data Flow
 
 1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `DAY_LABEL`, `DAY_DATE`, and `VENUE`. It also attaches optional video URLs from `app/src/data/video-links-for-sessions.json`.
@@ -37,6 +39,8 @@ At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`. `App` 
 The search box is intentionally broad: query matching checks session title, track, description, speaker name, and speaker role.
 
 On desktop, the schedule uses a master/detail grid where the selected-session detail pane takes roughly two fifths of the available width. The layout collapses to one column on small screens.
+
+`app/index.html` declares Open Graph and Twitter card metadata for `https://feneky.com/aiewf`. The share-card image is `app/public/og-image.png`, generated from `scripts/generate_og_image.mjs`.
 
 ## Favorites and Conflicts
 

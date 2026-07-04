@@ -3,7 +3,9 @@ import {
   Badge,
   Box,
   Container,
+  Link,
   Stack,
+  SvgIcon,
   Tab,
   Tabs,
   ToggleButton,
@@ -29,6 +31,14 @@ import Loopcraft from "./Loopcraft";
 import Homa from "./Homa";
 
 type View = "schedule" | "loopcraft" | "homa";
+
+function LinkedInIcon() {
+  return (
+    <SvgIcon fontSize="small" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z" />
+    </SvgIcon>
+  );
+}
 
 export default function App() {
   const schedule = useSchedule();
@@ -109,7 +119,15 @@ export default function App() {
             >
               <Box>
                 <Typography variant="h5" component="h1">
-                  AI Engineer World's Fair
+                  <Link
+                    href="https://www.ai.engineer/worldsfair/2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    AI Engineer World's Fair
+                  </Link>
                 </Typography>
                 <Typography color="text.secondary">
                   {FAIR_DATES} · {VENUE}
@@ -234,6 +252,31 @@ export default function App() {
           </Box>
             </>
           )}
+
+          <Box
+            component="footer"
+            sx={{
+              borderTop: "1px solid",
+              borderColor: "divider",
+              pt: 2,
+              color: "text.secondary",
+            }}
+          >
+            <Typography variant="body2">
+              Built by John Pfeiffer{" "}
+              <Link
+                href="https://www.linkedin.com/in/foupfeiffer"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                underline="hover"
+                aria-label="John Pfeiffer on LinkedIn"
+                sx={{ display: "inline-flex", verticalAlign: "text-bottom" }}
+              >
+                <LinkedInIcon />
+              </Link>
+            </Typography>
+          </Box>
         </Stack>
       </Container>
     </Box>

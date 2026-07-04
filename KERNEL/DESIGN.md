@@ -47,6 +47,9 @@ e.g. <https://github.com/mui/material-ui/tree/master/examples/material-ui-vite-t
 Colors: MUI defaults
 Fonts: MUI defaults
 
+
+Prefer relative links rather than absolute links.
+
 # References
 
 <https://github.com/google-labs-code/design.md>

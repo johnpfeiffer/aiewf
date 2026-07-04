@@ -14,7 +14,14 @@ describe("App", () => {
 
   it("renders the conference header and the full schedule by default", () => {
     render(<App />);
-    expect(screen.getByText(/AI Engineer World/i)).toBeInTheDocument();
+    const officialLink = screen.getByRole("link", {
+      name: /AI Engineer World's Fair/i,
+    });
+    expect(officialLink).toHaveAttribute(
+      "href",
+      "https://www.ai.engineer/worldsfair/2026",
+    );
+    expect(officialLink).toHaveAttribute("target", "_blank");
     expect(screen.getByText(/June 29.+July 2, 2026/i)).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "Day 2" })).toHaveAttribute(
       "aria-selected",
@@ -22,6 +29,19 @@ describe("App", () => {
     );
     // the schedule should list many sessions (left list) plus a detail pane
     expect(screen.getAllByLabelText(/Add to My Schedule|Remove from My Schedule/).length).toBeGreaterThan(10);
+  });
+
+  it("renders a footer credit linking to John Pfeiffer's LinkedIn", () => {
+    render(<App />);
+    expect(screen.getByText(/Built by John Pfeiffer/i)).toBeInTheDocument();
+    const linkedIn = screen.getByRole("link", {
+      name: "John Pfeiffer on LinkedIn",
+    });
+    expect(linkedIn).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/foupfeiffer",
+    );
+    expect(linkedIn).toHaveAttribute("target", "_blank");
   });
 
   it("shows an empty state on My Schedule before any session is saved", async () => {

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">AI Engineer World's Fair 2026 Schedule</title>
+  <desc id="desc">Social preview image for a schedule browser with saved sessions, video links, and keynote details.</desc>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="64" y="64" width="1072" height="502" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
+  <text x="104" y="156" fill="#1976d2" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">AI Engineer World's Fair</text>
+  <text x="104" y="238" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">2026 Schedule</text>
+  <text x="104" y="314" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="32">Browse sessions, save your schedule, and jump to video.</text>
+  <line x1="104" y1="376" x2="1096" y2="376" stroke="#d0d7de" stroke-width="2"/>
+  <text x="104" y="444" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">June 29 - July 2, 2026</text>
+  <text x="104" y="496" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="28">Moscone West, San Francisco</text>
+  <text x="104" y="548" fill="#6b7280" font-family="Arial, Helvetica, sans-serif" font-size="24">feneky.com/aiewf</text>
+</svg>
