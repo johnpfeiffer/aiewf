@@ -14,11 +14,11 @@ Return exactly one JSON object matching this schema:
 }
 
 Score each rubric item from 1 to 5:
-- faithfulness: every claim in key_lesson is traceable to evidence, and evidence traces to the source description or approved transcript segment.
+- faithfulness: every claim in key_lesson is traceable to evidence, and evidence traces to the source description, speaker bios, or approved transcript segment.
 - transferability: the lesson is useful beyond this specific talk or product.
 - actionability: action_items are concrete, not generic.
 - tag_accuracy: persona_tags match the golden reference.
-- appropriate_caution: insufficient_data is correctly used for thin source material and not overused when a rich description or approved transcript segment is present.
+- appropriate_caution: insufficient_data is correctly used for thin source material and not overused when a rich description, speaker bio, or approved transcript segment is present.
 
 Hard checks are enforced by the CLI before your score is used. If the provided lesson has passed to you, score only the rubric.
 

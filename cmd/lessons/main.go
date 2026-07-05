@@ -31,14 +31,16 @@ const (
 )
 
 type commonConfig struct {
-	sessions      string
-	speakers      string
-	transcripts   string
-	descriptions  string
-	dbPath        string
-	promptVersion string
-	limit         int
-	sessionID     string
+	sessions         string
+	speakers         string
+	transcripts      string
+	descriptions     string
+	noTranscripts    bool
+	dbPath           string
+	promptVersion    string
+	limit            int
+	sessionID        string
+	includeWorkshops bool
 }
 
 type generateConfig struct {
@@ -158,12 +160,14 @@ func parseRun(args []string) (generateConfig, judgeConfig, error) {
 func addCommonFlags(fs *flag.FlagSet, cfg *commonConfig) {
 	fs.StringVar(&cfg.sessions, "sessions", defaultSessions, "source sessions JSON path")
 	fs.StringVar(&cfg.speakers, "speakers", defaultSpeakers, "source speakers JSON path")
-	fs.StringVar(&cfg.transcripts, "transcripts", defaultTranscripts, "optional transcript augmentation JSON path, glob, or comma-separated paths")
+	fs.StringVar(&cfg.transcripts, "transcripts", defaultTranscripts, "transcript augmentation override path, glob, or comma-separated paths")
+	fs.BoolVar(&cfg.noTranscripts, "no-transcripts", false, "disable transcript augmentation")
 	fs.StringVar(&cfg.descriptions, "descriptions", defaultDescriptions, "optional description augmentation JSON path, glob, or comma-separated paths")
 	fs.StringVar(&cfg.dbPath, "db", defaultDB, "SQLite database path")
 	fs.StringVar(&cfg.promptVersion, "prompt-version", defaultPromptVer, "prompt version")
 	fs.IntVar(&cfg.limit, "limit", 0, "max sessions to process; 0 means all")
 	fs.StringVar(&cfg.sessionID, "session-id", "", "single session id to process")
+	fs.BoolVar(&cfg.includeWorkshops, "include-workshops", false, "include Day 1 workshop sessions")
 }
 
 func generate(ctx context.Context, cfg generateConfig) error {
@@ -228,6 +232,7 @@ func seedGoldens(cfg judgeConfig) error {
 	}
 	for _, session := range sessions {
 		lesson := model.SeedLesson(session)
+		seedSource := "placeholder reason=no_generation"
 		generation, err := store.LatestGeneration(session.SessionID, cfg.promptVersion)
 		if err == nil {
 			parsed, parseErr := model.ParseLessonJSON(generation.OutputJSON)
@@ -235,6 +240,7 @@ func seedGoldens(cfg judgeConfig) error {
 				return parseErr
 			}
 			lesson = parsed
+			seedSource = fmt.Sprintf("generation model=%s tokens=%d", generation.Model, generation.TokensUsed)
 		} else if !errors.Is(err, sql.ErrNoRows) {
 			return err
 		}
@@ -246,7 +252,7 @@ func seedGoldens(cfg judgeConfig) error {
 		if err := os.WriteFile(path, []byte(outputJSON+"\n"), 0o644); err != nil {
 			return err
 		}
-		fmt.Printf("seeded %s\n", path)
+		fmt.Printf("seeded %s source=%s\n", path, seedSource)
 	}
 	return nil
 }
@@ -316,13 +322,15 @@ func selectedSessions(cfg commonConfig) ([]model.Session, error) {
 		}
 		sessions = model.AttachDescriptionProposals(sessions, proposals)
 	}
-	if cfg.transcripts != "" {
-		segments, err := model.LoadTranscriptSegments(cfg.transcripts)
+	transcripts := transcriptSource(cfg)
+	if transcripts != "" {
+		segments, err := model.LoadTranscriptSegments(transcripts)
 		if err != nil {
 			return nil, err
 		}
 		sessions = model.AttachTranscriptSegments(sessions, segments)
 	}
+	sessions = model.FilterLessonAgentSessions(sessions, cfg.includeWorkshops)
 	if cfg.sessionID != "" {
 		session, ok := model.FindSession(sessions, cfg.sessionID)
 		if !ok {
@@ -334,6 +342,16 @@ func selectedSessions(cfg commonConfig) ([]model.Session, error) {
 		return sessions[:cfg.limit], nil
 	}
 	return sessions, nil
+}
+
+func transcriptSource(cfg commonConfig) string {
+	if cfg.noTranscripts {
+		return ""
+	}
+	if cfg.transcripts != "" {
+		return cfg.transcripts
+	}
+	return defaultTranscripts
 }
 
 func readGolden(dir, sessionID string) (model.Lesson, error) {
@@ -375,9 +393,11 @@ common flags:
   --sessions app/src/data/sessions.json
   --speakers app/src/data/speakers.json
   --transcripts app/src/data/keynote_segments_day*.json
+  --no-transcripts=false
   --descriptions app/src/data/day*-keynote-descriptions.json
   --db lessons.db
   --prompt-version v001
   --limit 0
-  --session-id <id>`)
+  --session-id <id>
+  --include-workshops=false`)
 }

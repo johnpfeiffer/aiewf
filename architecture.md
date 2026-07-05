@@ -133,7 +133,7 @@ The package split is:
 - `scripts/reconcile_session_ids.mjs`: reconciles `sessions.json` with authoritative ASN web ids and stores the previous hash id in `source_ids.derived`.
 - `scripts/build_keynote_segments.mjs`: reproducible extraction of keynote transcript segments from the day-specific raw transcripts into `app/src/data/keynote_segments_day*.json` and consolidated `app/src/data/video-links-for-sessions.json`.
 
-The CLI uses canonical `session_id` values from the schedule, falling back to deterministic derived ids only for unreconciled records. It joins speaker title/company metadata from the speaker catalog by name, attaches optional transcript segments by session id, and applies reviewed description proposals only when the source schedule description is empty or under 50 characters.
+The CLI uses canonical `session_id` values from the schedule, falling back to deterministic derived ids only for unreconciled records. It joins speaker title, company, and bio metadata from the speaker catalog by name, loads the default transcript segment files and attaches matching transcript segments by session id, applies reviewed description proposals only when the source schedule description is empty or under 50 characters, and skips `Day 1 — Workshop Day` unless `--include-workshops` is set.
 
 The description helper reads one transcript segment file, calls Gemini once per selected session, and emits one reviewable JSON batch with proposed schedule descriptions. It does not write to `sessions.json`; the output is consumed as an augmentation file or manually copied into source data after review.
 

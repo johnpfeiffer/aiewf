@@ -103,6 +103,30 @@ func TestEvidenceCanComeFromTranscriptSegment(t *testing.T) {
 	}
 }
 
+func TestEvidenceCanComeFromSpeakerBio(t *testing.T) {
+	session := Session{
+		SessionID:   "s1",
+		Description: "TBD",
+		Speakers: []Speaker{{
+			Name: "swyx",
+			Bio:  "swyx created the AI Engineer conference as an organic extension of technical community building and writing about how people organize around technology.",
+		}},
+	}
+	lesson := Lesson{
+		SessionID:   "s1",
+		Summary:     "The lesson connects community building with technical influence.",
+		KeyLesson:   "Technical influence compounds when people organize around shared practices.",
+		Evidence:    []string{"how people organize around technology"},
+		PersonaTags: []string{"dev-rel"},
+		ActionItems: []string{"Write down one repeatable community practice around a technical workflow."},
+		Confidence:  0.7,
+		Status:      StatusComplete,
+	}
+	if checks := ValidateLesson(lesson, session); !HardChecksPass(checks) {
+		t.Fatalf("hard checks failed: %#v", checks)
+	}
+}
+
 func TestThinSourceMaterialUsesTranscript(t *testing.T) {
 	session := Session{
 		Description: "TBD",
@@ -110,5 +134,17 @@ func TestThinSourceMaterialUsesTranscript(t *testing.T) {
 	}
 	if ThinSourceMaterial(session) {
 		t.Fatal("ThinSourceMaterial returned true with rich transcript text")
+	}
+}
+
+func TestThinSourceMaterialUsesSpeakerBio(t *testing.T) {
+	session := Session{
+		Description: "TBD",
+		Speakers: []Speaker{{
+			Bio: "This speaker bio is long enough to provide approved context about technical community building and organization around engineering practice.",
+		}},
+	}
+	if ThinSourceMaterial(session) {
+		t.Fatal("ThinSourceMaterial returned true with rich speaker bio")
 	}
 }

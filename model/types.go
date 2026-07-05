@@ -51,12 +51,14 @@ type RawSpeaker struct {
 	Role    string `json:"role"`
 	Title   string `json:"title"`
 	Company string `json:"company"`
+	Bio     string `json:"bio"`
 }
 
 type Speaker struct {
 	Name    string `json:"name"`
 	Title   string `json:"title"`
 	Company string `json:"company"`
+	Bio     string `json:"bio,omitempty"`
 }
 
 type Session struct {

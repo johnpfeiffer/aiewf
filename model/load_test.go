@@ -27,7 +27,8 @@ func TestLoadSessionsAdaptsCurrentScheduleShape(t *testing.T) {
   "speakers": [{
     "name": "Ada Lovelace",
     "role": "Engineer",
-    "company": "Analytical Engines"
+    "company": "Analytical Engines",
+    "bio": "Ada Lovelace wrote early programs for the Analytical Engine and connected computation to creative practice."
   }]
 }`)
 
@@ -51,6 +52,9 @@ func TestLoadSessionsAdaptsCurrentScheduleShape(t *testing.T) {
 	if got := session.Speakers[0].Company; got != "Analytical Engines" {
 		t.Fatalf("speaker company = %q, want Analytical Engines", got)
 	}
+	if got := session.Speakers[0].Bio; got != "Ada Lovelace wrote early programs for the Analytical Engine and connected computation to creative practice." {
+		t.Fatalf("speaker bio = %q, want loaded bio", got)
+	}
 }
 
 func TestStableSessionIDIsDeterministic(t *testing.T) {
@@ -59,6 +63,26 @@ func TestStableSessionIDIsDeterministic(t *testing.T) {
 	second := stableSessionID(raw)
 	if first != second {
 		t.Fatalf("stableSessionID changed: %q != %q", first, second)
+	}
+}
+
+func TestFilterLessonAgentSessionsSkipsWorkshopDayByDefault(t *testing.T) {
+	sessions := []Session{
+		{SessionID: "workshop", Day: "Day 1 — Workshop Day"},
+		{SessionID: "session", Day: "Day 2 — Session Day 1"},
+	}
+
+	filtered := FilterLessonAgentSessions(sessions, false)
+	if len(filtered) != 1 {
+		t.Fatalf("len(filtered) = %d, want 1", len(filtered))
+	}
+	if filtered[0].SessionID != "session" {
+		t.Fatalf("filtered[0].SessionID = %q, want session", filtered[0].SessionID)
+	}
+
+	included := FilterLessonAgentSessions(sessions, true)
+	if len(included) != 2 {
+		t.Fatalf("len(included) = %d, want 2", len(included))
 	}
 }
 

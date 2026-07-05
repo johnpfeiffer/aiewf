@@ -262,20 +262,35 @@ export default function App() {
               color: "text.secondary",
             }}
           >
-            <Typography variant="body2">
-              Built by John Pfeiffer{" "}
-              <Link
-                href="https://www.linkedin.com/in/foupfeiffer"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="inherit"
-                underline="hover"
-                aria-label="John Pfeiffer on LinkedIn"
-                sx={{ display: "inline-flex", verticalAlign: "text-bottom" }}
-              >
-                <LinkedInIcon />
-              </Link>
-            </Typography>
+            {view === "loopcraft" ? (
+              <Typography variant="body2">
+                Watch the talk:{" "}
+                <Link
+                  href="https://www.youtube.com/watch?v=htM02KMNZnk&t=68s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="inherit"
+                  underline="hover"
+                >
+                  youtube.com/watch?v=htM02KMNZnk
+                </Link>
+              </Typography>
+            ) : (
+              <Typography variant="body2">
+                Built by John Pfeiffer{" "}
+                <Link
+                  href="https://www.linkedin.com/in/foupfeiffer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="inherit"
+                  underline="hover"
+                  aria-label="John Pfeiffer on LinkedIn"
+                  sx={{ display: "inline-flex", verticalAlign: "text-bottom" }}
+                >
+                  <LinkedInIcon />
+                </Link>
+              </Typography>
+            )}
           </Box>
         </Stack>
       </Container>

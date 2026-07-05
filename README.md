@@ -54,15 +54,17 @@ This repo also contains a root-level Go CLI for generating and judging structure
 The CLI reads:
 
 - `app/src/data/sessions.json`
-- `app/src/data/speakers.json`
+- `app/src/data/speakers.json` for speaker role, company, and bio context
 - `app/src/data/keynote_segments_day*.json` for optional keynote transcript augmentation
 - `app/src/data/day*-keynote-descriptions.json` for optional generated description augmentation
 
-The raw keynote transcripts remain in `app/src/data/keynotes-day*.txt`. The derived `app/src/data/keynote_segments_day*.json` files map transcript segments to canonical ASN-backed schedule session ids.
+The raw keynote transcripts remain in `app/src/data/keynotes-day*.txt`. The derived `app/src/data/keynote_segments_day*.json` files map transcript segments to canonical ASN-backed schedule session ids. The lesson-agent commands load those segment files by default and automatically attach a transcript when the selected session id is present. Use `--no-transcripts` only when you want to disable transcript augmentation, or `--transcripts <path-or-glob>` to override the default source.
 
 The same extraction step writes the consolidated `app/src/data/video-links-for-sessions.json`, which the schedule app uses to show timestamped external video links in session details.
 
 The CLI only uses generated description proposals when the source session description is empty or under 50 characters. The CLI writes generated lessons and judge scores to SQLite, and writes seed golden files to `goldens/` for manual review.
+
+Day 1 was a paid workshop day rather than normal conference talks, so the lesson-agent commands skip `Day 1 — Workshop Day` by default. Use `--include-workshops` to process those sessions explicitly.
 
 `cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator.
 
@@ -84,6 +86,8 @@ go run ./cmd/lessons judge --limit 1
 go run ./cmd/lessons run --limit 1
 go run ./cmd/descriptions --out app/src/data/day2-keynote-descriptions.json app/src/data/keynote_segments_day2.json
 ```
+
+Run `generate` before `seed-goldens` when you want the seed file to start from an AI-generated lesson. If no stored generation exists for the same `--db`, `--prompt-version`, and session id, `seed-goldens` writes a schema-valid placeholder for manual authoring.
 
 Description generation writes one valid JSON batch to stdout by default. Use `--out app/src/data/dayN-keynote-descriptions.json` to write a reviewable file for a whole day, and `--session-id <asn-id>` to generate one session.
 

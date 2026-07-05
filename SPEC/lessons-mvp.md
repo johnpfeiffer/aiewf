@@ -47,6 +47,7 @@ Default flags:
 - `--sessions app/src/data/sessions.json`
 - `--speakers app/src/data/speakers.json`
 - `--transcripts app/src/data/keynote_segments_day*.json`
+- `--no-transcripts=false`
 - `--descriptions app/src/data/day*-keynote-descriptions.json`
 - `--prompt prompts/v001.txt`
 - `--prompt-version v001`
@@ -55,6 +56,7 @@ Default flags:
 - `--temperature 0`
 - `--limit 0` where `0` means all selected sessions
 - `--session-id ""` where empty means no single-session filter
+- `--include-workshops=false`
 
 If a session description is empty or under 50 characters after trimming and no approved transcript segment is attached, the generator must not call the LLM. It must return `status="insufficient_data"`, `confidence=0`, no evidence, and no action items.
 
@@ -83,9 +85,11 @@ Runs `generate` followed by `judge` with the same session selection.
 
 - If `session_id` or `id` is present, use it.
 - Otherwise derive a deterministic id from day, time, room, and title with a short hash suffix.
-- Speaker role and company are joined from `app/src/data/speakers.json` by speaker name when available.
+- Speaker role, company, and bio are joined from `app/src/data/speakers.json` by speaker name when available.
 - `format` maps from the source `type` field.
 - `duration_minutes` is computed from the source time range when possible.
+
+The lesson-agent commands skip `Day 1 — Workshop Day` by default because it was a paid workshop day rather than normal conference talk content. Passing `--include-workshops` includes those sessions for manual experiments.
 
 ## Transcript Augmentation
 
@@ -93,12 +97,14 @@ Runs `generate` followed by `judge` with the same session selection.
 
 The schedule app consumes a smaller consolidated derived map at `app/src/data/video-links-for-sessions.json`.
 
-The generator and judge load transcript segments into a session-id map. When a session id is present in the map, the prompt receives both:
+The generator and judge load transcript segments by default into a session-id map. When a selected session id is present in the map, the matching transcript is attached automatically and the prompt receives both:
 
 - `session_json`
 - `transcript_json`
 
-Evidence hard checks accept verbatim phrases from either the schedule description or the matched transcript segment. A session is considered thin only when both the schedule description and transcript segment are missing or under 50 characters.
+The `--transcripts` flag is an override for the default transcript source. The `--no-transcripts` flag disables transcript augmentation.
+
+Evidence hard checks accept verbatim phrases from the schedule description, joined speaker bios, or the matched transcript segment. A session is considered thin only when the schedule description, joined speaker bios, and transcript segment are all missing or under 50 characters.
 
 The extracted JSON is intentionally not written back into `sessions.json`.
 

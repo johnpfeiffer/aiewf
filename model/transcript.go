@@ -95,7 +95,9 @@ func AttachTranscriptSegments(sessions []Session, segments map[string]Transcript
 }
 
 func ThinSourceMaterial(session Session) bool {
-	return len(strings.TrimSpace(session.Description)) < 50 && len(strings.TrimSpace(transcriptText(session))) < 50
+	return len(strings.TrimSpace(session.Description)) < 50 &&
+		len(strings.TrimSpace(transcriptText(session))) < 50 &&
+		len(strings.TrimSpace(speakerBioText(session))) < 50
 }
 
 func EvidenceAppearsInSourceMaterial(session Session, evidence string) bool {
@@ -103,7 +105,9 @@ func EvidenceAppearsInSourceMaterial(session Session, evidence string) bool {
 	if evidence == "" {
 		return false
 	}
-	return strings.Contains(session.Description, evidence) || strings.Contains(transcriptText(session), evidence)
+	return strings.Contains(session.Description, evidence) ||
+		strings.Contains(transcriptText(session), evidence) ||
+		strings.Contains(speakerBioText(session), evidence)
 }
 
 func transcriptText(session Session) string {
@@ -111,4 +115,15 @@ func transcriptText(session Session) string {
 		return ""
 	}
 	return session.Transcript.Transcript
+}
+
+func speakerBioText(session Session) string {
+	var bios []string
+	for _, speaker := range session.Speakers {
+		if strings.TrimSpace(speaker.Bio) == "" {
+			continue
+		}
+		bios = append(bios, speaker.Bio)
+	}
+	return strings.Join(bios, "\n")
 }

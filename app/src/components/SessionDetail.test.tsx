@@ -96,6 +96,24 @@ describe("SessionDetail", () => {
     expect(screen.getByText("conflict")).toBeInTheDocument();
   });
 
+  it("renders URLs in the description as clickable links", () => {
+    render(
+      <SessionDetail
+        session={makeSession({
+          description:
+            "We celebrate the third birthday of the AI Engineer post. https://www.latent.space/p/ai-engineer",
+        })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    const link = screen.getByRole("link", {
+      name: "https://www.latent.space/p/ai-engineer",
+    });
+    expect(link).toHaveAttribute("href", "https://www.latent.space/p/ai-engineer");
+    expect(link).toHaveAttribute("target", "_blank");
+  });
+
   it("renders an external video link when available", () => {
     render(
       <SessionDetail

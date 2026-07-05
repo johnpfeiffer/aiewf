@@ -4,6 +4,7 @@ import {
   TYPE_LABEL,
   formatTimeRange,
 } from "../models/session";
+import { linkify } from "../lib/linkify";
 
 interface SessionDetailProps {
   session?: ScheduleSession;
@@ -103,7 +104,20 @@ export function SessionDetail({
               Session Description
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
-              {session.description}
+              {linkify(session.description).map((part, index) =>
+                part.type === "link" ? (
+                  <Link
+                    key={index}
+                    href={part.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {part.value}
+                  </Link>
+                ) : (
+                  part.value
+                ),
+              )}
             </Typography>
           </Box>
         )}

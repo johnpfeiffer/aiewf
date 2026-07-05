@@ -57,6 +57,24 @@ func ThinDescription(session Session) bool {
 	return len(strings.TrimSpace(session.Description)) < 50
 }
 
+func FilterLessonAgentSessions(sessions []Session, includeWorkshops bool) []Session {
+	if includeWorkshops {
+		return sessions
+	}
+	filtered := make([]Session, 0, len(sessions))
+	for _, session := range sessions {
+		if IsWorkshopDay(session) {
+			continue
+		}
+		filtered = append(filtered, session)
+	}
+	return filtered
+}
+
+func IsWorkshopDay(session Session) bool {
+	return strings.Contains(strings.ToLower(session.Day), "workshop")
+}
+
 func adaptSession(raw RawSession, speakerIndex map[string]RawSpeaker) Session {
 	speakers := make([]Speaker, 0, len(raw.Speakers))
 	for _, name := range raw.Speakers {
@@ -64,6 +82,7 @@ func adaptSession(raw RawSession, speakerIndex map[string]RawSpeaker) Session {
 		if rich, ok := speakerIndex[name]; ok {
 			speaker.Title = firstNonEmpty(rich.Title, rich.Role)
 			speaker.Company = rich.Company
+			speaker.Bio = rich.Bio
 		}
 		speakers = append(speakers, speaker)
 	}
