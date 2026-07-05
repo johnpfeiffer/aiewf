@@ -25,8 +25,8 @@ const (
 	defaultPromptVer    = "v001"
 	defaultDB           = "lessons.db"
 	defaultGoldens      = "goldens"
-	defaultLessonModel  = "gemma-4-31b-it"
-	defaultJudgeModel   = "gemini-2.5-flash"
+	defaultLessonModel  = "gemma-4-31b"
+	defaultJudgeModel   = "gemini-3.5-flash"
 	defaultTemperature  = 0
 )
 
@@ -185,15 +185,15 @@ func generate(ctx context.Context, cfg generateConfig) error {
 	}
 	defer store.Close()
 
-	var gemini *client.Gemini
+	var cerebras *client.Cerebras
 	generator := model.Generator{}
 	for _, session := range sessions {
 		if !model.ThinSourceMaterial(session) && generator.Client == nil {
-			gemini, err = client.NewGemini(ctx, os.Getenv("GEMINI_API_KEY"))
+			cerebras, err = client.NewCerebras(os.Getenv("CEREBRAS_API_KEY"))
 			if err != nil {
 				return err
 			}
-			generator.Client = gemini
+			generator.Client = cerebras
 		}
 
 		lesson, tokens, err := generator.Generate(ctx, session, promptTemplate, cfg.modelName, float32(cfg.temperature))
@@ -283,10 +283,12 @@ func judge(ctx context.Context, cfg judgeConfig) error {
 		if err != nil {
 			return err
 		}
-		golden, err := readGolden(cfg.goldens, session.SessionID)
+		goldenPath := goldenPath(cfg.goldens, session.SessionID)
+		golden, err := readGolden(goldenPath)
 		if err != nil {
 			return err
 		}
+		fmt.Printf("judging %s generation_created_at=%s golden=%s\n", session.SessionID, generation.CreatedAt, goldenPath)
 		if model.HardChecksPass(model.ValidateLesson(lesson, session)) && judge.Client == nil {
 			gemini, err = client.NewGemini(ctx, os.Getenv("GEMINI_API_KEY"))
 			if err != nil {
@@ -354,8 +356,8 @@ func transcriptSource(cfg commonConfig) string {
 	return defaultTranscripts
 }
 
-func readGolden(dir, sessionID string) (model.Lesson, error) {
-	data, err := os.ReadFile(filepath.Join(dir, sessionID+".json"))
+func readGolden(path string) (model.Lesson, error) {
+	data, err := os.ReadFile(path)
 	if err != nil {
 		return model.Lesson{}, err
 	}
@@ -364,6 +366,10 @@ func readGolden(dir, sessionID string) (model.Lesson, error) {
 		return model.Lesson{}, err
 	}
 	return lesson, nil
+}
+
+func goldenPath(dir, sessionID string) string {
+	return filepath.Join(dir, sessionID+".json")
 }
 
 func firstFailed(checks []model.HardCheck) string {

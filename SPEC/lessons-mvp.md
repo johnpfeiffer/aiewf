@@ -31,16 +31,16 @@ Use a root Go module with this package split:
 
 - `cmd/lessons`: CLI entry point.
 - `model`: source data, lesson schema, prompt rendering, hard checks, generation orchestration, judge orchestration.
-- `client`: Gemini API client wrapper.
+- `client`: Cerebras, retained Groq, and Gemini API client wrappers.
 - `storage`: SQLite persistence.
 
-The CLI uses standard library plumbing where practical. SQLite persistence uses `modernc.org/sqlite`. Gemini calls use `google.golang.org/genai`.
+The CLI uses standard library plumbing where practical. SQLite persistence uses `modernc.org/sqlite`. Lesson generation calls use Cerebras chat completions with `CEREBRAS_API_KEY`. Judge calls use Gemini via `google.golang.org/genai` with `GEMINI_API_KEY`.
 
 ## Commands
 
 ### `lessons generate`
 
-Reads sessions, renders a generation prompt, calls the Gemini API for each selected session, validates the generated lesson JSON, and stores the result in SQLite.
+Reads sessions, renders a generation prompt, calls the Cerebras API for each selected session, validates the generated lesson JSON, and stores the result in SQLite.
 
 Default flags:
 
@@ -52,7 +52,7 @@ Default flags:
 - `--prompt prompts/v001.txt`
 - `--prompt-version v001`
 - `--db lessons.db`
-- `--model $LESSON_MODEL`, falling back to `gemma-4-31b-it`
+- `--model $LESSON_MODEL`, falling back to `gemma-4-31b`
 - `--temperature 0`
 - `--limit 0` where `0` means all selected sessions
 - `--session-id ""` where empty means no single-session filter
@@ -68,10 +68,12 @@ Creates human-reviewable seed golden files under `goldens/`. If a stored generat
 
 Loads the latest stored generation for each selected session and the matching golden file, runs hard checks, and then calls a judge model if hard checks pass.
 
+The judge prompt passes the generated lesson and golden reference as separate labeled inputs. The judge model scores only the subjective dimensions `faithfulness`, `transferability`, and `actionability`. The Go model layer computes `tag_f1`, `status_match`, and `evidence_verbatim` objective checks, converts those objective metrics onto a 1-5 score scale, and stores the six-dimension mean as `total_score`.
+
 Default flags:
 
 - `--judge-prompt prompts/judge-v001.txt`
-- `--judge-model $JUDGE_MODEL`, falling back to `gemini-2.5-flash`
+- `--judge-model $JUDGE_MODEL`, falling back to `gemini-3.5-flash`
 
 The judge model must be configurable and should be different from the generation model to reduce self-grading bias.
 

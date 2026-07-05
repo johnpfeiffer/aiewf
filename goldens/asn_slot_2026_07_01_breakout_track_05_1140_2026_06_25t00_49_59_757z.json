@@ -1,0 +1,21 @@
+{
+  "session_id": "asn_slot_2026_07_01_breakout_track_05_1140_2026_06_25t00_49_59_757z",
+  "summary": "Uber developed a multimodal agent to enhance food photography for merchants while maintaining authenticity and brand identity. The session explores the creation of closed-loop evaluation systems using offline and online signals to prevent reward hacking and ensure quality at scale.",
+  "key_lesson": "To maintain quality in narrow-domain multimodal agents, implement a closed feedback loop combining offline and online signals to detect and counter reward hacking.",
+  "evidence": [
+    "built a closed feedback loop incorporating offline and online signals for continuous improvement",
+    "recognizing and countering reward hacking"
+  ],
+  "persona_tags": [
+    "engineer",
+    "product",
+    "ai-researcher"
+  ],
+  "action_items": [
+    "Implement a closed feedback loop that incorporates both offline and online signals for continuous model improvement.",
+    "Establish monitoring to detect and counter reward hacking where agents game evaluation metrics.",
+    "Define rigid safety guardrails to balance generative creativity with domain-specific quality constraints."
+  ],
+  "confidence": 1,
+  "status": "complete"
+}

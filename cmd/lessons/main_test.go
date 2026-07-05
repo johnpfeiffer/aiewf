@@ -65,11 +65,32 @@ func TestGenerateDefaultsTranscriptLookupOn(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	if cfg.modelName != "gemma-4-31b" {
+		t.Fatalf("modelName = %q, want gemma-4-31b", cfg.modelName)
+	}
 	if cfg.transcripts != defaultTranscripts {
 		t.Fatalf("transcripts = %q, want default %q", cfg.transcripts, defaultTranscripts)
 	}
 	if cfg.noTranscripts {
 		t.Fatal("noTranscripts = true, want false")
+	}
+}
+
+func TestJudgeDefaultsToGeminiFlash(t *testing.T) {
+	cfg, err := parseJudge(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if cfg.judgeModel != "gemini-3.5-flash" {
+		t.Fatalf("judgeModel = %q, want gemini-3.5-flash", cfg.judgeModel)
+	}
+}
+
+func TestGoldenPathUsesSessionJSONFilename(t *testing.T) {
+	got := goldenPath("goldens", "s1")
+	want := filepath.Join("goldens", "s1.json")
+	if got != want {
+		t.Fatalf("goldenPath = %q, want %q", got, want)
 	}
 }
 

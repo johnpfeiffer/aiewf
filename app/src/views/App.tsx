@@ -266,13 +266,13 @@ export default function App() {
               <Typography variant="body2">
                 Watch the talk:{" "}
                 <Link
-                  href="https://www.youtube.com/watch?v=htM02KMNZnk&t=68s"
+                  href="https://www.youtube.com/watch?v=htM02KMNZnk&t=92s"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="inherit"
                   underline="hover"
                 >
-                  youtube.com/watch?v=htM02KMNZnk
+                  youtube.com/watch?v=htM02KMNZnk&t=92s
                 </Link>
               </Typography>
             ) : (

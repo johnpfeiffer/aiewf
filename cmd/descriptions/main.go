@@ -99,7 +99,7 @@ func parse(args []string) (config, error) {
 	cfg := config{}
 	fs.StringVar(&cfg.output, "out", "", "optional output JSON path; stdout when empty")
 	fs.StringVar(&cfg.prompt, "prompt", defaultPrompt, "description prompt template path")
-	fs.StringVar(&cfg.modelName, "model", envDefault("LESSON_MODEL", defaultModel), "Gemini model")
+	fs.StringVar(&cfg.modelName, "model", envDefault("DESCRIPTION_MODEL", defaultModel), "Gemini model")
 	fs.Float64Var(&cfg.temperature, "temperature", defaultTemperature, "generation temperature")
 	fs.IntVar(&cfg.limit, "limit", 0, "max sessions to process; 0 means all")
 	fs.StringVar(&cfg.sessionID, "session-id", "", "single session id to process")

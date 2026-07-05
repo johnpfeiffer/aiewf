@@ -66,16 +66,19 @@ The CLI only uses generated description proposals when the source session descri
 
 Day 1 was a paid workshop day rather than normal conference talks, so the lesson-agent commands skip `Day 1 — Workshop Day` by default. Use `--include-workshops` to process those sessions explicitly.
 
-`cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator.
+`cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator. `cmd/llm-debug` is a narrow debug helper that accepts only `--session-id`, builds the Cerebras lesson-generation request for that session with strict structured outputs, `reasoning_effort` set to `medium`, and `reasoning_format` set to `parsed`, then prints the exact request JSON body plus the raw response body without parsing or storing it.
 
 ### Setup
 
 ```bash
 go mod tidy
+export CEREBRAS_API_KEY=...
 export GEMINI_API_KEY=...
 ```
 
-The default generation model is `gemma-4-31b-it`. Override it with `LESSON_MODEL` or `--model` if your Gemini API account uses a different model id. The default judge model is `gemini-2.5-flash`; override it with `JUDGE_MODEL` or `--judge-model`.
+Lesson generation uses Cerebras by default with model `gemma-4-31b`, strict structured outputs, `reasoning_effort` set to `medium`, and `reasoning_format` set to `parsed`; override the model with `LESSON_MODEL` or `--model`. Judging uses Google Gemini by default with model `gemini-3.5-flash`; override it with `JUDGE_MODEL` or `--judge-model`. The description helper also uses Gemini and can be overridden with `DESCRIPTION_MODEL` or its own `--model`.
+
+Judge scoring combines LLM and Go-computed checks. Gemini returns three subjective 1-5 rubric scores for faithfulness, transferability, and actionability. The CLI computes tag F1 against the golden, status match against the golden, and evidence-verbatim ratio against the approved source material, converts those objective checks onto the same 1-5 scale, and stores the six-way mean as `total_score`.
 
 ### Commands
 
@@ -84,12 +87,42 @@ go run ./cmd/lessons generate --limit 1
 go run ./cmd/lessons seed-goldens --limit 1
 go run ./cmd/lessons judge --limit 1
 go run ./cmd/lessons run --limit 1
+go run ./cmd/llm-debug --session-id asn_slot_2026_06_30_main_stage_0900_2026_06_09t19_26_48_493z
 go run ./cmd/descriptions --out app/src/data/day2-keynote-descriptions.json app/src/data/keynote_segments_day2.json
 ```
 
 Run `generate` before `seed-goldens` when you want the seed file to start from an AI-generated lesson. If no stored generation exists for the same `--db`, `--prompt-version`, and session id, `seed-goldens` writes a schema-valid placeholder for manual authoring.
 
 Description generation writes one valid JSON batch to stdout by default. Use `--out app/src/data/dayN-keynote-descriptions.json` to write a reviewable file for a whole day, and `--session-id <asn-id>` to generate one session.
+
+### SQLite Inspection
+
+The lessons CLI writes generated lessons and judge scores to `lessons.db` by default. Use `--db <path>` on the CLI commands when you want a different database file.
+
+Basic interactive SQLite commands:
+
+```bash
+sqlite3 lessons.db
+.tables
+.schema generations
+.schema scores
+select count(*) from generations;
+select count(*) from scores;
+.quit
+```
+
+Useful non-interactive checks:
+
+```bash
+sqlite3 lessons.db 'select count(*) from generations'
+sqlite3 lessons.db 'select count(*) from scores'
+sqlite3 lessons.db 'select * from scores order by created_at desc limit 5'
+sqlite3 lessons.db 'select session_id, model, tokens_used, created_at from generations order by created_at desc limit 5'
+sqlite3 lessons.db 'select session_id, judge_model, total_score, created_at from scores order by created_at desc limit 10'
+```
+
+
+Very destructive but in dev... `sqlite3 lessons.db 'delete from generations; delete from scores;'`
 
 Rebuild the derived keynote augmentation file after changing the raw transcript or schedule:
 

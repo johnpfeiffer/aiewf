@@ -102,8 +102,10 @@ flowchart LR
   descjson["day*-keynote-descriptions.json"]
   cmd["cmd/lessons CLI"]
   desc["cmd/descriptions CLI"]
+  debug["cmd/llm-debug CLI"]
   model["model package"]
-  client["client Gemini API"]
+  cerebras["client Cerebras API"]
+  gemini["client Gemini API"]
   sqlite["SQLite lessons.db"]
   goldens["goldens/*.json"]
 
@@ -115,7 +117,10 @@ flowchart LR
   descjson --> model
   cmd --> model
   desc --> model
-  model --> client
+  debug --> model
+  model --> cerebras
+  model --> gemini
+  debug --> cerebras
   model --> sqlite
   sqlite --> goldens
   goldens --> model
@@ -127,8 +132,9 @@ The package split is:
 
 - `cmd/lessons`: command parsing and orchestration for `generate`, `seed-goldens`, `judge`, and `run`.
 - `cmd/descriptions`: command parsing and orchestration for distilling schedule descriptions from one `keynote_segments_day*.json` file.
+- `cmd/llm-debug`: command parsing and orchestration for a single `--session-id` LLM exchange trace. It uses the same default schedule, speaker, transcript, description, prompt, model, temperature, strict structured-output schema, `reasoning_effort: medium`, and `reasoning_format: parsed` defaults as lesson generation, then prints the raw request and response without SQLite persistence.
 - `model`: schedule adaptation, prompt rendering, lesson schema, thin-description handling, hard checks, generator orchestration, and judge orchestration.
-- `client`: Gemini API wrapper using `google.golang.org/genai`.
+- `client`: Cerebras chat-completions wrapper for lesson generation, Gemini wrapper using `google.golang.org/genai` for judging and description generation, and a retained Groq wrapper that is not wired to any CLI.
 - `storage`: SQLite persistence using `modernc.org/sqlite`.
 - `scripts/reconcile_session_ids.mjs`: reconciles `sessions.json` with authoritative ASN web ids and stores the previous hash id in `source_ids.derived`.
 - `scripts/build_keynote_segments.mjs`: reproducible extraction of keynote transcript segments from the day-specific raw transcripts into `app/src/data/keynote_segments_day*.json` and consolidated `app/src/data/video-links-for-sessions.json`.
@@ -136,6 +142,10 @@ The package split is:
 The CLI uses canonical `session_id` values from the schedule, falling back to deterministic derived ids only for unreconciled records. It joins speaker title, company, and bio metadata from the speaker catalog by name, loads the default transcript segment files and attaches matching transcript segments by session id, applies reviewed description proposals only when the source schedule description is empty or under 50 characters, and skips `Day 1 — Workshop Day` unless `--include-workshops` is set.
 
 The description helper reads one transcript segment file, calls Gemini once per selected session, and emits one reviewable JSON batch with proposed schedule descriptions. It does not write to `sessions.json`; the output is consumed as an augmentation file or manually copied into source data after review.
+
+The judge path passes the source session, optional transcript, generated lesson, and golden reference as separate labeled prompt inputs. Gemini scores only the subjective dimensions: faithfulness, transferability, and actionability. The Go model layer computes objective tag F1, status match, and evidence-verbatim metrics, converts them onto the same 1-5 scale, and stores the six-dimension mean as `total_score`.
+
+The LLM debug helper exists only to inspect the lesson-generation Cerebras exchange for one session id. It rejects every input except `--session-id`, skips SQLite writes, sends the same strict lesson JSON schema and reasoning settings as normal generation, and returns the HTTP status plus the unparsed response body so prompt and provider issues can be diagnosed outside the normal generation and validation flow.
 
 The schedule app consumes the app-local video-link map by canonical `session_id`. `SessionListItem` renders a "Watch video" link beside the schedule-row track/location, and `SessionDetail` renders the same link inline after the displayed track/location when `videoUrl` is present.
 
@@ -145,17 +155,34 @@ The first-pass user journey is:
 sequenceDiagram
   participant User
   participant CLI as lessons CLI
+  participant Cerebras
   participant Gemini
   participant DB as SQLite
   participant Goldens as goldens/
 
   User->>CLI: generate
-  CLI->>Gemini: request lesson JSON for rich approved source material
+  CLI->>Cerebras: request structured lesson JSON for rich approved source material
   CLI->>DB: store generation
   User->>CLI: seed-goldens
   CLI->>Goldens: write editable JSON seeds
   User->>Goldens: manually edit references
   User->>CLI: judge
-  CLI->>Gemini: request rubric scores after hard checks
+  CLI->>Gemini: request subjective rubric scores after hard checks
+  CLI->>CLI: compute tag F1, status match, and evidence-verbatim scores
   CLI->>DB: store score
+```
+
+The debug journey is:
+
+```mermaid
+sequenceDiagram
+  participant User
+  participant Debug as llm-debug CLI
+  participant Cerebras
+
+  User->>Debug: --session-id
+  Debug->>Debug: render lesson prompt and structured chat request JSON
+  Debug->>Cerebras: send raw chat completion request
+  Cerebras-->>Debug: raw HTTP response body
+  Debug-->>User: print request body, status, and response body
 ```

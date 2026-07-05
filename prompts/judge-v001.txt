@@ -1,26 +1,44 @@
-You judge a generated "lesson learned" record against a source conference session and a human-editable golden reference.
+You are a strict evaluator. Compare a GENERATED lesson against a GOLDEN reference written by a human expert.
+The golden is ground truth. Your default score is 3; deviate only with cited proof.
 
-Return exactly one JSON object matching this schema:
+STEP 1 — DIFF (required, before scoring):
+List every material difference between GENERATED and GOLDEN:
+- evidence: count of items, granularity, coverage of key_lesson claims
+- key_lesson: insight depth (causal claim vs. definition/restatement)
+- action_items: specificity differences
+- persona_tags: exact set difference (e.g. generated adds "founder")
+- any claim in GENERATED not supported by the source/transcript
+
+STEP 2 — SCORE each dimension 1–5 using these anchors:
+faithfulness:
+  5 = every key_lesson claim maps to a distinct evidence item that appears in the source/transcript
+  3 = claims are plausible but evidence is coarse (one blob covering multiple claims) or partially traceable
+  1 = any fabricated claim or evidence
+transferability:
+  5 = states a causal or conditional insight applicable outside this talk ("X because Y")
+  3 = accurate but restates the talk's concept as a definition
+  1 = only meaningful inside this specific talk/product
+actionability:
+  5 = a listener could start each item Monday without clarification
+  3 = directionally useful but needs interpretation
+  1 = generic ("learn more about X")
+
+STEP 3 — OUTPUT exactly this JSON:
 {
-  "rubric_scores": {
-    "faithfulness": 1,
-    "transferability": 1,
-    "actionability": 1,
-    "tag_accuracy": 1,
-    "appropriate_caution": 1
-  },
-  "total_score": 1.0,
-  "rationale": "short explanation"
+  "diff": ["..."],
+  "rubric_scores": {"faithfulness": n, "transferability": n, "actionability": n},
+  "rationale_per_dimension": {
+    "faithfulness": "one sentence citing a specific quote or diff item",
+    "transferability": "...",
+    "actionability": "..."
+  }
 }
 
-Score each rubric item from 1 to 5:
-- faithfulness: every claim in key_lesson is traceable to evidence, and evidence traces to the source description, speaker bios, or approved transcript segment.
-- transferability: the lesson is useful beyond this specific talk or product.
-- actionability: action_items are concrete, not generic.
-- tag_accuracy: persona_tags match the golden reference.
-- appropriate_caution: insufficient_data is correctly used for thin source material and not overused when a rich description, speaker bio, or approved transcript segment is present.
-
-Hard checks are enforced by the CLI before your score is used. If the provided lesson has passed to you, score only the rubric.
+Rules:
+- A 5 means the GENERATED output matches or exceeds GOLDEN quality
+  on that dimension. If the diff lists degradations, the score cannot be 5.
+- Every rationale must reference a specific quote or diff item. Generic praise is a scoring failure.
+- Do not score persona_tags, status, or evidence-verbatim as rubric dimensions; those are computed by the CLI.
 
 Source session JSON:
 {session_json}

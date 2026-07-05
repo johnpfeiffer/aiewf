@@ -29,10 +29,15 @@ The minimal high-value tests cover:
   - confidence between 0 and 1
   - valid status and persona tags
 - Zeroing judge totals when a hard check fails.
+- Computing judge objective checks in Go:
+  - tag F1 against the golden persona tags
+  - generated status match against golden status
+  - generated evidence-verbatim ratio against approved source material
+- Combining the three LLM subjective rubric scores with the three Go-computed objective scores into `total_score`.
 
 ## Manual Validation
 
-With `GEMINI_API_KEY` set:
+With `CEREBRAS_API_KEY` and `GEMINI_API_KEY` set:
 
 ```bash
 rtk go run ./cmd/lessons generate --limit 1
@@ -50,5 +55,6 @@ Then manually review:
 
 ## Known First-Pass Risks
 
-- The default generation model is `gemma-4-31b-it` because the user requested it. If the Gemini API account does not expose that exact model id, use `--model` or `LESSON_MODEL` to override it.
+- The default generation model is `gemma-4-31b` on Cerebras because the user requested it. If the Cerebras API account does not expose that exact model id, use `--model` or `LESSON_MODEL` to override it.
+- The default judge model is `gemini-3.5-flash` on Google Gemini. If the Gemini API account does not expose that exact model id, use `--judge-model` or `JUDGE_MODEL` to override it.
 - Goldens produced by `seed-goldens` are only starting points and must be manually edited before judge scores should be trusted.

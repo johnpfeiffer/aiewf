@@ -105,18 +105,28 @@ type Lesson struct {
 }
 
 type RubricScores struct {
-	Faithfulness       int `json:"faithfulness"`
-	Transferability    int `json:"transferability"`
-	Actionability      int `json:"actionability"`
-	TagAccuracy        int `json:"tag_accuracy"`
-	AppropriateCaution int `json:"appropriate_caution"`
+	Faithfulness    int `json:"faithfulness"`
+	Transferability int `json:"transferability"`
+	Actionability   int `json:"actionability"`
+}
+
+type ObjectiveScores struct {
+	TagF1                 float64 `json:"tag_f1"`
+	StatusMatch           bool    `json:"status_match"`
+	EvidenceVerbatim      float64 `json:"evidence_verbatim"`
+	TagScore              float64 `json:"tag_score"`
+	StatusScore           float64 `json:"status_score"`
+	EvidenceVerbatimScore float64 `json:"evidence_verbatim_score"`
 }
 
 type JudgeResult struct {
-	RubricScores RubricScores `json:"rubric_scores"`
-	TotalScore   float64      `json:"total_score"`
-	Rationale    string       `json:"rationale"`
-	HardChecks   []HardCheck  `json:"hard_checks,omitempty"`
+	Diff                  []string          `json:"diff,omitempty"`
+	RubricScores          RubricScores      `json:"rubric_scores"`
+	ObjectiveScores       ObjectiveScores   `json:"objective_scores"`
+	TotalScore            float64           `json:"total_score"`
+	Rationale             string            `json:"rationale,omitempty"`
+	RationalePerDimension map[string]string `json:"rationale_per_dimension,omitempty"`
+	HardChecks            []HardCheck       `json:"hard_checks,omitempty"`
 }
 
 type HardCheck struct {
