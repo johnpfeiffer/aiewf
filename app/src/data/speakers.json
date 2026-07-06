@@ -806,6 +806,30 @@
       ]
     },
     {
+      "name": "Allie Howe",
+      "role": "Security engineer; host of Insecure Agents",
+      "company": "Keycard / Insecure Agents",
+      "bio": "AI security practitioner and host of the Insecure Agents podcast, focused on AI security and agentic systems.",
+      "twitter": "https://x.com/vtahowe",
+      "photoUrl": "/wf26/speakers/by-id/spk_allie_howe.jpg",
+      "sessions": [
+        {
+          "title": "The Great Loops Debate",
+          "day": "Day 4 — Session Day 3",
+          "time": "12:30pm-1:30pm",
+          "room": "Main Stage",
+          "type": "session",
+          "track": "Harness Engineering",
+          "status": "confirmed",
+          "speakers": [
+            "Dex Horthy",
+            "Ian Livingstone",
+            "Allie Howe"
+          ]
+        }
+      ]
+    },
+    {
       "name": "Aman Gupta",
       "role": "Principal Machine Learning Engineer",
       "company": "Nubank",
@@ -3598,6 +3622,20 @@
           "speakers": [
             "Dex Horthy"
           ]
+        },
+        {
+          "title": "The Great Loops Debate",
+          "day": "Day 4 — Session Day 3",
+          "time": "12:30pm-1:30pm",
+          "room": "Main Stage",
+          "type": "session",
+          "track": "Harness Engineering",
+          "status": "confirmed",
+          "speakers": [
+            "Dex Horthy",
+            "Ian Livingstone",
+            "Allie Howe"
+          ]
         }
       ]
     },
@@ -5400,6 +5438,30 @@
           "status": "confirmed",
           "speakers": [
             "Hursh Agrawal"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ian Livingstone",
+      "role": "Co-Founder and CEO",
+      "company": "Keycard",
+      "bio": "Co-Founder and CEO of Keycard, working on identity and access management for AI agents.",
+      "twitter": "https://x.com/ianlivingstone",
+      "photoUrl": "/wf26/speakers/by-id/spk_ian_livingstone.jpg",
+      "sessions": [
+        {
+          "title": "The Great Loops Debate",
+          "day": "Day 4 — Session Day 3",
+          "time": "12:30pm-1:30pm",
+          "room": "Main Stage",
+          "type": "session",
+          "track": "Harness Engineering",
+          "status": "confirmed",
+          "speakers": [
+            "Dex Horthy",
+            "Ian Livingstone",
+            "Allie Howe"
           ]
         }
       ]
