@@ -102,12 +102,15 @@ flowchart LR
   descjson["day*-keynote-descriptions.json"]
   cmd["cmd/lessons CLI"]
   desc["cmd/descriptions CLI"]
+  optimizer["cmd/optimizer CLI"]
   debug["cmd/llm-debug CLI"]
   model["model package"]
   cerebras["client Cerebras API"]
   gemini["client Gemini API"]
   sqlite["SQLite lessons.db"]
   goldens["goldens/*.json"]
+  prompts["prompts/vNNN.txt"]
+  tuner["tuner/*.json"]
 
   sessions --> model
   speakers --> model
@@ -117,6 +120,7 @@ flowchart LR
   descjson --> model
   cmd --> model
   desc --> model
+  optimizer --> model
   debug --> model
   model --> cerebras
   model --> gemini
@@ -124,6 +128,10 @@ flowchart LR
   model --> sqlite
   sqlite --> goldens
   goldens --> model
+  goldens --> optimizer
+  prompts --> optimizer
+  optimizer --> prompts
+  optimizer --> tuner
   model --> sqlite
   desc --> descjson
 ```
@@ -132,8 +140,9 @@ The package split is:
 
 - `cmd/lessons`: command parsing and orchestration for `generate`, `seed-goldens`, `judge`, and `run`.
 - `cmd/descriptions`: command parsing and orchestration for distilling schedule descriptions from one `keynote_segments_day*.json` file.
+- `cmd/optimizer`: golden-only prompt auto-tuning. It starts from `prompts/v001.txt` by default, evaluates the four golden sessions, asks Gemini 3.5 Flash for exactly one generalizable mutation, writes the next `prompts/vNNN.txt`, re-evaluates, and accepts the candidate only if the mean score improves by at least 0.05 without any individual golden dropping by more than 0.10.
 - `cmd/llm-debug`: command parsing and orchestration for a single `--session-id` LLM exchange trace. It uses the same default schedule, speaker, transcript, description, prompt, model, temperature, strict structured-output schema, `reasoning_effort: medium`, and `reasoning_format: parsed` defaults as lesson generation, then prints the raw request and response without SQLite persistence.
-- `model`: schedule adaptation, prompt rendering, lesson schema, thin-description handling, hard checks, generator orchestration, and judge orchestration.
+- `model`: schedule adaptation, prompt rendering, lesson schema, thin-description handling, hard checks, generator orchestration, judge orchestration, optimizer mutation prompts, failure trace extraction, prompt versioning, and prompt acceptance rules.
 - `client`: Cerebras chat-completions wrapper for lesson generation, Gemini wrapper using `google.golang.org/genai` for judging and description generation, and a retained Groq wrapper that is not wired to any CLI.
 - `storage`: SQLite persistence using `modernc.org/sqlite`.
 - `scripts/reconcile_session_ids.mjs`: reconciles `sessions.json` with authoritative ASN web ids and stores the previous hash id in `source_ids.derived`.
@@ -144,6 +153,8 @@ The CLI uses canonical `session_id` values from the schedule, falling back to de
 The description helper reads one transcript segment file, calls Gemini once per selected session, and emits one reviewable JSON batch with proposed schedule descriptions. It does not write to `sessions.json`; the output is consumed as an augmentation file or manually copied into source data after review.
 
 The judge path passes the source session, optional transcript, generated lesson, and golden reference as separate labeled prompt inputs. Gemini returns pass/fail item checks and fractional scores for faithfulness, coverage, transferability, and actionability. The Go model layer keeps objective tag F1, status match, and normalized evidence-source-match metrics as diagnostics, computes confidence calibration against the golden, and stores the five-dimension fractional mean as `total_score`.
+
+The optimizer path is fully automated but intentionally restricted to goldens. Each iteration logs baseline scores, candidate scores, failure traces, mutation rationale, token usage, and the accept/reject decision under `tuner/`. Candidate prompts are guarded against direct references to golden session ids, titles, or speaker names before evaluation.
 
 The LLM debug helper exists only to inspect the lesson-generation Cerebras exchange for one session id. It rejects every input except `--session-id`, skips SQLite writes, sends the same strict lesson JSON schema and reasoning settings as normal generation, and returns the HTTP status plus the unparsed response body so prompt and provider issues can be diagnosed outside the normal generation and validation flow.
 
@@ -170,6 +181,31 @@ sequenceDiagram
   CLI->>Gemini: request pass/fail item checks after hard checks
   CLI->>CLI: compute diagnostics and confidence calibration
   CLI->>DB: store score
+```
+
+The optimizer journey is:
+
+```mermaid
+sequenceDiagram
+  participant User
+  participant Optimizer as optimizer CLI
+  participant Cerebras
+  participant Gemini
+  participant DB as SQLite
+  participant Prompts as prompts/
+  participant Tuner as tuner/
+
+  User->>Optimizer: run auto-tuner
+  Optimizer->>Prompts: load current vNNN prompt
+  Optimizer->>Cerebras: generate lessons for four golden sessions
+  Optimizer->>Gemini: judge each generation against its golden
+  Optimizer->>Gemini: request one prompt mutation from failure traces
+  Optimizer->>Prompts: write candidate vNNN+1 prompt
+  Optimizer->>Cerebras: regenerate the same four sessions
+  Optimizer->>Gemini: rejudge candidate outputs
+  Optimizer->>DB: store generation and score rows
+  Optimizer->>Tuner: log iteration JSON and decision
+  Optimizer-->>User: print winning prompt version
 ```
 
 The debug journey is:

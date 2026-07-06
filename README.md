@@ -62,13 +62,15 @@ The raw keynote transcripts remain in `app/src/data/keynotes-day*.txt`. The deri
 
 The same extraction step writes the consolidated `app/src/data/video-links-for-sessions.json`, which the schedule app uses to show timestamped external video links in session details.
 
-The CLI only uses generated description proposals when the source session description is empty or under 50 characters. The CLI writes generated lessons and judge scores to SQLite, and writes seed golden files to `goldens/` for manual review.
+The CLI writes generated lessons and judge scores to SQLite, and writes seed golden files to `goldens/` for manual review.
 
 Day 1 was a paid workshop day rather than normal conference talks, so the lesson-agent commands skip `Day 1 — Workshop Day` by default. Use `--include-workshops` to process those sessions explicitly.
 
-`cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator. `cmd/llm-debug` is a narrow debug helper that accepts only `--session-id`, builds the Cerebras lesson-generation request for that session with strict structured outputs, `reasoning_effort` set to `medium`, and `reasoning_format` set to `parsed`, then prints the exact request JSON body plus the raw response body without parsing or storing it.
+`cmd/descriptions` is a separate helper command for filling missing keynote descriptions from derived transcript segments before running the lesson generator.
+`cmd/optimizer` is the golden-only prompt auto-tuner. It evaluates the four checked-in goldens, asks Gemini for one generalizable prompt mutation, writes the next `prompts/vNNN.txt`, re-evaluates, and accepts the candidate only when mean `total_score` improves by at least 0.05 with no individual golden dropping by more than 0.10.
+`cmd/llm-debug` is a narrow debug helper that accepts only `--session-id`, builds the generate (for a Lesson) request for that session then prints the exact request JSON body plus the raw response body without parsing or storing it.
 
-### Setup
+### Setup and Models
 
 ```bash
 go mod tidy
@@ -76,9 +78,20 @@ export CEREBRAS_API_KEY=...
 export GEMINI_API_KEY=...
 ```
 
-Lesson generation uses Cerebras by default with model `gemma-4-31b`, strict structured outputs, `reasoning_effort` set to `medium`, and `reasoning_format` set to `parsed`; override the model with `LESSON_MODEL` or `--model`. Judging uses Google Gemini by default with model `gemini-3.5-flash`; override it with `JUDGE_MODEL` or `--judge-model`. The description helper also uses Gemini and can be overridden with `DESCRIPTION_MODEL` or its own `--model`.
+Lesson generation uses Cerebras by default with model `gemma-4-31b`, strict structured outputs, `reasoning_effort` set to `medium`, and `reasoning_format` set to `parsed`.
+- override the model with `LESSON_MODEL` or `--model`.
 
-Judge scoring combines LLM pass/fail dimensions and Go-computed confidence calibration. Gemini returns fractional scores for faithfulness, coverage, transferability, and actionability. The CLI keeps tag F1 against the golden, status match against the golden, and normalized evidence-source-match ratio as diagnostics, computes confidence calibration against the golden, and stores the five-way fractional mean as `total_score`.
+Judging uses Google Gemini by default with model `gemini-3.5-flash`
+- override it with `JUDGE_MODEL` or `--judge-model`. The description helper also uses Gemini and can be overridden with `DESCRIPTION_MODEL` or its own `--model`.
+
+Optimizer prompt mutation also uses Google Gemini by default with model `gemini-3.5-flash`
+- override it with `OPTIMIZER_MODEL` or `--optimizer-model`.
+
+### Methodology
+
+Judge scoring combines LLM pass/fail dimensions and Go-computed confidence calibration. The LLM returns fractional scores for faithfulness, coverage, transferability, and actionability.
+
+The CLI keeps tag F1 against the golden, status match against the golden, and normalized evidence-source-match ratio as diagnostics, computes confidence calibration against the golden, and stores the five-way fractional mean as `total_score`.
 
 ### Commands
 
@@ -87,6 +100,7 @@ go run ./cmd/lessons generate --limit 1
 go run ./cmd/lessons seed-goldens --limit 1
 go run ./cmd/lessons judge --limit 1
 go run ./cmd/lessons run --limit 1
+go run ./cmd/optimizer
 go run ./cmd/llm-debug --session-id asn_slot_2026_06_30_main_stage_0900_2026_06_09t19_26_48_493z
 go run ./cmd/descriptions --out app/src/data/day2-keynote-descriptions.json app/src/data/keynote_segments_day2.json
 ```
@@ -94,6 +108,8 @@ go run ./cmd/descriptions --out app/src/data/day2-keynote-descriptions.json app/
 Run `generate` before `seed-goldens` when you want the seed file to start from an AI-generated lesson. If no stored generation exists for the same `--db`, `--prompt-version`, and session id, `seed-goldens` writes a schema-valid placeholder for manual authoring.
 
 Description generation writes one valid JSON batch to stdout by default. Use `--out app/src/data/dayN-keynote-descriptions.json` to write a reviewable file for a whole day, and `--session-id <asn-id>` to generate one session.
+
+The optimizer starts from `prompts/v001.txt` by default. Use `--latest` to start from the highest `prompts/vNNN.txt`, `--max-iterations 10` to control the plateau limit, and `--overwrite-prompts` only when intentionally replacing candidate prompt files from an earlier tuner run. Per-iteration JSON logs are written to `tuner/`, and optimizer SQLite rows default to `tuner/optimizer.db`.
 
 ### SQLite Inspection
 
