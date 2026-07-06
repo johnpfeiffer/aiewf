@@ -21,7 +21,7 @@ const (
 	defaultTranscripts  = "app/src/data/keynote_segments_day*.json"
 	defaultDescriptions = "app/src/data/day*-keynote-descriptions.json"
 	defaultPrompt       = "prompts/v001.txt"
-	defaultJudgePrompt  = "prompts/judge-v001.txt"
+	defaultJudgePrompt  = "prompts/judge-v002.txt"
 	defaultPromptVer    = "v001"
 	defaultDB           = "lessons.db"
 	defaultGoldens      = "goldens"

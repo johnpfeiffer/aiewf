@@ -1,0 +1,23 @@
+{
+  "session_id": "asn_slot_2026_07_01_leadership_track_02_1045_2026_06_05t14_14_05_159z",
+  "summary": "Defines the Chief AI Officer (CAIO) as a multifaceted role requiring a balance between technical experimentation, product strategy, and organizational coaching. It introduces a 20/60/20 Framework to help CAIOs manage these competing priorities based on the context of their organization's and individual's 'AI maturity'.",
+  "key_lesson": "The Chief AI Officer must dynamically balance the roles of Tinker, Architect, and Coach using a framework that adjusts focus based on the context of current AI adoption.",
+  "evidence": [
+    "Tinker building scalable experiments",
+    "Architect navigating the hype cycle to execute high-stakes product strategy",
+    "Coach guiding a workforce and your customers on meaningful AI adoption",
+    "dynamic 20/60/20 Framework",
+    "push the sliders of focus based on your industry’s maturity and where you are"
+  ],
+  "persona_tags": [
+    "leadership",
+    "c-suite",
+    "manager"
+  ],
+  "action_items": [
+    "Apply a 20/60/20 Framework to balance technical experimentation, product strategy, and organizational coaching.",
+    "Assess your organization and own maturity in AI adoption."
+  ],
+  "confidence": 0.4,
+  "status": "needs_review"
+}

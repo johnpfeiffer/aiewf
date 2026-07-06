@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/johnpfeiffer/textmatch"
 )
 
 func LoadTranscriptSegments(path string) (map[string]TranscriptSegment, error) {
@@ -105,9 +107,9 @@ func EvidenceAppearsInSourceMaterial(session Session, evidence string) bool {
 	if evidence == "" {
 		return false
 	}
-	return strings.Contains(session.Description, evidence) ||
-		strings.Contains(transcriptText(session), evidence) ||
-		strings.Contains(speakerBioText(session), evidence)
+	return textmatch.ContainsNormalized(session.Description, evidence) > 0 ||
+		textmatch.ContainsNormalized(transcriptText(session), evidence) > 0 ||
+		textmatch.ContainsNormalized(speakerBioText(session), evidence) > 0
 }
 
 func transcriptText(session Session) string {

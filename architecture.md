@@ -143,7 +143,7 @@ The CLI uses canonical `session_id` values from the schedule, falling back to de
 
 The description helper reads one transcript segment file, calls Gemini once per selected session, and emits one reviewable JSON batch with proposed schedule descriptions. It does not write to `sessions.json`; the output is consumed as an augmentation file or manually copied into source data after review.
 
-The judge path passes the source session, optional transcript, generated lesson, and golden reference as separate labeled prompt inputs. Gemini scores only the subjective dimensions: faithfulness, transferability, and actionability. The Go model layer computes objective tag F1, status match, and evidence-verbatim metrics, converts them onto the same 1-5 scale, and stores the six-dimension mean as `total_score`.
+The judge path passes the source session, optional transcript, generated lesson, and golden reference as separate labeled prompt inputs. Gemini returns pass/fail item checks and fractional scores for faithfulness, coverage, transferability, and actionability. The Go model layer keeps objective tag F1, status match, and normalized evidence-source-match metrics as diagnostics, computes confidence calibration against the golden, and stores the five-dimension fractional mean as `total_score`.
 
 The LLM debug helper exists only to inspect the lesson-generation Cerebras exchange for one session id. It rejects every input except `--session-id`, skips SQLite writes, sends the same strict lesson JSON schema and reasoning settings as normal generation, and returns the HTTP status plus the unparsed response body so prompt and provider issues can be diagnosed outside the normal generation and validation flow.
 
@@ -167,8 +167,8 @@ sequenceDiagram
   CLI->>Goldens: write editable JSON seeds
   User->>Goldens: manually edit references
   User->>CLI: judge
-  CLI->>Gemini: request subjective rubric scores after hard checks
-  CLI->>CLI: compute tag F1, status match, and evidence-verbatim scores
+  CLI->>Gemini: request pass/fail item checks after hard checks
+  CLI->>CLI: compute diagnostics and confidence calibration
   CLI->>DB: store score
 ```
 

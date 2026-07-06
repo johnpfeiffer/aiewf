@@ -70,7 +70,7 @@ Hard checks (pass/fail, not scored):
 - Valid JSON matching schema
 - summary under 100 words
 - key_lesson is exactly 1 sentence
-- evidence[] items each appear verbatim in source description
+- evidence[] items each appear in source materials
 - 0 <= confidence <= 1
 
 Total = mean of rubric scores, zeroed if any hard check fails.

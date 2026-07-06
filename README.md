@@ -78,7 +78,7 @@ export GEMINI_API_KEY=...
 
 Lesson generation uses Cerebras by default with model `gemma-4-31b`, strict structured outputs, `reasoning_effort` set to `medium`, and `reasoning_format` set to `parsed`; override the model with `LESSON_MODEL` or `--model`. Judging uses Google Gemini by default with model `gemini-3.5-flash`; override it with `JUDGE_MODEL` or `--judge-model`. The description helper also uses Gemini and can be overridden with `DESCRIPTION_MODEL` or its own `--model`.
 
-Judge scoring combines LLM and Go-computed checks. Gemini returns three subjective 1-5 rubric scores for faithfulness, transferability, and actionability. The CLI computes tag F1 against the golden, status match against the golden, and evidence-verbatim ratio against the approved source material, converts those objective checks onto the same 1-5 scale, and stores the six-way mean as `total_score`.
+Judge scoring combines LLM pass/fail dimensions and Go-computed confidence calibration. Gemini returns fractional scores for faithfulness, coverage, transferability, and actionability. The CLI keeps tag F1 against the golden, status match against the golden, and normalized evidence-source-match ratio as diagnostics, computes confidence calibration against the golden, and stores the five-way fractional mean as `total_score`.
 
 ### Commands
 
@@ -136,3 +136,13 @@ node scripts/build_keynote_segments.mjs
 ```bash
 go test ./...
 ```
+
+# Some Notes
+
+For prompts and Evals
+
+- prefer deterministic hard pass/fail first
+
+- LLM as a judge for subjective or more fuzzy tasks
+- require reasoning before verdict/scoring
+- decompose into atomic claims, verify each, report the fraction.

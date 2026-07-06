@@ -38,7 +38,7 @@ Rules:
 - A 5 means the GENERATED output matches or exceeds GOLDEN quality
   on that dimension. If the diff lists degradations, the score cannot be 5.
 - Every rationale must reference a specific quote or diff item. Generic praise is a scoring failure.
-- Do not score persona_tags, status, or evidence-verbatim as rubric dimensions; those are computed by the CLI.
+- Do not score persona_tags, status, evidence-source-match, or confidence calibration as rubric dimensions; those are computed by the CLI.
 
 Source session JSON:
 {session_json}

@@ -1,10 +1,13 @@
 {
   "session_id": "asn_slot_2026_07_01_breakout_track_05_1140_2026_06_25t00_49_59_757z",
-  "summary": "Uber developed a multimodal agent to enhance food photography for merchants while maintaining authenticity and brand identity. The session explores the creation of closed-loop evaluation systems using offline and online signals to prevent reward hacking and ensure quality at scale.",
-  "key_lesson": "To maintain quality in narrow-domain multimodal agents, implement a closed feedback loop combining offline and online signals to detect and counter reward hacking.",
+  "summary": "Uber built a system of agentic loops that enhances food photography for independent Uber Eats merchants, with hard constraints: stay faithful to the dish, preserve merchant branding, avoid homogenizing the marketplace. The talk covers designing multimodal evals - how a closed feedback loop of offline and online signals keeps it improving in production.",
+  "key_lesson": "Static evals are insufficient for production because agents can reward hack so quality at scale requires a closed loop combining offline evals with online production signals, plus monitoring and anomaly detection.",
   "evidence": [
-    "built a closed feedback loop incorporating offline and online signals for continuous improvement",
-    "recognizing and countering reward hacking"
+    "the agent figured out how to game the eval loop",
+    "a closed feedback loop incorporating offline and online signals for continuous improvement",
+    "recognizing and countering reward hacking",
+    "balancing creativity against rigid safety guardrails at scale",
+    "scales production-grade Generative AI"
   ],
   "persona_tags": [
     "engineer",
@@ -12,10 +15,10 @@
     "ai-researcher"
   ],
   "action_items": [
-    "Implement a closed feedback loop that incorporates both offline and online signals for continuous model improvement.",
-    "Establish monitoring to detect and counter reward hacking where agents game evaluation metrics.",
-    "Define rigid safety guardrails to balance generative creativity with domain-specific quality constraints."
+    "Add online production signals to any offline-only (or human) eval suite for a deployed generative feature, closing the feedback loop.",
+    "Red-team your own eval loop: test whether the agent can score well while violating domain constraints (brand fidelity, faithfulness to source).",
+    "Separate creativity scoring from safety guardrails so guardrails stay rigid while the quality rubric evolves."
   ],
-  "confidence": 1,
+  "confidence": 0.8,
   "status": "complete"
 }

@@ -68,11 +68,11 @@ Creates human-reviewable seed golden files under `goldens/`. If a stored generat
 
 Loads the latest stored generation for each selected session and the matching golden file, runs hard checks, and then calls a judge model if hard checks pass.
 
-The judge prompt passes the generated lesson and golden reference as separate labeled inputs. The judge model scores only the subjective dimensions `faithfulness`, `transferability`, and `actionability`. The Go model layer computes `tag_f1`, `status_match`, and `evidence_verbatim` objective checks, converts those objective metrics onto a 1-5 score scale, and stores the six-dimension mean as `total_score`.
+The judge prompt passes the generated lesson and golden reference as separate labeled inputs. The judge model returns pass/fail item checks and fractional scores for `faithfulness`, `coverage`, `transferability`, and `actionability`. The Go model layer keeps `tag_f1`, `status_match`, and `evidence_source_match` as diagnostics, computes confidence calibration against the golden, and stores the five-dimension fractional mean as `total_score`.
 
 Default flags:
 
-- `--judge-prompt prompts/judge-v001.txt`
+- `--judge-prompt prompts/judge-v002.txt`
 - `--judge-model $JUDGE_MODEL`, falling back to `gemini-3.5-flash`
 
 The judge model must be configurable and should be different from the generation model to reduce self-grading bias.
@@ -106,7 +106,7 @@ The generator and judge load transcript segments by default into a session-id ma
 
 The `--transcripts` flag is an override for the default transcript source. The `--no-transcripts` flag disables transcript augmentation.
 
-Evidence hard checks accept verbatim phrases from the schedule description, joined speaker bios, or the matched transcript segment. A session is considered thin only when the schedule description, joined speaker bios, and transcript segment are all missing or under 50 characters.
+Evidence hard checks accept phrases that match the schedule description, joined speaker bios, or the matched transcript segment after deterministic normalization. A session is considered thin only when the schedule description, joined speaker bios, and transcript segment are all missing or under 50 characters.
 
 The extracted JSON is intentionally not written back into `sessions.json`.
 

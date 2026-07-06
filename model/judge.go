@@ -16,10 +16,9 @@ func (j Judge) Judge(ctx context.Context, session Session, lesson Lesson, golden
 	objectiveScores := ComputeObjectiveScores(session, lesson, golden)
 	if !HardChecksPass(hardChecks) {
 		return JudgeResult{
-			RubricScores:    RubricScores{},
 			ObjectiveScores: objectiveScores,
 			TotalScore:      0,
-			Rationale:       "Hard checks failed; rubric score zeroed.",
+			Rationale:       "Hard checks failed; score zeroed.",
 			HardChecks:      hardChecks,
 		}, 0, nil
 	}
@@ -38,51 +37,95 @@ func (j Judge) Judge(ctx context.Context, session Session, lesson Lesson, golden
 	if err != nil {
 		return JudgeResult{}, tokens, err
 	}
-	result.RubricScores = clampRubric(result.RubricScores)
+	result.DimensionScores = normalizeDimensionScores(result.DimensionScores)
+	objectiveScores = applyConfidenceCalibration(result.DimensionScores, objectiveScores, lesson, golden)
 	result.ObjectiveScores = objectiveScores
-	result.TotalScore = combinedJudgeScore(result.RubricScores, objectiveScores)
+	result.TotalScore = combinedJudgeScore(result.DimensionScores, objectiveScores, lesson, golden)
 	result.HardChecks = hardChecks
 	return result, tokens, nil
-}
-
-func clampRubric(scores RubricScores) RubricScores {
-	return RubricScores{
-		Faithfulness:    clampScore(scores.Faithfulness),
-		Transferability: clampScore(scores.Transferability),
-		Actionability:   clampScore(scores.Actionability),
-	}
-}
-
-func clampScore(score int) int {
-	if score < 1 {
-		return 1
-	}
-	if score > 5 {
-		return 5
-	}
-	return score
 }
 
 func ComputeObjectiveScores(session Session, lesson Lesson, golden Lesson) ObjectiveScores {
 	tagF1 := tagF1(lesson.PersonaTags, golden.PersonaTags)
 	statusMatch := lesson.Status == golden.Status
-	evidenceVerbatim := evidenceVerbatim(session, lesson)
+	evidenceSourceMatch := evidenceSourceMatch(session, lesson)
 	return ObjectiveScores{
-		TagF1:                 round2(tagF1),
-		StatusMatch:           statusMatch,
-		EvidenceVerbatim:      round2(evidenceVerbatim),
-		TagScore:              round2(scaleUnitScore(tagF1)),
-		StatusScore:           boolScore(statusMatch),
-		EvidenceVerbatimScore: round2(scaleUnitScore(evidenceVerbatim)),
+		TagF1:               round2(tagF1),
+		StatusMatch:         statusMatch,
+		EvidenceSourceMatch: round2(evidenceSourceMatch),
+		ConfidenceDelta:     round2(lesson.Confidence - golden.Confidence),
 	}
 }
 
-func combinedJudgeScore(scores RubricScores, objectiveScores ObjectiveScores) float64 {
-	total := float64(scores.Faithfulness+scores.Transferability+scores.Actionability) +
-		objectiveScores.TagScore +
-		objectiveScores.StatusScore +
-		objectiveScores.EvidenceVerbatimScore
-	return round2(total / 6)
+func combinedJudgeScore(scores DimensionScores, objectiveScores ObjectiveScores, lesson Lesson, golden Lesson) float64 {
+	if lesson.Status == StatusInsufficientData && golden.Status != StatusInsufficientData {
+		return 0
+	}
+	if lesson.Status == StatusInsufficientData && golden.Status == StatusInsufficientData {
+		return objectiveScores.ConfidenceCalibration
+	}
+	total := scores.Faithfulness.Fraction +
+		scores.Coverage.Fraction +
+		scores.Transferability.Fraction +
+		scores.Actionability.Fraction +
+		objectiveScores.ConfidenceCalibration
+	return round2(total / 5)
+}
+
+func applyConfidenceCalibration(scores DimensionScores, objectiveScores ObjectiveScores, lesson Lesson, golden Lesson) ObjectiveScores {
+	objectiveScores.ConfidenceCalibration = confidenceCalibration(scores, lesson, golden)
+	return objectiveScores
+}
+
+func confidenceCalibration(scores DimensionScores, lesson Lesson, golden Lesson) float64 {
+	qualityCeiling := dimensionMean(scores, lesson, golden)
+	expectedCeiling := math.Min(golden.Confidence, qualityCeiling)
+	overconfidence := lesson.Confidence - expectedCeiling
+	if overconfidence <= 0 {
+		return 1
+	}
+	return round2(clampFloat(1-2*overconfidence, 0, 1))
+}
+
+func dimensionMean(scores DimensionScores, lesson Lesson, golden Lesson) float64 {
+	if lesson.Status == StatusInsufficientData && golden.Status == StatusInsufficientData {
+		return 1
+	}
+	if lesson.Status == StatusInsufficientData && golden.Status != StatusInsufficientData {
+		return 0
+	}
+	total := scores.Faithfulness.Fraction +
+		scores.Coverage.Fraction +
+		scores.Transferability.Fraction +
+		scores.Actionability.Fraction
+	return total / 4
+}
+
+func normalizeDimensionScores(scores DimensionScores) DimensionScores {
+	return DimensionScores{
+		Faithfulness:    normalizeDimensionScore(scores.Faithfulness),
+		Coverage:        normalizeDimensionScore(scores.Coverage),
+		Transferability: normalizeDimensionScore(scores.Transferability),
+		Actionability:   normalizeDimensionScore(scores.Actionability),
+	}
+}
+
+func normalizeDimensionScore(score DimensionScore) DimensionScore {
+	if score.Total < 0 {
+		score.Total = 0
+	}
+	if score.Passed < 0 {
+		score.Passed = 0
+	}
+	if score.Passed > score.Total {
+		score.Passed = score.Total
+	}
+	if score.Total == 0 {
+		score.Fraction = 0
+		return score
+	}
+	score.Fraction = round2(float64(score.Passed) / float64(score.Total))
+	return score
 }
 
 func tagF1(generated []string, golden []string) float64 {
@@ -120,7 +163,7 @@ func stringSet(values []string) map[string]struct{} {
 	return out
 }
 
-func evidenceVerbatim(session Session, lesson Lesson) float64 {
+func evidenceSourceMatch(session Session, lesson Lesson) float64 {
 	if len(lesson.Evidence) == 0 {
 		if lesson.Status == StatusInsufficientData {
 			return 1
@@ -136,23 +179,16 @@ func evidenceVerbatim(session Session, lesson Lesson) float64 {
 	return float64(passing) / float64(len(lesson.Evidence))
 }
 
-func scaleUnitScore(value float64) float64 {
-	if value < 0 {
-		value = 0
-	}
-	if value > 1 {
-		value = 1
-	}
-	return 1 + 4*value
-}
-
-func boolScore(value bool) float64 {
-	if value {
-		return 5
-	}
-	return 1
-}
-
 func round2(value float64) float64 {
 	return math.Round(value*100) / 100
+}
+
+func clampFloat(value, minValue, maxValue float64) float64 {
+	if value < minValue {
+		return minValue
+	}
+	if value > maxValue {
+		return maxValue
+	}
+	return value
 }

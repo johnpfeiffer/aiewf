@@ -25,15 +25,16 @@ The minimal high-value tests cover:
 - Enforcing hard checks:
   - summary under 100 words
   - exactly one sentence in `key_lesson`
-  - evidence appears verbatim in the source description, joined speaker bio, or approved transcript segment
+  - evidence appears in the source description, joined speaker bio, or approved transcript segment using normalized containment
   - confidence between 0 and 1
   - valid status and persona tags
 - Zeroing judge totals when a hard check fails.
 - Computing judge objective checks in Go:
   - tag F1 against the golden persona tags
   - generated status match against golden status
-  - generated evidence-verbatim ratio against approved source material
-- Combining the three LLM subjective rubric scores with the three Go-computed objective scores into `total_score`.
+  - generated evidence-source-match ratio against approved source material
+  - generated confidence calibration against golden confidence and rubric quality
+- Combining four LLM fractional dimensions with Go-computed confidence calibration into `total_score`.
 
 ## Manual Validation
 

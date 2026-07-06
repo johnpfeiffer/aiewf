@@ -17,9 +17,9 @@ func ValidateLesson(lesson Lesson, session Session) []HardCheck {
 	}
 
 	for i, evidence := range lesson.Evidence {
-		name := fmt.Sprintf("evidence_%d_verbatim", i)
+		name := fmt.Sprintf("evidence_%d_source_match", i)
 		pass := EvidenceAppearsInSourceMaterial(session, evidence)
-		checks = append(checks, check(name, pass, "evidence item does not appear verbatim in approved source material"))
+		checks = append(checks, check(name, pass, "evidence item does not appear in approved source material"))
 	}
 
 	if ThinSourceMaterial(session) {

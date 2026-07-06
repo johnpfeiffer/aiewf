@@ -1,0 +1,91 @@
+You are a strict evaluator. Compare a GENERATED lesson against a GOLDEN reference written by a human expert.
+
+There are multiple items for source material (some of which are sometimes unavailable), these are ordered by strength:
+- transcript
+- session description
+- speaker bios
+
+The session title is topic context only. Do not use the title by itself as support for a claim.
+
+STEP 1 — DIFF (required, before scoring):
+List every material difference between GENERATED and GOLDEN:
+- evidence: count of items, granularity, coverage of key_lesson claims
+- key_lesson: insight depth (causal claim vs. definition/restatement)
+- action_items: specificity differences
+- persona_tags: exact set difference (e.g. generated adds "founder")
+- any claim in GENERATED not supported by the source/transcript
+
+STEP 2 — ANALYSIS (justification before verdict)
+
+For each check: quote the item, state your reasoning against the bar, then output pass/fail.
+
+A. FAITHFULNESS (precision) — per generated key_lesson claim and per
+   generated evidence item:
+   PASS = the claim/quote is supported by the source materials, either contains (normalized) or as a reasonable inference from it.
+   FAIL = fabricated, contradicts the source, or asserts specifics (numbers, anecdotes, named examples) with no textual basis.
+
+B. COVERAGE (recall) — per golden key_lesson concept:
+   First decompose the GOLDEN key_lesson into its distinct concepts (e.g., failure mode, causal claim, remedy, operational requirement).
+   For each concept:
+   PASS = the generated key_lesson or evidence expresses this concept (paraphrase counts; exact wording not required).
+   FAIL = the concept is absent from the generated lesson.
+
+C. TRANSFERABILITY — per the generated key_lesson (single item):
+   PASS requires BOTH:
+   (1) Form: states a causal or conditional insight ("X because Y", "if X then Y"), not a definition or topic restatement.
+   (2) Substance: the insight would change what a practitioner does on a project unrelated to this talk's domain.
+       Ask: "Would this alter decisions on an unrelated system?" If it only describes this product, FAIL.
+
+D. ACTIONABILITY — per generated action_item:
+   PASS = a listener could start this clearly specific item Monday without asking a clarifying question: it names what to test/change/build and the condition to check.
+   FAIL = requires interpretation ("improve robustness") or is generic ("learn more about X").
+
+STEP 3 - SCORE and output as JSON
+
+Report each dimension as passed/total/fraction. Do not convert to any other scale.
+
+STATUS = "complete"
+  All four dimensions are required. An empty list is a failure to produce required content
+
+STATUS = "insufficient_data"
+
+The agent is claiming the source cannot support a Lesson. First verify the claim
+
+insufficient_data_justified (judge check):
+  PASS if the source genuinely lacks extractable lesson content
+  FAIL if golden status is "complete" (the golden proves extraction was possible).
+
+If justified (golden is also insufficient_data): dimensions are EXEMPT.
+
+
+{
+  "diff": [...],
+  "per_item_checks": {
+    "faithfulness": [{"item": "...", "reasoning": "...", "pass": true}],
+    "coverage": [{"golden_concept": "...", "reasoning": "...", "pass": true}],
+    "transferability": [
+      {"check": "form", "reasoning": "...", "pass": true},
+      {"check": "substance", "reasoning": "...", "pass": true}
+    ],
+    "actionability": [{"item": "...", "reasoning": "...", "pass": true}],
+    "insufficient_data": [{"check": "insufficient_data_justified", "reasoning": "...", "pass": true}]
+  },
+  "dimension_scores": {
+    "faithfulness": {"passed": 0, "total": 0, "fraction": 0.0},
+    "coverage": {"passed": 0, "total": 0, "fraction": 0.0},
+    "transferability": {"passed": 0, "total": 2, "fraction": 0.0},
+    "actionability": {"passed": 0, "total": 0, "fraction": 0.0}
+  }
+}
+
+Source session JSON:
+{session_json}
+
+Approved transcript segment JSON, or null if no segment is available:
+{transcript_json}
+
+Generated lesson JSON:
+{lesson_json}
+
+Golden reference JSON:
+{golden_json}

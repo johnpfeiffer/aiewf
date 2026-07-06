@@ -104,24 +104,47 @@ type Lesson struct {
 	Status      string   `json:"status"`
 }
 
-type RubricScores struct {
-	Faithfulness    int `json:"faithfulness"`
-	Transferability int `json:"transferability"`
-	Actionability   int `json:"actionability"`
-}
-
 type ObjectiveScores struct {
 	TagF1                 float64 `json:"tag_f1"`
 	StatusMatch           bool    `json:"status_match"`
-	EvidenceVerbatim      float64 `json:"evidence_verbatim"`
-	TagScore              float64 `json:"tag_score"`
-	StatusScore           float64 `json:"status_score"`
-	EvidenceVerbatimScore float64 `json:"evidence_verbatim_score"`
+	EvidenceSourceMatch   float64 `json:"evidence_source_match"`
+	ConfidenceDelta       float64 `json:"confidence_delta"`
+	ConfidenceCalibration float64 `json:"confidence_calibration"`
+}
+
+type JudgeCheck struct {
+	Item          string `json:"item,omitempty"`
+	GoldenConcept string `json:"golden_concept,omitempty"`
+	Check         string `json:"check,omitempty"`
+	Reasoning     string `json:"reasoning"`
+	Pass          bool   `json:"pass"`
+}
+
+type PerItemChecks struct {
+	Faithfulness     []JudgeCheck `json:"faithfulness,omitempty"`
+	Coverage         []JudgeCheck `json:"coverage,omitempty"`
+	Transferability  []JudgeCheck `json:"transferability,omitempty"`
+	Actionability    []JudgeCheck `json:"actionability,omitempty"`
+	InsufficientData []JudgeCheck `json:"insufficient_data,omitempty"`
+}
+
+type DimensionScore struct {
+	Passed   int     `json:"passed"`
+	Total    int     `json:"total"`
+	Fraction float64 `json:"fraction"`
+}
+
+type DimensionScores struct {
+	Faithfulness    DimensionScore `json:"faithfulness"`
+	Coverage        DimensionScore `json:"coverage"`
+	Transferability DimensionScore `json:"transferability"`
+	Actionability   DimensionScore `json:"actionability"`
 }
 
 type JudgeResult struct {
 	Diff                  []string          `json:"diff,omitempty"`
-	RubricScores          RubricScores      `json:"rubric_scores"`
+	PerItemChecks         PerItemChecks     `json:"per_item_checks"`
+	DimensionScores       DimensionScores   `json:"dimension_scores"`
 	ObjectiveScores       ObjectiveScores   `json:"objective_scores"`
 	TotalScore            float64           `json:"total_score"`
 	Rationale             string            `json:"rationale,omitempty"`

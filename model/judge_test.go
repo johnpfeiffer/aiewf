@@ -35,20 +35,28 @@ func (c *judgeClient) GenerateJSON(_ context.Context, _ string, systemPrompt, _ 
 	c.systemPrompt = systemPrompt
 	return `{
   "diff": ["generated action item is less specific"],
-  "rubric_scores": {
-    "faithfulness": 5,
-    "transferability": 3,
-    "actionability": 4
+  "per_item_checks": {
+    "faithfulness": [{"item": "source phrase", "reasoning": "It appears in the source.", "pass": true}],
+    "coverage": [
+      {"golden_concept": "source phrase", "reasoning": "The generated lesson includes this concept.", "pass": true},
+      {"golden_concept": "evaluation", "reasoning": "The generated lesson omits evaluation.", "pass": false}
+    ],
+    "transferability": [
+      {"check": "form", "reasoning": "The generated lesson states a need.", "pass": true},
+      {"check": "substance", "reasoning": "It is narrow.", "pass": false}
+    ],
+    "actionability": [{"item": "Apply source phrase.", "reasoning": "The item is concrete.", "pass": true}]
   },
-  "rationale_per_dimension": {
-    "faithfulness": "The generated evidence quotes source phrase.",
-    "transferability": "Diff notes a less causal framing.",
-    "actionability": "Diff notes weaker specificity."
+  "dimension_scores": {
+    "faithfulness": {"passed": 1, "total": 1, "fraction": 0.0},
+    "coverage": {"passed": 1, "total": 2, "fraction": 0.0},
+    "transferability": {"passed": 1, "total": 2, "fraction": 0.0},
+    "actionability": {"passed": 1, "total": 1, "fraction": 0.0}
   }
 }`, 37, nil
 }
 
-func TestJudgeCombinesSubjectiveAndObjectiveScores(t *testing.T) {
+func TestJudgeCombinesV2DimensionsAndConfidenceCalibration(t *testing.T) {
 	client := &judgeClient{}
 	session := Session{
 		SessionID:   "s1",
@@ -61,12 +69,13 @@ func TestJudgeCombinesSubjectiveAndObjectiveScores(t *testing.T) {
 		Evidence:    []string{"source phrase"},
 		PersonaTags: []string{"engineer", "product"},
 		ActionItems: []string{"Apply source phrase."},
-		Confidence:  0.9,
+		Confidence:  0.8,
 		Status:      StatusComplete,
 	}
 	golden := Lesson{
 		SessionID:   "s1",
 		PersonaTags: []string{"engineer", "manager"},
+		Confidence:  0.9,
 		Status:      StatusComplete,
 	}
 
@@ -90,11 +99,17 @@ func TestJudgeCombinesSubjectiveAndObjectiveScores(t *testing.T) {
 	if !result.ObjectiveScores.StatusMatch {
 		t.Fatal("StatusMatch = false, want true")
 	}
-	if result.ObjectiveScores.EvidenceVerbatim != 1 {
-		t.Fatalf("EvidenceVerbatim = %v, want 1", result.ObjectiveScores.EvidenceVerbatim)
+	if result.ObjectiveScores.EvidenceSourceMatch != 1 {
+		t.Fatalf("EvidenceSourceMatch = %v, want 1", result.ObjectiveScores.EvidenceSourceMatch)
 	}
-	if result.TotalScore != 4.17 {
-		t.Fatalf("TotalScore = %v, want 4.17", result.TotalScore)
+	if result.DimensionScores.Coverage.Fraction != 0.5 {
+		t.Fatalf("Coverage.Fraction = %v, want 0.5", result.DimensionScores.Coverage.Fraction)
+	}
+	if result.ObjectiveScores.ConfidenceCalibration != 0.9 {
+		t.Fatalf("ConfidenceCalibration = %v, want 0.9", result.ObjectiveScores.ConfidenceCalibration)
+	}
+	if result.TotalScore != 0.78 {
+		t.Fatalf("TotalScore = %v, want 0.78", result.TotalScore)
 	}
 	if client.systemPrompt == "" {
 		t.Fatal("systemPrompt was empty")
@@ -106,10 +121,12 @@ func TestComputeObjectiveScores(t *testing.T) {
 	lesson := Lesson{
 		Evidence:    []string{"alpha", "missing"},
 		PersonaTags: []string{"engineer", "product"},
+		Confidence:  0.9,
 		Status:      StatusNeedsReview,
 	}
 	golden := Lesson{
 		PersonaTags: []string{"engineer", "manager"},
+		Confidence:  0.7,
 		Status:      StatusComplete,
 	}
 
@@ -120,16 +137,40 @@ func TestComputeObjectiveScores(t *testing.T) {
 	if scores.StatusMatch {
 		t.Fatal("StatusMatch = true, want false")
 	}
-	if scores.EvidenceVerbatim != 0.5 {
-		t.Fatalf("EvidenceVerbatim = %v, want 0.5", scores.EvidenceVerbatim)
+	if scores.EvidenceSourceMatch != 0.5 {
+		t.Fatalf("EvidenceSourceMatch = %v, want 0.5", scores.EvidenceSourceMatch)
 	}
-	if scores.TagScore != 3 {
-		t.Fatalf("TagScore = %v, want 3", scores.TagScore)
+	if scores.ConfidenceDelta != 0.2 {
+		t.Fatalf("ConfidenceDelta = %v, want 0.2", scores.ConfidenceDelta)
 	}
-	if scores.StatusScore != 1 {
-		t.Fatalf("StatusScore = %v, want 1", scores.StatusScore)
+}
+
+func TestCombinedJudgeScoreDingsOverconfidentPoorerGeneration(t *testing.T) {
+	scores := DimensionScores{
+		Faithfulness:    DimensionScore{Passed: 3, Total: 5},
+		Coverage:        DimensionScore{Passed: 3, Total: 5},
+		Transferability: DimensionScore{Passed: 3, Total: 5},
+		Actionability:   DimensionScore{Passed: 3, Total: 5},
 	}
-	if scores.EvidenceVerbatimScore != 3 {
-		t.Fatalf("EvidenceVerbatimScore = %v, want 3", scores.EvidenceVerbatimScore)
+	scores = normalizeDimensionScores(scores)
+	lesson := Lesson{Confidence: 0.9}
+	golden := Lesson{Confidence: 0.7}
+	objectiveScores := applyConfidenceCalibration(scores, ObjectiveScores{}, lesson, golden)
+
+	if objectiveScores.ConfidenceCalibration != 0.4 {
+		t.Fatalf("ConfidenceCalibration = %v, want 0.4", objectiveScores.ConfidenceCalibration)
+	}
+	if total := combinedJudgeScore(scores, objectiveScores, lesson, golden); total != 0.56 {
+		t.Fatalf("combinedJudgeScore = %v, want 0.56", total)
+	}
+}
+
+func TestCombinedJudgeScoreZerosUnjustifiedInsufficientData(t *testing.T) {
+	lesson := Lesson{Status: StatusInsufficientData, Confidence: 0}
+	golden := Lesson{Status: StatusComplete, Confidence: 0.8}
+	objectiveScores := applyConfidenceCalibration(DimensionScores{}, ObjectiveScores{}, lesson, golden)
+
+	if total := combinedJudgeScore(DimensionScores{}, objectiveScores, lesson, golden); total != 0 {
+		t.Fatalf("combinedJudgeScore = %v, want 0", total)
 	}
 }

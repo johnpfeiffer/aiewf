@@ -84,6 +84,9 @@ func TestJudgeDefaultsToGeminiFlash(t *testing.T) {
 	if cfg.judgeModel != "gemini-3.5-flash" {
 		t.Fatalf("judgeModel = %q, want gemini-3.5-flash", cfg.judgeModel)
 	}
+	if cfg.judgePrompt != "prompts/judge-v002.txt" {
+		t.Fatalf("judgePrompt = %q, want prompts/judge-v002.txt", cfg.judgePrompt)
+	}
 }
 
 func TestGoldenPathUsesSessionJSONFilename(t *testing.T) {

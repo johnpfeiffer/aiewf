@@ -5,7 +5,7 @@ Return exactly one JSON object matching this schema:
   "session_id": "string",
   "summary": "2-3 sentences, under 100 words total",
   "key_lesson": "exactly one sentence with a transferable insight",
-  "evidence": ["verbatim phrase from the approved source material"],
+  "evidence": ["short phrase from the approved source material"],
   "persona_tags": ["one or more allowed taxonomy tags"],
   "action_items": ["0-3 concrete next steps"],
   "confidence": 0.0,
@@ -20,7 +20,7 @@ Allowed status values:
 
 Rules:
 - Use only the session description, speaker bios in the session JSON, and optional approved transcript segment as evidence for the key lesson.
-- Every evidence item must appear verbatim in the source description, a speaker bio, or the approved transcript segment.
+- Every evidence item must appear in the source description, a speaker bio, or the approved transcript segment.
 - Do not infer a lesson from title, speaker name, company, track, or format alone.
 - If the description, speaker bios, and approved transcript segment are all thin or missing, return status "insufficient_data", confidence below 0.3, empty evidence, and empty action_items.
 - If you are uncertain but the approved source material contains enough substance, return status "needs_review".

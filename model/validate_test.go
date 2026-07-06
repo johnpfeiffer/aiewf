@@ -25,7 +25,27 @@ func TestValidateLessonPassesGroundedLesson(t *testing.T) {
 	}
 }
 
-func TestValidateLessonFailsNonVerbatimEvidence(t *testing.T) {
+func TestValidateLessonAcceptsNormalizedEvidenceSourceMatch(t *testing.T) {
+	session := Session{
+		SessionID:   "s1",
+		Description: "Production agents need replayable\u2014traces so teams can debug failures after deployment.",
+	}
+	lesson := Lesson{
+		SessionID:   "s1",
+		Summary:     "The talk covered replayable traces for production agents.",
+		KeyLesson:   "Replayable traces make production agent failures easier to debug.",
+		Evidence:    []string{"replayable traces so teams can debug failures"},
+		PersonaTags: []string{"engineer"},
+		ActionItems: []string{"Capture replayable traces for one production agent workflow."},
+		Confidence:  0.8,
+		Status:      StatusComplete,
+	}
+	if checks := ValidateLesson(lesson, session); !HardChecksPass(checks) {
+		t.Fatalf("hard checks failed: %#v", checks)
+	}
+}
+
+func TestValidateLessonFailsEvidenceMissingFromSource(t *testing.T) {
 	session := Session{SessionID: "s1", Description: strings.Repeat("grounded ", 10)}
 	lesson := Lesson{
 		SessionID:   "s1",
