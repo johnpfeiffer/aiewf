@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { ScheduleSession } from "../models/session";
+import { ScheduleSession, TranscriptData } from "../models/session";
 import { SessionDetail } from "./SessionDetail";
 
 function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession {
@@ -22,6 +22,12 @@ function makeSession(overrides: Partial<ScheduleSession> = {}): ScheduleSession 
     ...overrides,
   };
 }
+
+const sampleTranscript: TranscriptData = {
+  start: "00:01:08",
+  end: "00:11:15",
+  text: "Welcome to the World's Fair. Let's kick off the stage.",
+};
 
 describe("SessionDetail", () => {
   it("renders full details: title, track, speakers, description", () => {
@@ -133,5 +139,86 @@ describe("SessionDetail", () => {
     expect(link.closest("p")).toHaveTextContent(
       "Software Factories · Main Stage Watch video",
     );
+  });
+
+  it("shows a Transcript button when the session has a transcript", () => {
+    render(
+      <SessionDetail
+        session={makeSession({ transcript: sampleTranscript })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    expect(screen.getByRole("button", { name: "Transcript" })).toBeInTheDocument();
+  });
+
+  it("does not show a Transcript button when the session has no transcript", () => {
+    render(
+      <SessionDetail
+        session={makeSession()}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    expect(screen.queryByRole("button", { name: "Transcript" })).not.toBeInTheDocument();
+  });
+
+  it("opens the transcript panel when the Transcript button is clicked", async () => {
+    const user = userEvent.setup();
+    render(
+      <SessionDetail
+        session={makeSession({ transcript: sampleTranscript })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    expect(screen.queryByText("Transcript", { selector: "h3" })).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Transcript" }));
+    expect(screen.getByRole("heading", { name: "Transcript" })).toBeInTheDocument();
+    expect(screen.getByText(sampleTranscript.text)).toBeInTheDocument();
+  });
+
+  it("hides the transcript panel when the button is clicked again", async () => {
+    const user = userEvent.setup();
+    render(
+      <SessionDetail
+        session={makeSession({ transcript: sampleTranscript })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: "Transcript" }));
+    expect(screen.getByRole("heading", { name: "Transcript" })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Hide transcript" }));
+    expect(screen.queryByRole("heading", { name: "Transcript" })).not.toBeInTheDocument();
+  });
+
+  it("displays the start and end timestamps in the transcript panel", async () => {
+    const user = userEvent.setup();
+    render(
+      <SessionDetail
+        session={makeSession({ transcript: sampleTranscript })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: "Transcript" }));
+    expect(screen.getByText("00:01:08 / 00:11:15")).toBeInTheDocument();
+  });
+
+  it("shows a Jump to video link when both transcript and videoUrl exist", async () => {
+    const user = userEvent.setup();
+    render(
+      <SessionDetail
+        session={makeSession({
+          transcript: sampleTranscript,
+          videoUrl: "https://www.youtube.com/watch?v=abc&t=68s",
+        })}
+        isFavorite={false}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: "Transcript" }));
+    expect(screen.getByRole("link", { name: "Jump to video" })).toBeInTheDocument();
   });
 });

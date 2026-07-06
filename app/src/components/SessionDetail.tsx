@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Box, Chip, IconButton, Link, Paper, Stack, Typography } from "@mui/material";
 import {
   ScheduleSession,
@@ -5,6 +6,7 @@ import {
   formatTimeRange,
 } from "../models/session";
 import { linkify } from "../lib/linkify";
+import { TranscriptPanel } from "./TranscriptPanel";
 
 interface SessionDetailProps {
   session?: ScheduleSession;
@@ -19,6 +21,12 @@ export function SessionDetail({
   onToggleFavorite,
   conflictsWithFavorite,
 }: SessionDetailProps) {
+  const [showTranscript, setShowTranscript] = useState(false);
+
+  useEffect(() => {
+    setShowTranscript(false);
+  }, [session?.id]);
+
   if (!session) {
     return (
       <Paper variant="outlined" sx={{ p: 2 }}>
@@ -29,6 +37,8 @@ export function SessionDetail({
 
   const hasSpeakers = session.speakers.length > 0;
   const hasDescription = session.description.trim().length > 0;
+  const hasTranscript = Boolean(session.transcript);
+  const showPanel = showTranscript && hasTranscript;
 
   return (
     <Paper
@@ -37,6 +47,13 @@ export function SessionDetail({
         p: 2,
         borderColor: conflictsWithFavorite ? "error.main" : "divider",
         borderWidth: conflictsWithFavorite ? 2 : 1,
+        ...(showPanel
+          ? {
+              display: "flex",
+              flexDirection: "column",
+              maxHeight: "calc(100vh - 32px)",
+            }
+          : {}),
       }}
     >
       <Stack spacing={1}>
@@ -67,6 +84,18 @@ export function SessionDetail({
                 variant="body2"
               >
                 Watch video
+              </Link>
+            </>
+          )}
+          {hasTranscript && (
+            <>
+              {" "}
+              <Link
+                component="button"
+                variant="body2"
+                onClick={() => setShowTranscript(!showTranscript)}
+              >
+                {showTranscript ? "Hide transcript" : "Transcript"}
               </Link>
             </>
           )}
@@ -131,6 +160,9 @@ export function SessionDetail({
           </IconButton>
         </Box>
       </Stack>
+      {showPanel && session.transcript && (
+        <TranscriptPanel transcript={session.transcript} videoUrl={session.videoUrl} />
+      )}
     </Paper>
   );
 }
