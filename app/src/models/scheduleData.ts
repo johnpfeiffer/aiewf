@@ -7,6 +7,9 @@
 import sessionsJsonRaw from "../data/sessions.json?raw";
 import speakersJsonRaw from "../data/speakers.json?raw";
 import sessionVideoLinksRaw from "../data/video-links-for-sessions.json?raw";
+import keynoteSegmentsDay2Raw from "../data/keynote_segments_day2.json?raw";
+import keynoteSegmentsDay3Raw from "../data/keynote_segments_day3.json?raw";
+import keynoteSegmentsDay4Raw from "../data/keynote_segments_day4.json?raw";
 
 export interface Speaker {
   name: string;
@@ -15,6 +18,12 @@ export interface Speaker {
 }
 
 export type SessionType = "KEYNOTE" | "SESSION" | "SPONSOR" | "WORKSHOP";
+
+export interface TranscriptData {
+  start: string;
+  end: string;
+  text: string;
+}
 
 export interface ScheduleSession {
   id: string;
@@ -30,6 +39,7 @@ export interface ScheduleSession {
   speakers: Speaker[];
   description: string;
   videoUrl?: string;
+  transcript?: TranscriptData;
 }
 
 export interface ScheduleDay {
@@ -82,6 +92,17 @@ interface SessionVideoLink {
 
 interface SessionVideoLinksFile {
   links: SessionVideoLink[];
+}
+
+interface KeynoteSegment {
+  session_id: string;
+  start: string;
+  end: string;
+  transcript: string;
+}
+
+interface KeynoteSegmentsFile {
+  segments: KeynoteSegment[];
 }
 
 const TIME_PATTERN = /^(\d{1,2}):(\d{2})(am|pm)$/;
@@ -143,6 +164,25 @@ const videoUrlBySessionId = new Map(
   sessionVideoLinksFile.links.map((link) => [link.session_id, link.video_url]),
 );
 
+const keynoteSegmentsFiles: KeynoteSegmentsFile[] = [
+  JSON.parse(keynoteSegmentsDay2Raw),
+  JSON.parse(keynoteSegmentsDay3Raw),
+  JSON.parse(keynoteSegmentsDay4Raw),
+];
+
+const transcriptBySessionId = new Map<string, TranscriptData>();
+for (const file of keynoteSegmentsFiles) {
+  for (const segment of file.segments) {
+    if (segment.transcript && segment.transcript.trim().length > 0) {
+      transcriptBySessionId.set(segment.session_id, {
+        start: segment.start,
+        end: segment.end,
+        text: segment.transcript,
+      });
+    }
+  }
+}
+
 function sortRawSessions(a: RawSession, b: RawSession): number {
   const [aStart] = splitTimeRange(a.time);
   const [bStart] = splitTimeRange(b.time);
@@ -187,6 +227,7 @@ export const scheduleSessions: ScheduleSession[] = SCHEDULE_DAYS.flatMap(
           })),
           description: session.description ?? "",
           videoUrl: videoUrlBySessionId.get(session.session_id),
+          transcript: transcriptBySessionId.get(session.session_id),
         };
       });
   },

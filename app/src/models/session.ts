@@ -11,6 +11,7 @@ export {
   type Speaker,
   type SessionType,
   type ScheduleDay,
+  type TranscriptData,
   scheduleSessions,
   SCHEDULE_DAYS,
   FAIR_DATES,
