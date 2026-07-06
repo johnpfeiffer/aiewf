@@ -4,7 +4,7 @@
   "location": "San Francisco, CA",
   "website": "https://ai.engineer/worldsfair",
   "scheduleVersion": 4943,
-  "totalSessions": 561,
+  "totalSessions": 562,
   "sessions": [
     {
       "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 101",
@@ -8358,6 +8358,25 @@
       "source_ids": {
         "asn": "asn_2026_07_02_expo_stage_02_1230",
         "derived": "day_4_session_day_3_12_30pm_1_30pm_expo_stage_2_nw_latent_space_live_the_a9a1f474"
+      }
+    },
+    {
+      "title": "The Great Loops Debate",
+      "day": "Day 4 — Session Day 3",
+      "time": "12:30pm-1:30pm",
+      "room": "Main Stage",
+      "type": "session",
+      "track": "Harness Engineering",
+      "status": "confirmed",
+      "speakers": [
+        "Dex Horthy",
+        "Ian Livingstone",
+        "Allie Howe",
+        "Geoffrey Huntley"
+      ],
+      "session_id": "asn_slot_2026_07_02_main_stage_1230_2026_06_24t22_27_43_481z",
+      "source_ids": {
+        "asn": "asn_slot_2026_07_02_main_stage_1230_2026_06_24t22_27_43_481z"
       }
     },
     {
