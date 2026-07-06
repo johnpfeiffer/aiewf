@@ -824,7 +824,8 @@
           "speakers": [
             "Dex Horthy",
             "Ian Livingstone",
-            "Allie Howe"
+            "Allie Howe",
+            "Geoffrey Huntley"
           ]
         }
       ]
@@ -3634,7 +3635,8 @@
           "speakers": [
             "Dex Horthy",
             "Ian Livingstone",
-            "Allie Howe"
+            "Allie Howe",
+            "Geoffrey Huntley"
           ]
         }
       ]
@@ -4947,6 +4949,32 @@
       ]
     },
     {
+      "name": "Geoffrey Huntley",
+      "role": "Creator of the Ralph Wiggum Loop",
+      "company": "Latent Patterns",
+      "bio": "Creator of the Ralph Wiggum Loop, a deterministic LLM pattern for managing context rot and compaction in agentic software engineering. Building Latent Patterns, a deep technical course on AI engineering.",
+      "twitter": "https://x.com/GeoffreyHuntley",
+      "website": "https://ghuntley.com/",
+      "photoUrl": "/wf26/speakers/by-id/spk_geoffrey_huntley.jpg",
+      "sessions": [
+        {
+          "title": "The Great Loops Debate",
+          "day": "Day 4 — Session Day 3",
+          "time": "12:30pm-1:30pm",
+          "room": "Main Stage",
+          "type": "session",
+          "track": "Harness Engineering",
+          "status": "confirmed",
+          "speakers": [
+            "Dex Horthy",
+            "Ian Livingstone",
+            "Allie Howe",
+            "Geoffrey Huntley"
+          ]
+        }
+      ]
+    },
+    {
       "name": "Geoffrey Litt",
       "role": "Design Engineer",
       "company": "Notion",
@@ -5461,7 +5489,8 @@
           "speakers": [
             "Dex Horthy",
             "Ian Livingstone",
-            "Allie Howe"
+            "Allie Howe",
+            "Geoffrey Huntley"
           ]
         }
       ]
