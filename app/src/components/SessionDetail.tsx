@@ -51,7 +51,7 @@ export function SessionDetail({
           ? {
               display: "flex",
               flexDirection: "column",
-              maxHeight: "calc(100vh - 32px)",
+              maxHeight: { xs: "none", md: "calc(100vh - 32px)" },
             }
           : {}),
       }}

@@ -42,8 +42,8 @@ export function TranscriptPanel({ transcript, videoUrl }: TranscriptPanelProps) 
   return (
     <Box
       sx={{
-        flex: 1,
-        minHeight: 0,
+        flex: { xs: "none", md: 1 },
+        minHeight: { xs: "auto", md: 0 },
         display: "flex",
         flexDirection: "column",
         mt: 1.5,
@@ -89,9 +89,11 @@ export function TranscriptPanel({ transcript, videoUrl }: TranscriptPanelProps) 
         ref={scrollRef}
         onScroll={handleScroll}
         sx={{
-          flex: 1,
           overflowY: "auto",
           pr: 1,
+          height: { xs: "60vh", md: "auto" },
+          flex: { md: 1 },
+          minHeight: { xs: 300, md: 0 },
         }}
       >
         <Typography variant="body2" sx={{ whiteSpace: "pre-line", lineHeight: 1.8 }}>
