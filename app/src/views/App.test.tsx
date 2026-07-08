@@ -44,6 +44,18 @@ describe("App", () => {
     expect(linkedIn).toHaveAttribute("target", "_blank");
   });
 
+  it("renders a footer link to the GitHub source code", () => {
+    render(<App />);
+    const github = screen.getByRole("link", {
+      name: "Source code on GitHub",
+    });
+    expect(github).toHaveAttribute(
+      "href",
+      "https://github.com/johnpfeiffer/aiewf",
+    );
+    expect(github).toHaveAttribute("target", "_blank");
+  });
+
   it("shows an empty state on My Schedule before any session is saved", async () => {
     const user = userEvent.setup();
     render(<App />);
