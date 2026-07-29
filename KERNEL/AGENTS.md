@@ -60,7 +60,7 @@ Agents must not:
 
 Use of documentation is the way to record facts and output.
 
-Ensure there is a README.md that is updated with the dev setup, and how to test locally (i.e. localhost:8080)
+Ensure there is a README.md that is updated with the dev setup, and how to test locally
 
 ## Tests Pass
 
