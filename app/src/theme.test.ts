@@ -27,8 +27,8 @@ describe("theme conformance (KERNEL/DESIGN.md)", () => {
     expect(theme.components?.MuiButton?.styleOverrides?.sizeSmall).toMatchObject({
       fontSize: "0.875rem",
     });
-    expect(theme.components?.MuiChip?.styleOverrides?.labelSmall).toMatchObject({
-      fontSize: "0.875rem",
+    expect(theme.components?.MuiChip?.styleOverrides?.root).toMatchObject({
+      "&.MuiChip-sizeSmall .MuiChip-label": { fontSize: "0.875rem" },
     });
     expect(theme.components?.MuiInputBase?.styleOverrides?.sizeSmall).toMatchObject({
       fontSize: "0.875rem",

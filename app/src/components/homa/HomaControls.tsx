@@ -54,8 +54,8 @@ export function HomaControls({
   const show = (s: Scene[]) => s.includes(scene);
 
   return (
-    <Stack spacing={2} direction={{ xs: "column", md: "row" }} alignItems="flex-start" flexWrap="wrap">
-      <Stack direction="row" spacing={1} alignItems="center">
+    <Stack spacing={2} direction={{ xs: "column", md: "row" }} sx={{ alignItems: "flex-start", flexWrap: "wrap" }}>
+      <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
         <Button variant="contained" size="small" onClick={toggle} disabled={finished && !playing}>
           {playing ? "Pause" : "Play"}
         </Button>
@@ -81,7 +81,7 @@ export function HomaControls({
 
       <Divider orientation="vertical" flexItem />
 
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+      <Stack direction="row" spacing={2} sx={{ flexWrap: "wrap" }} useFlexGap>
         {show(["tcp-vs-homa", "overcommitment"]) && (
           <Row label="Workload">
             <Select

@@ -44,9 +44,9 @@ export function SessionListItem({
         bgcolor: selected ? "action.selected" : "background.paper",
       }}
     >
-      <Stack direction="row" justifyContent="space-between" gap={1} alignItems="flex-start">
+      <Stack direction="row" sx={{ justifyContent: "space-between", gap: 1, alignItems: "flex-start" }}>
         <Stack sx={{ minWidth: 0, flex: 1 }} spacing={0.25}>
-          <Stack direction="row" gap={0.5} flexWrap="wrap" alignItems="center">
+          <Stack direction="row" sx={{ gap: 0.5, flexWrap: "wrap", alignItems: "center" }}>
             <Chip
               size="small"
               label={TYPE_LABEL[session.type]}

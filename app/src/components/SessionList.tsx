@@ -59,7 +59,7 @@ export function SessionList({
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
+      <Stack direction="row" spacing={1} sx={{ alignItems: "center", flexWrap: "wrap" }}>
         {showCount && (
           <Typography variant="caption" color="text.secondary" sx={{ mr: 1 }}>
             {visibleCount} of {totalCount} session{totalCount === 1 ? "" : "s"}

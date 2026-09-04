@@ -12,7 +12,7 @@ export function TypeFilter({ options, selected, onToggle }: TypeFilterProps) {
     return null;
   }
   return (
-    <Stack direction="row" gap={0.5} flexWrap="wrap" alignItems="center">
+    <Stack direction="row" sx={{ gap: 0.5, flexWrap: "wrap", alignItems: "center" }}>
       <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
         Type
       </Typography>

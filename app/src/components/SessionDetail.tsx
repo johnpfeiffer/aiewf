@@ -57,7 +57,7 @@ export function SessionDetail({
       }}
     >
       <Stack spacing={1}>
-        <Stack direction="row" gap={0.5} flexWrap="wrap" alignItems="center">
+        <Stack direction="row" sx={{ gap: 0.5, flexWrap: "wrap", alignItems: "center" }}>
           <Chip size="small" label={TYPE_LABEL[session.type]} color="primary" />
           <Typography variant="caption" color="text.secondary">
             {formatTimeRange(session)}

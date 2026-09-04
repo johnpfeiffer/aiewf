@@ -24,8 +24,8 @@ export function TrackFilter({
   const hiddenCount = options.length - PREVIEW_COUNT;
 
   return (
-    <Stack direction="column" gap={0.5}>
-      <Stack direction="row" gap={0.5} flexWrap="wrap" alignItems="center">
+    <Stack direction="column" sx={{ gap: 0.5 }}>
+      <Stack direction="row" sx={{ gap: 0.5, flexWrap: "wrap", alignItems: "center" }}>
         <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
           Track
         </Typography>

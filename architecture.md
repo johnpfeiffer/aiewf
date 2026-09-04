@@ -1,6 +1,9 @@
 # Architecture
 
-This is a Vite + React + TypeScript single-page app. It has no backend service: all schedule records are embedded in the frontend bundle, and user-specific state is stored in the browser.
+This is a Vite + React + TypeScript single-page app using Material UI. It has
+no backend service: all schedule records and interactive module logic are
+embedded in the frontend bundle, and user-specific schedule state is stored in
+the browser.
 
 ## Runtime Shape
 
@@ -11,18 +14,55 @@ The app uses a small MVC-style split:
 - View: the top-level app shell in `app/src/views`.
 - Components: reusable UI pieces in `app/src/components`.
 
-At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`. `App` creates two controller hooks:
+At runtime, `app/src/main.tsx` mounts `App` from `app/src/views/App.tsx`.
+`App` owns the top-level module switcher for Schedule, Loopcraft, and Homa. In
+the schedule module, it creates two controller hooks:
 
 - `useSchedule()` loads the embedded schedule, tracks search/filter state, and returns grouped time slots.
 - `useFavorites()` loads saved session ids from `localStorage`, updates them when the user stars or unstars a session, and exposes the saved count.
 
-`App` then renders either the full schedule tab or the "My Schedule" tab.
+`App` then renders Day 2, Day 3, Day 4, or "My Schedule" within the schedule
+module.
 
 The shell also includes attribution links: the app title links to the official AI Engineer World's Fair 2026 page, and the footer credits John Pfeiffer with a LinkedIn link.
 
+```mermaid
+flowchart TD
+  main["main.tsx"]
+  app["views/App.tsx"]
+  schedule["Schedule module"]
+  loopcraft["views/Loopcraft.tsx"]
+  homa["views/Homa.tsx"]
+  scheduleHook["controllers/useSchedule.ts"]
+  favoritesHook["controllers/useFavorites.ts"]
+  sessionModel["models/session.ts + scheduleData.ts"]
+  favoritesModel["models/favorites.ts + shareUrl.ts"]
+  list["components/SessionList.tsx"]
+  detail["components/SessionDetail.tsx"]
+  mySchedule["components/MySchedule.tsx"]
+  homaModel["models/homa*.ts"]
+  loopcraftModel["models/loopcraft.ts"]
+  browserStorage["browser localStorage"]
+
+  main --> app
+  app --> schedule
+  app --> loopcraft
+  app --> homa
+  schedule --> scheduleHook
+  schedule --> favoritesHook
+  scheduleHook --> sessionModel
+  favoritesHook --> favoritesModel
+  favoritesModel <--> browserStorage
+  schedule --> list
+  schedule --> detail
+  schedule --> mySchedule
+  loopcraft --> loopcraftModel
+  homa --> homaModel
+```
+
 ## Data Flow
 
-1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `DAY_LABEL`, `DAY_DATE`, and `VENUE`. It also attaches optional video URLs from `app/src/data/video-links-for-sessions.json`.
+1. `app/src/models/scheduleData.ts` exports `scheduleSessions`, `SCHEDULE_DAYS`, `FAIR_DATES`, and `VENUE`. It also attaches optional video URLs from `app/src/data/video-links-for-sessions.json`.
 2. `app/src/models/session.ts` exports helpers over that data:
    - `matchesQuery`
    - `applyFilters`
@@ -34,7 +74,7 @@ The shell also includes attribution links: the app title links to the official A
 3. `app/src/controllers/useSchedule.ts` stores the active query, track filters, and type filters.
 4. `app/src/views/App.tsx` passes the derived time slots to `SessionList`.
 5. `SessionList` renders one `TimeGroup` per start time.
-6. `TimeGroup` renders a `SessionCard` for each session.
+6. `TimeGroup` renders a `SessionListItem` for each session.
 
 The search box is intentionally broad: query matching checks session title, track, description, speaker name, and speaker role.
 
@@ -48,12 +88,38 @@ Favorites are stored as session ids under the `aiewf.day2.favorites` key in brow
 
 The saved-session path is:
 
-- `app/src/components/SessionCard.tsx`: star button toggles a session id.
+- `app/src/components/SessionListItem.tsx`: star button toggles a session id.
 - `app/src/controllers/useFavorites.ts`: updates the selected id list.
 - `app/src/models/favorites.ts`: persists the list in `localStorage`.
 - `app/src/components/MySchedule.tsx`: maps ids back to schedule records, sorts them, groups them by time, and computes conflicts.
 - `app/src/models/session.ts`: `conflictingIds` identifies overlapping saved sessions.
-- `app/src/components/ConflictNotice.tsx` and `SessionCard.tsx`: display conflict warnings.
+- `app/src/components/ConflictNotice.tsx` and `SessionListItem.tsx`: display conflict warnings.
+
+The schedule user journey is:
+
+```mermaid
+sequenceDiagram
+  participant User
+  participant App
+  participant Schedule as useSchedule
+  participant Favorites as useFavorites
+  participant Storage as localStorage
+
+  User->>App: open Schedule
+  App->>Schedule: load selected day and filters
+  App->>Favorites: load saved session ids
+  Favorites->>Storage: read aiewf.day2.favorites
+  Schedule-->>App: grouped visible sessions
+  Favorites-->>App: saved count and toggles
+  User->>App: select day, search, or filter
+  App->>Schedule: update filter state
+  Schedule-->>App: recomputed time slots
+  User->>App: star a session
+  App->>Favorites: toggle session id
+  Favorites->>Storage: persist saved ids
+  User->>App: open My Schedule
+  App->>App: group saved sessions by day and flag conflicts
+```
 
 ## Where "Interactive Loops" Lives
 

@@ -22,8 +22,10 @@ export const theme = createTheme({
     },
     MuiChip: {
       styleOverrides: {
-        labelSmall: {
-          fontSize: "0.875rem",
+        root: {
+          "&.MuiChip-sizeSmall .MuiChip-label": {
+            fontSize: "0.875rem",
+          },
         },
       },
     },

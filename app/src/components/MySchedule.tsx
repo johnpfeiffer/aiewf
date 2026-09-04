@@ -80,10 +80,7 @@ export function MySchedule({
     <Stack spacing={1.5}>
       <Stack
         direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        flexWrap="wrap"
-        gap={1}
+        sx={{ justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}
       >
         <Typography color="text.secondary">
           {favoriteSessions.length} saved session
@@ -110,7 +107,7 @@ export function MySchedule({
       </Stack>
 
       {shareUrl && (
-        <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
+        <Stack direction="row" spacing={1} sx={{ alignItems: "center", flexWrap: "wrap" }}>
           <OutlinedInput
             value={shareUrl}
             size="small"

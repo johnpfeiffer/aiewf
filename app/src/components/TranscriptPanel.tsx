@@ -54,19 +54,16 @@ export function TranscriptPanel({ transcript, videoUrl }: TranscriptPanelProps) 
     >
       <Stack
         direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        sx={{ mb: 1, flexShrink: 0 }}
+        sx={{ justifyContent: "space-between", alignItems: "center", mb: 1, flexShrink: 0 }}
       >
         <Typography variant="subtitle2" component="h3">
           Transcript
         </Typography>
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
           <Typography
             variant="caption"
             color="text.secondary"
-            fontFamily="monospace"
-            sx={{ userSelect: "none" }}
+            sx={{ fontFamily: "monospace", userSelect: "none" }}
           >
             {currentTime} / {transcript.end}
           </Typography>

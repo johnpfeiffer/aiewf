@@ -120,10 +120,7 @@ export default function App() {
           <Box>
             <Stack
               direction="row"
-              justifyContent="space-between"
-              alignItems="flex-start"
-              flexWrap="wrap"
-              gap={1}
+              sx={{ justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 1 }}
             >
               <Box>
                 <Typography variant="h5" component="h1">
@@ -192,7 +189,7 @@ export default function App() {
           {tab !== "mine" && (
             <Stack spacing={1}>
               <SearchBar value={schedule.filters.query} onChange={schedule.setQuery} />
-              <Stack direction={{ xs: "column", md: "row" }} gap={1} alignItems="flex-start">
+              <Stack direction={{ xs: "column", md: "row" }} sx={{ gap: 1, alignItems: "flex-start" }}>
                 <TypeFilter
                   options={schedule.typeOptions}
                   selected={schedule.filters.types}
