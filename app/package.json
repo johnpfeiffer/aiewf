@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.20.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -10,8 +13,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
     "@mui/material": "9.4.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -24,9 +27,9 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "6.1.1",
     "jsdom": "^26.1.0",
-    "typescript": "^5.8.3",
+    "typescript": "7.0.2",
     "vite": "8.2.2",
-    "vitest": "^3.2.7"
+    "vitest": "5.0.0"
   },
   "allowScripts": {
     "esbuild@0.25.12": true,

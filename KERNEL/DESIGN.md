@@ -54,3 +54,5 @@ Prefer relative links rather than absolute links.
 
 <https://github.com/google-labs-code/design.md>
 
+*version: 2026-08-11*
+

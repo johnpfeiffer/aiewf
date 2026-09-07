@@ -21,9 +21,13 @@ Also bonus functions of a port of Swyx interactive demo and the HOMA protocol
 
 ## Quick Start
 
+Install Node.js 24.20.0 (the version pinned in `app/.nvmrc`), then install the
+locked dependencies:
+
 ```bash
 cd app
-npm install
+nvm use
+npm ci
 npm run dev
 ```
 
@@ -34,6 +38,10 @@ cd app
 npm test
 npm run build
 ```
+
+The frontend dependency targets are recorded in `dependency-baseline.json`.
+Directly used baseline packages are pinned exactly in `app/package.json` and
+the matching lockfile is committed for reproducible `npm ci` installs.
 
 ## Project Map
 

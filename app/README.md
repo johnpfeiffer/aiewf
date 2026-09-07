@@ -8,8 +8,11 @@ React, TypeScript, and Material UI defaults.
 
 ## Develop
 
+Use Node.js 24.20.0, which is pinned in `.nvmrc`, and install from the lockfile:
+
 ```bash
-npm install
+nvm use
+npm ci
 npm run dev
 ```
 
@@ -21,6 +24,10 @@ Open the local URL printed by Vite, usually http://localhost:5173.
 npm test
 npm run build
 ```
+
+The repository-level `../dependency-baseline.json` records the shared frontend
+dependency targets. Packages used by this app are pinned to those exact
+versions in `package.json`.
 
 ## Features
 

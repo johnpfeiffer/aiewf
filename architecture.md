@@ -5,6 +5,11 @@ no backend service: all schedule records and interactive module logic are
 embedded in the frontend bundle, and user-specific schedule state is stored in
 the browser.
 
+The frontend build and test toolchain targets Node.js 24.20.0 via
+`app/.nvmrc`. Directly used shared packages are pinned to the versions in
+`dependency-baseline.json`, with `app/package-lock.json` providing reproducible
+`npm ci` installs.
+
 ## Runtime Shape
 
 The app uses a small MVC-style split:
