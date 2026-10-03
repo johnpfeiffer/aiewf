@@ -452,11 +452,32 @@ for (const config of configs) {
   console.log(`wrote ${config.outPath} with ${segments.length} segments`);
 }
 
+// Merge individually-published talk videos (one video per session) without
+// overriding the curated keynote-livestream segment links above.
+const individualLinksPath = "app/src/data/video-links-individual-sessions.json";
+const linkSources = configs.map((config) => config.outPath);
+if (fs.existsSync(individualLinksPath)) {
+  const individual = JSON.parse(fs.readFileSync(individualLinksPath, "utf8"));
+  const linkedSessionIds = new Set(allLinks.map((link) => link.session_id));
+  let added = 0;
+  for (const link of individual.links) {
+    if (!linkedSessionIds.has(link.session_id)) {
+      allLinks.push(link);
+      linkedSessionIds.add(link.session_id);
+      added += 1;
+    }
+  }
+  linkSources.push(individualLinksPath);
+  console.log(
+    `merged ${added} individual session video links from ${individualLinksPath}`,
+  );
+}
+
 fs.writeFileSync(
   appLinksPath,
   `${JSON.stringify(
     {
-      source: configs.map((config) => config.outPath),
+      source: linkSources,
       links: allLinks,
     },
     null,
